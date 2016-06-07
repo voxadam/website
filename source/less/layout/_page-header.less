@@ -3,31 +3,12 @@
    =========================================== */
 
 .page-header {
-	background: fade(@color-brand-secondary, 92%);
 	position: relative;
 
-	&--fixed {									// this is a wrapping div
-	  position: fixed;					// (.page-header--fixed > .page-header)
-	  top: 0;										// this class will prevent header jumping on scroll
-	  left: 0;
-	  width: 100%;
-	  transform: translateZ(0); // prevent element repaint for position: fixed element
-	  z-index: @z-index-large;
-	  height: 99px;
-	}
-
-	&--animated {
-		animation-name: fadeInDown;
-		animation-delay: 1.2s;
-		.animate(@duration: 1s;);
-	}
-
-	.container {							  // Modify container width for main navigation
-		width: 100%;
-		@media screen and (min-width: 1200px) {
-			width: 92%;
-			margin-left: auto;
-			margin-right: auto;
+	&--alternate {
+		margin-top: 0;
+		@media screen and (min-width: @desktop-breakpoint) {
+			margin-top: 70px;
 		}
 	}
 }
@@ -38,13 +19,9 @@
 	padding: 27px 0;
 	line-height: 1;
 	display: inline-block;
+	
 	img {
 		display: block;
-		@media screen and (max-width: 400px) {
-			display: block;
-			max-width: 200px;
-			height: auto;
-		}
 	}
 }
 
@@ -67,6 +44,10 @@
 			margin-left: -15px;
 			margin-right: -15px;
 		}
+
+		&--alternate {
+			float: none;
+		}
 	}
 
 	&__item {
@@ -81,9 +62,7 @@
 		&:last-child {
 			padding-right: 0;
 		}
-		@media screen and (min-width: @hd-breakpoint) {
-		padding: 0 17px;
-		}
+
 		@media screen and (max-width: @desktop-breakpoint) {
 			border-top: 1px dotted #dedddc;
 			float: none;
@@ -92,21 +71,18 @@
 	}
 
 	&__link {
-		.font-size(16);
-		font-weight: @font-weight-regular;
-		color: @color-white;
+		.font-size(14);
+		font-weight: @font-weight-extra-bold;
+		text-transform: uppercase;
+		letter-spacing: .035em;
+		color: @color-coal;
 		padding: 10px 0;
 		display: block;
-		@media screen and (max-width: @desktop-breakpoint) {
-			padding: 20px 0;
-		}
+	}
 
-		&--active {
-			color: @color-brand-primary;
-			&:hover {
-				color: @color-brand-primary;
-			}
-		}
+	iframe {
+		position: relative;
+		top: 3px;
 	}
 }
 
