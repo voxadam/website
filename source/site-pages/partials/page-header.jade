@@ -1,25 +1,51 @@
-header#page-header.page-header.page-header--animated
-	.container
-		.row
-			.col-12.col-desktop-4
-				figure.page-logo
-					a: img(src="assets/images/logo.svg", width="233", height="70", alt="")
-			.col-12.col-desktop-8
-				nav.page-nav
-					ul.page-nav__list
-						li.page-nav__item
-							a(href="about.html" title="Learn more about us").page-nav__link About
-						li.page-nav__item
-							a(href="careers.html" title="See open positions").page-nav__link Careers
-						li.page-nav__item
-							a(href="contact.html" title="How can you reach us").page-nav__link Contact
-						li.page-nav__item
-							a(href="blog.html" title="Thoughts on usage of graph database.").page-nav__link Blog
-						li.page-nav__item
-							a(href="https://github.com/dgraph-io/dgraph" title="GihHub repository").page-nav__link Download
-						li.page-nav__item
-							include misc/git-hub-star
+if MainHeader
+	header#page-header.page-header
+		.container
+			.row
+				.col-12.col-desktop-4
+					figure.page-logo
+						a: img(src="assets/images/logo.svg", width="233", height="70", alt="")
+				.col-12.col-desktop-8
+					nav.page-nav
+						ul.page-nav__list
+							li.page-nav__item
+								a(href="about.html" title="Learn more about us").page-nav__link About
+							li.page-nav__item
+								a(href="careers.html" title="See open positions").page-nav__link Careers
+							li.page-nav__item
+								a(href="contact.html" title="How can you reach us").page-nav__link Contact
+							li.page-nav__item
+								a(href="blog.html" title="Thoughts on usage of graph database.").page-nav__link Blog
+							li.page-nav__item
+								a(href="https://github.com/dgraph-io/dgraph" title="GihHub repository").page-nav__link Download
+							li.page-nav__item
+								include misc/git-hub-star
 
-			a(href="javascript:void(0)", title="Site Navigation")#page-nav-button.button.page-nav-button Menu
+				a(href="javascript:void(0)", title="Site Navigation")#page-nav-button.button.page-nav-button Menu
+
+if AlternateHeader
+	header#page-header.page-header.page-header--alternate
+		.container
+			.row
+				.col-12.col-desktop-4.hide-desktop
+					figure.page-logo
+						a: img(src="assets/images/logo.svg", width="233", height="70", alt="")
+				.col-12.col-desktop-8.push-desktop-4
+					nav.page-nav
+						ul.page-nav__list.page-nav__list--alternate
+							li.page-nav__item
+								a(href="about.html" title="Learn more about us").page-nav__link About
+							li.page-nav__item
+								a(href="careers.html" title="See open positions").page-nav__link Careers
+							li.page-nav__item
+								a(href="contact.html" title="How can you reach us").page-nav__link Contact
+							li.page-nav__item
+								a(href="blog.html" title="Thoughts on usage of graph database.").page-nav__link Blog
+							li.page-nav__item
+								a(href="https://github.com/dgraph-io/dgraph" title="GihHub repository").page-nav__link Download
+							li.page-nav__item
+								include misc/git-hub-star
+
+				a(href="javascript:void(0)", title="Site Navigation")#page-nav-button.button.page-nav-button Menu
 
 // / page-header
