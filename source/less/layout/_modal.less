@@ -1,0 +1,88 @@
+/* ===========================================
+   Modal styling
+   =========================================== */
+
+.modal {
+  position: fixed;
+  overflow-y: auto;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: fade(@color-brand-secondary, 90%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s 0s, visibility 0s 0.2s;
+  z-index: @z-index-modal;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s 0s, visibility 0s 0s;
+  }
+
+
+  &__close {
+    text-align: center;
+    line-height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    z-index: @z-index-overlay + 1;
+    background-color: #222;
+    &:hover {
+      background-color: #000;
+    }
+  }
+
+  &__close-icon {
+    width: 15px;
+    height: 15px;
+    fill: @color-white;
+  }
+
+
+  &__container {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    margin: 4em auto;
+    background: #fff;
+    border-radius: .4em;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: scale(.9);
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-backface-visibility: hidden;
+    transition-property: transform;
+    transition-duration: 0.2s;
+
+    .is-visible & {
+      transform: scale(1);
+    }
+
+  }
+
+  &__header {
+    border-bottom: 1px solid #f1f1f1;
+    padding: 10px;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__content {
+    padding: 30px;
+  }
+
+  &__footer {
+    border-top: 1px solid #f1f1f1;
+    padding: 10px;
+  }
+
+}

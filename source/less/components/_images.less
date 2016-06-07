@@ -1,0 +1,43 @@
+/* ===========================================
+ * Image styling
+ * =========================================== */
+
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+figure {
+  margin: 0;
+}
+
+// Images
+img {
+  vertical-align: middle;
+}
+
+img[data-src] { // animate lazy loading
+  opacity: 0;
+  transition: opacity .25s ease-in;
+}
+
+// Responsive imags
+.image-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Image Positions
+.image-left {
+  float: left;
+  margin-right: 20px;
+}
+.image-right {
+  float: right;
+  margin-left: 20px;
+}
+
+// Svg sprite container
+.svg-holder {
+	display: none;
+}

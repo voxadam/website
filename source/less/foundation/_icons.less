@@ -1,0 +1,182 @@
+/* ===========================================
+ * Icons
+ * =========================================== */
+ 
+// Inline svg example
+// a
+// 	svg.icon.icon--close
+//		use(xlink:href="#icon-close" xmlns:xlink="http://www.w3.org/1999/xlink")
+
+.icon {
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+	position: relative;
+
+	&--circle {
+		border-radius: 50%;
+		background-color: @color-brand-secondary;
+		color: @color-white;
+		padding: 2px;
+	}
+}
+
+
+// Animated menu icon
+//
+// Code example
+// 
+// Jade:
+// a(href="javascript:void(0) title="Site Navigation).js-menu-button
+//  .icon--menu-animated
+// 		span.icon--menu-bar
+// 		span.icon--menu-bar
+// 		span.icon--menu-bar
+// 
+// JS:
+// 	$('.js-menu-button').click(function() {
+//		$('.icon--menu-animated').toggleClass('is-open');
+//	});
+
+
+// menu icon animated
+.icon--menu-animated {
+  width: 32px;
+  height: 24px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.icon--menu-bar {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: @color-brand-secondary;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+  border-radius: 2px;
+	&:nth-child(1) {
+	  top: 0px;
+	  transform-origin: left center;
+	}
+	&:nth-child(2) {
+	  top: 10px;
+	  transform-origin: left center;
+	}
+	&:nth-child(3) {
+	  top: 20px;
+	  transform-origin: left center;
+	}
+}
+
+.icon--menu-animated.is-open {
+
+	.icon--menu-bar:nth-child(1) {
+	  transform: rotate(45deg);
+	  top: -3px;
+	  left: 4px;
+	}
+	.icon--menu-bar:nth-child(2) {
+	  width: 0%;
+	  opacity: 0;
+	}
+	.icon--menu-bar:nth-child(3) {
+	  transform: rotate(-45deg);
+	  top: 19px;
+	  left: 4px;
+	}
+}
+
+
+// Animated Loader
+// 
+// Code Sample
+// 
+// span.icon-loader
+// 	svg(class="icon-loader__circular" viewBox="25 25 50 50")
+//    circle(class="icon-loader__path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10")/
+
+
+// Loader variables:
+@width: 36px;
+@green: #6ebb6e;
+@blue: #4b7af7;
+@red: #e04c4c;
+@yellow: #ffa530;
+
+.icon-loader {
+	display: inline-block;
+	position: relative;
+	margin: 0px auto;
+	width: @width;
+	&:before {
+		content:'';
+		display: block;
+		padding-top: 100%;
+	}
+
+	&__circular {
+		animation: rotate-loader 2s linear infinite;
+		height: 100%;
+		transform-origin: center center;
+		width: 100%;
+		position: absolute;
+		top: 0; bottom: 0; left: 0; right: 0;
+		margin: auto;
+	}
+
+	&__path {
+		stroke-dasharray: 1,200;
+		stroke-dashoffset: 0;
+		animation: loader-dash 1.5s ease-in-out infinite, loader-dash-color 6s ease-in-out infinite;
+		stroke-linecap: round;
+	}
+
+	// Loader animation settings
+	@keyframes rotate-loader {
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes loader-dash {
+		0% {
+			stroke-dasharray: 1,200;
+			stroke-dashoffset: 0;
+		}
+
+		50% {
+			stroke-dasharray: 89,200;
+			stroke-dashoffset: -35px;
+		}
+
+		100% {
+			stroke-dasharray: 89,200;
+			stroke-dashoffset: -124px;
+		}
+	}
+
+	@keyframes loader-dash-color {
+		100%, 0% {
+			stroke: @red;
+		}
+
+		40% {
+			stroke: @blue;
+		}
+
+		66% {
+			stroke: @green;
+		}
+
+		80%, 90% {
+			stroke: @yellow;
+		}
+	}
+}

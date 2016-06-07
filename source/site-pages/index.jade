@@ -1,0 +1,25 @@
+extends pagewrapper
+
+//- Override config.jade file
+append page-config
+	- var PageTitle = 'Dgraph | Welcome'
+	- var PageClass = 'homepage'
+	- var PageIntroClass = 'homepage'
+	- var PageContentClass = 'homepage'
+
+//- Begin
+block partials
+	//- include partials/modals/modal
+	//- include partials/overlays/overlay
+
+block page-intro	
+	h1 Hello World
+
+block page-content
+	.container
+		.row
+			.col-12
+				p Page content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis non facilis, sapiente fugit voluptas dolorem quos tempore facere culpa, commodi.
+
+block additional-scripts
+	//- include partials/path/to/additional/script.js

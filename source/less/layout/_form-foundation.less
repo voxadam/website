@@ -1,0 +1,313 @@
+// One of the possible ways of form styling
+// CSS clases methodology followed by BEM Principles
+.form {
+  .clearfix();
+
+  &__input {
+    width: 100%;
+    padding: 5px 10px;
+    line-height: (@line-height-computed * 1.1);
+    border-radius: @border-radius-small;
+    border: 1px solid @border-color;
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+    outline: none;
+    transition: all .3s ease-in-out;
+    &:hover {
+      border-color: lighten(@border-color, 30%);
+    }
+    &:focus {
+      border-color: @color-brand-secondary;
+    }
+
+    &--error { //highlight input feild
+      border-color: @color-error;
+      background: lighten(@color-error, 35%);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      &:hover,
+      &:focus {
+        border-color: @color-error;
+      }
+    }
+
+    &--alert {
+      border-color: @color-alert;
+      background: lighten(@color-alert, 35%);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      &:hover,
+      &:focus {
+        border-color: @color-alert;
+      }
+    }
+
+    &--success {
+      border-color: @color-success;
+      background: lighten(@color-success, 35%);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      &:hover,
+      &:focus {
+        border-color: @color-success;
+      }
+    }
+
+    &--textarea {
+      min-height: 150px;
+      line-height: 1.5;
+      padding-top: 15px;
+    }
+  }
+
+  &__label {
+    &:hover {
+      cursor: pointer;
+    }
+    
+    &--checkbox {
+      font-weight: @font-weight-regular;
+    }
+  }
+
+  &__button {
+    font-weight: @font-weight-bold;
+    margin-top: @spacing-base;
+    width: 100%;
+    border: none;
+    border-radius: @border-radius-base;
+    color: @color-white;
+    padding: 10px 15px;
+    transition: all .3s ease-in-out;
+
+    &--submit {
+      background: lighten(@color-link, 10%);
+      &:hover {
+        background: @color-link;
+      }
+      &:focus {
+        background: darken(@color-link, 5%);
+      }
+    }
+
+    &--cancel {
+      background: lighten(@color-error, 10%);
+      &:hover {
+        background: @color-error;
+      }
+      &:focus {
+        background: darken(@color-error, 5%);
+      }
+    }
+  }
+
+  // Checkbox replacement
+  // 
+  // Jade:
+  // 
+  // input(type="checkbox" id="checkbox-01" class="form__checkbox")
+  // label(for="checkbox-01" class="form__label")
+  //   span(class="form__checkbox-replacement")
+  //     svg.icon-check
+  //       use(xlink:href="#icon-check" xmlns:xlink="http://www.w3.org/1999/xlink")
+  //   | Checkbox Text
+
+  &__checkbox {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__checkbox[type="checkbox"]:checked + .form__label .form__checkbox-replacement {
+    border-color: @color-brand-secondary;
+    background-color: @color-brand-secondary;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    .icon-check {
+      transform: scale(1);
+    }
+  }
+
+  &__checkbox[type="checkbox"]:focus + .form__label .form__checkbox-replacement {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+  }
+
+  &__checkbox-replacement {
+    // checkbox replacement
+    width: 1em;
+    height: 1em;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin-right: 7px;
+    transition: 0.1s ease background-color;
+
+    .icon-check {
+      fill: @color-white;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: 10px;
+      height: 10px;
+      transform: scale(0);
+      transition: transform .18s ease-in-out;
+    }
+  }
+
+  // Radio replacement
+  // 
+  // Jade:
+  // 
+  // label(for="radio-01" class="form__label")
+  //   input(type="radio" value="radio-01" name="radio-name" id="radio-01" class="form__radio")
+  //   span.form__radio-replacement Radio 01
+  // label(for="radio-02" class="form__label")
+  //   input(type="radio" value="radio-02" name="radio-name" id="radio-02" class="form__radio")
+  //   span.form__radio-replacement Radio 02
+  // label(for="radio-03" class="form__label")
+  //   input(type="radio" value="radio-03" name="radio-name" id="radio-03" class="form__radio")
+  //   span.form__radio-replacement Radio 03
+
+  &__radio[type="radio"] {
+    border: 0; 
+    clip: rect(0 0 0 0); 
+    height: 1px; 
+    margin: -1px; 
+    overflow: hidden; 
+    padding: 0; 
+    position: absolute; 
+    width: 1px;
+  }
+
+  &__radio[type="radio"] + .form__radio-replacement {
+    display: block;
+    position: relative;
+  }
+
+  // the basic, unchecked style
+  &__radio[type="radio"] + .form__radio-replacement:before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.2em;
+    border-radius: 1em;
+    border: 0.15em solid #fff;
+    box-shadow: 0 0 0 1px #ccc;
+    margin-right: 7px;
+    transition: 0.3s ease all;
+  }
+
+  // the checked style using the :checked pseudo class
+  &__radio[type="radio"]:checked + .form__radio-replacement:before {
+    background: @color-brand-secondary;
+    box-shadow: 0 0 0 1px #ccc;
+  }
+
+  // additional focus hint
+  &__radio[type="radio"]:focus + .form__radio-replacement:after {
+    content: '\0020\2193';  // 2190 = left; 2191 = top; 2192 = right; 2193 = bottom;
+    position: absolute;
+    left: .25em;
+    top: -1.15em; 
+    color: #666;
+  }
+
+  // File upload replacement
+  // 
+  // Jade:
+  // 
+  // a(href="javascript:void(0)" class="button form__upload-replacement js-form__upload-replacement") Choose File
+  // input(type="file" class="form__upload")
+  // 
+  // JS:
+  // 
+  // $('.js-form__upload-replacement').click(function(){
+  //   $(this).siblings('.form__upload').click();
+  // });
+
+  &__upload {
+    display: inline-block;
+    z-index: 1;
+    position: absolute;
+    top: 14px;
+    margin-left: 35px;
+  }
+
+  &__upload-replacement {
+    position: relative;
+    z-index: @z-index-small;
+  }
+
+}
+
+// Form message notification
+.form-message {
+
+  &__hint { //show message hint bellow input feild
+    color: #91989e;
+    display: block;
+    margin-top: 15px;
+    padding: 0;
+  }
+
+  &__input { //show message bellow input feild
+    .font-size(12);
+    font-weight: @font-weight-bold;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    padding: 3px;
+    color: @color-white;
+    margin: 0;
+    border-bottom-right-radius: @border-radius-small;
+    border-bottom-left-radius: @border-radius-small;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    right: 0;
+
+    &--error {
+      background: @color-error;
+    }
+
+    &--alert {
+      background: @color-alert;
+    }
+
+    &--success {
+      background: @color-success;
+    }
+  }
+
+}
+
+// Input fields holder
+.holder {
+  .clearfix();
+  position: relative;
+  margin-bottom: @spacing-small;
+
+  &__half {
+    width: 50%;
+    float: left;
+    position: relative;
+
+    &:nth-child(1) {
+      padding-right: 15px;
+    }
+
+    &:nth-child(2) {
+      padding-left: 15px;
+    }
+  }
+  
+}

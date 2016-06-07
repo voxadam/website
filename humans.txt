@@ -1,0 +1,15 @@
+/* TEAM */
+
+    Design and Front End: Superawesome
+    Website: www.sprawsm.com
+    Contact: dudes@sprawsm.com
+    Contact: danijel@sprawsm.com
+
+/* SITE */
+
+    Last update: 2016/06/07
+    Language: English / Serbian
+    Doctype: HTML5
+    IDE: Sublime Text 3, iTerm, GitHub, Transit, Photoshop, Illustrator
+
+

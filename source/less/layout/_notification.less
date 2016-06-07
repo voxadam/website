@@ -1,0 +1,69 @@
+/* ===========================================
+ * Notification styling
+ * =========================================== */
+
+.notification { //show global message on top of the page
+  text-align: center;
+  line-height: 1.1;
+  color: @color-white;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  z-index: @z-index-overlay + 10;
+  padding: 20px 0;
+  transition: transform .15s ease-in-out;
+  box-shadow: 0 0 20px rgba(0,0,0,.3);
+  display: none;
+
+  &--fixed {
+    position: fixed;
+  }
+
+  &--error {
+    background: @color-error;
+  }
+
+  &--alert {
+    background: @color-alert;
+  }
+
+  &--success {
+    background: @color-success;
+  }
+
+  &.is-visible {
+    display: block;
+  }
+
+}
+
+.notification-message {
+  display: block;
+  margin: 0 30px;
+}
+
+.notification-close {
+  text-align: center;
+  line-height: 13px;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: @z-index-overlay + 1;
+  background-color: fade(@color-black, 40%);
+  &:hover {
+    background-color: fade(@color-black, 60%);
+  }
+}
+
+.notification-icon-close {
+  width: 12px;
+  height: 12px;
+  top: 8px;
+  fill: @color-white;
+}

@@ -1,0 +1,214 @@
+/* ===========================================
+   Tooltip styling
+   =========================================== */
+
+// Usage:
+// a(href="#" data-tooltip="Tooltip top" class="tooltip/tooltip-top/tooltip-right/tooltip-bottom/tooltip-left") Tooltip example
+// Tooltip top is default, it will work without class (or it can go with .tooltip or .tooltip-top).
+
+// Variables
+// PS: If the tooltips are going to be used I suggest moving the tooltip variables
+// inside sourse/less/helpers/_variables.less file for consistency sake.
+
+// Tooltip max width
+@tooltip-max-width:           200px;
+
+// Tooltip text color
+@tooltip-color:               #fff;
+
+// Tooltip background color
+@tooltip-background:          fade(#000, 90%);
+
+// @z-index-tooltip is defined in _variables.less file
+
+// Styles for the element that has a tooltip
+[data-tooltip],
+.tooltip {
+  position: relative;
+  cursor: pointer;
+
+  // Styles for the entire tooltip
+  &:before,
+  &:after {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+    transform: translate3d(0, 0, 0);
+    pointer-events: none;
+  }
+
+  // Tooltip's directional arrow
+  &:before {
+    content: '';
+    z-index: @z-index-tooltip;
+    border: 6px solid transparent;
+    background: transparent;
+  }
+
+  // Tooltip's content area
+  &:after {
+    content: attr(data-tooltip);
+    font-size: 14px;
+    line-height: 1.2;
+    color: @tooltip-color;
+    background-color: @tooltip-background;
+    border-radius: 2px;
+    padding: 8px;
+    width: @tooltip-max-width;
+    z-index: @z-index-tooltip;
+    text-align: center;
+  }
+
+  // Show the entire tooltip on hover and focus
+  &:hover,
+  &:focus {
+
+    &:before,
+    &:after {
+      visibility: visible;
+      opacity: 1;
+    }
+
+  }
+
+}
+
+/* Tooltip directions */
+
+/* Top (default) */
+[data-tooltip],
+.tooltip,
+.tooltip-top {
+
+  &:before,
+  &:after {
+    bottom: 100%;
+    left: 50%;
+  }
+
+  &:before {
+    margin-left: -6px;
+    margin-bottom: -12px;
+    border-top-color: @tooltip-background;
+  }
+
+  // Horizontally align top/bottom tooltips
+  &:after {
+    margin-left: -@tooltip-max-width/2;
+  }
+
+  &:hover,
+  &:focus {
+
+    &:before,
+    &:after {
+      transform: translateY(-12px); 
+    }
+
+  }
+
+}
+
+/* Left */
+.tooltip-left {
+
+  &:before,
+  &:after {
+    right: 100%;
+    bottom: 50%;
+    left: auto;
+  }
+
+  &:before {
+    margin-left: 0;
+    margin-right: -12px;
+    margin-bottom: 0;
+    border-top-color: transparent;
+    border-left-color: @tooltip-background;
+  }
+
+  &:hover,
+  &:focus {
+    
+    &:before,
+    &:after {
+      transform: translateX(-12px); 
+    }
+
+  }
+
+}
+
+/* Bottom */
+.tooltip-bottom {
+
+  &:before,
+  &:after {
+    top: 100%;
+    bottom: auto;
+    left: 50%;
+  }
+
+  &:before {
+    margin-top: -12px;
+    margin-bottom: 0;
+    border-top-color: transparent;
+    border-bottom-color: @tooltip-background;
+  }
+
+  &:hover,
+  &:focus {
+
+    &:before,
+    &:after {
+      transform: translateY(12px); 
+    }
+
+  }
+
+}
+
+/* Right */
+.tooltip-right {
+
+  &:before,
+  &:after {
+    bottom: 50%;
+    left: 100%;
+  }
+
+  &:before {
+    margin-bottom: 0;
+    margin-left: -12px;
+    border-top-color: transparent;
+    border-right-color: @tooltip-background;
+  }
+
+  &:hover,
+  &:focus {
+
+    &:before,
+    &:after {
+      transform: translateX(12px); 
+    }
+
+  }
+
+}
+
+// Small adjustments
+.tooltip-left,
+.tooltip-right {
+
+  // Move directional arrows down a bit for left/right tooltips
+  &:before {
+    top: 3px;
+  }
+
+  // Vertically center tooltip content for left/right tooltips
+  &:after {
+    margin-left: 0;
+    margin-bottom: -16px;
+  }
+}

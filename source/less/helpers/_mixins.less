@@ -1,0 +1,86 @@
+// ==========================================================================
+// Mixins and functions
+// ==========================================================================
+
+  .clearfix() {    // Source: http://nicolasgallagher.com/micro-clearfix-hack/
+    zoom:1;
+    &:before, 
+    &:after { 
+      content:"";
+      display:table; 
+    }
+    &:after { 
+      clear: both; 
+    }
+  }
+
+// Font sizes (primary sizing in `rem` units with a fallback of `px`)
+// Example usage .font-size(18);
+.font-size (@size) {
+  @remValue: @size / 16;
+  @pxValue: (@size);
+  font-size: ~"@{pxValue}px"; 
+  font-size: ~"@{remValue}rem";
+}
+
+//Gradients
+.gradient (@startColor: #eee, @endColor: white) {
+  background-color: @startColor;
+  background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background: -webkit-linear-gradient(top, @startColor, @endColor);
+  background: -moz-linear-gradient(top, @startColor, @endColor);
+  background: -ms-linear-gradient(top, @startColor, @endColor);
+  background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.horizontal-gradient (@startColor: #eee, @endColor: white) {
+  background-color: @startColor;
+  background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+  background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+  background-image: -moz-linear-gradient(left, @startColor, @endColor);
+  background-image: -ms-linear-gradient(left, @startColor, @endColor);
+  background-image: -o-linear-gradient(left, @startColor, @endColor);
+}
+
+// Animations
+// Example Usage .animation(1s);
+.animate(@duration: 1s) {
+  -webkit-animation-duration: @duration;
+  animation-duration: @duration;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+// Animation Delay
+// Example Usage .animation-delay(1s)
+.animate-delay(@delay: 1s) {
+  -webkit-animation-delay: @delay;
+  animation-delay: @delay;
+}
+
+// Center block element vertically
+.center-vertically() {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Reset text to its default stylings
+.reset-text() {
+  font-family: @font-family-base;
+  // We deliberately do NOT reset font-size.
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: @line-height-base;
+  text-align: left; // Fallback for where `start` is not supported
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+}

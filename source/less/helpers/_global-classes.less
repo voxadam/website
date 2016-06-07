@@ -1,0 +1,87 @@
+/* ===========================================
+ * Global classes
+ * =========================================== */
+
+.disable-hover {
+  pointer-events: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.hide-text {
+  text-indent: -99999px;
+  direction: ltr;
+  font-size: 0;
+}
+
+// replace text with an image
+.image-replace {
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  color: transparent;
+  white-space: nowrap;
+}
+
+// Hide only visually, but have it available for screenreaders: : h5bp.com/v
+.sr {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// Alignments
+.center-element {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Animations
+.animate {
+  .animate(1s);
+}
+
+.animate-infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+// General Resets
+.no-margin { margin: 0; }
+.no-padding { padding: 0; }
+.no-float { float: none; }
+.no-background { background: transparent; }
+.no-border { border: 0; }
+.no-select {
+  user-select: none;
+  cursor: default;
+}

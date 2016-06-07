@@ -1,0 +1,51 @@
+/* ===========================================
+ * Button styling
+ * =========================================== */
+
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  background-color: @button-bg;
+  color: @button-color;
+  border: 1px solid transparent;
+  border-radius: @border-radius-small;
+  white-space: nowrap;
+  padding: @button-padding-base;
+
+  font-weight: @button-font-weight;
+  &:hover,
+  &:focus {
+    color: @button-color;
+    text-decoration: none;
+  }
+  &:active {
+    color: @button-color;
+    text-decoration: none;
+  }
+}
+
+// Button outline
+.button--outline {
+  border: 2px solid @color-brand-primary;
+  border-radius: @border-radius-base;
+}
+
+// Button behaves as link
+.button--link {
+  color: @color-link;
+  text-decoration: underline;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  &:hover { text-decoration: none; }
+  &:active { outline: 0; }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: .5;
+}

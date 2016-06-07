@@ -1,0 +1,83 @@
+/* ===========================================
+   Tabs styling
+   =========================================== */
+
+.tab-environment {
+
+}
+
+.tab-nav {
+	text-align: center;
+
+	&__list {
+		.clearfix();
+		border-bottom: 2px solid #e5e5e5;
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+		margin-bottom: -5px;
+		width: 100%;
+
+		&--right {
+			@media screen and (min-width: 600px) {
+				text-align: right;
+				margin-bottom: 0;	
+			}
+		}
+
+		&--left {
+			@media screen and (min-width: 600px) {
+				text-align: left;
+				margin-bottom: 0;	
+			}
+		}
+	}
+
+	&__item {
+		display: inline-block;
+		margin-left: 2px;
+		margin-right: 2px;
+		margin-bottom: 0;
+	}
+
+	&__link {
+		.font-size(12);
+		font-family: @font-family-primary;
+		letter-spacing: .05em;
+		text-transform: uppercase;
+		display: block;
+		padding: 12px;
+		color: @color-gray;
+		border-bottom: 4px solid transparent;
+		&:hover {
+			color: @color-gray;
+			text-decoration: none;
+		}
+		&:active,
+		&:focus {
+			color: @color-gray;
+		}
+		
+		&.is-active {
+			color: @color-brand-primary;
+			border-bottom: 4px solid @color-brand-primary;
+		}
+	}
+
+	&__separator {
+		margin: 0;
+		border-top: 2px solid #e5e5e5;
+	}
+}
+
+.tab-group {
+	margin-top: 30px;
+}
+
+.tab-item {
+  display:none;
+
+  &.is-active {
+ 	 display:block;
+	}
+}

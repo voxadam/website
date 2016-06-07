@@ -1,0 +1,373 @@
+//- Begin
+doctype
+
+//[if IE 8] <html class="no-js lt-ie9"> ![endif]
+//[if gt IE 8] <!--> <html lang="en"> <!-- ![endif]
+head
+	meta(charset="utf-8")
+	meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, zoom=1")
+	meta(http-equiv="X-UA-Compatible", content="IE=edge")
+
+	meta(name="description", content="A description of the page no longer than 155 characters (including spaces)")
+	meta(name="author", content="Danijel Grabez")
+	
+	= '\n'
+	//- give me some space so I can breathe human ;)
+
+	// favicons
+	link(rel="apple-touch-icon", sizes="57x57", href="assets/images/favicons/apple-touch-icon-57x57.png")
+	link(rel="apple-touch-icon", sizes="60x60", href="assets/images/favicons/apple-touch-icon-60x60.png")
+	link(rel="apple-touch-icon", sizes="72x72", href="assets/images/favicons/apple-touch-icon-72x72.png")
+	link(rel="apple-touch-icon", sizes="76x76", href="assets/images/favicons/apple-touch-icon-76x76.png")
+
+	= '\n'
+
+	link(rel="apple-touch-icon", sizes="114x114", href="assets/images/favicons/apple-touch-icon-114x114.png")
+	link(rel="apple-touch-icon", sizes="120x120", href="assets/images/favicons/apple-touch-icon-120x120.png")
+	link(rel="apple-touch-icon", sizes="144x144", href="assets/images/favicons/apple-touch-icon-144x144.png")
+	link(rel="apple-touch-icon", sizes="152x152", href="assets/images/favicons/apple-touch-icon-152x152.png")
+	link(rel="apple-touch-icon", sizes="180x180", href="assets/images/favicons/apple-touch-icon-180x180.png")
+
+	= '\n'
+
+	link(rel="icon", type="image/png", href="assets/images/favicons/favicon-32x32.png", sizes="32x32")
+	link(rel="icon", type="image/png", href="assets/images/favicons/android-chrome-192x192.png", sizes="192x192")
+	link(rel="icon", type="image/png", href="assets/images/favicons/favicon-96x96.png", sizes="96x96")
+	link(rel="icon", type="image/png", href="assets/images/favicons/favicon-16x16.png", sizes="16x16")
+
+	= '\n'
+
+	link(rel="manifest", href="assets/images/favicons/manifest.json")
+	link(rel="mask-icon", href="assets/images/favicons/safari-pinned-tab.svg", color="#03c296")
+	link(rel="shortcut icon", href="assets/images/favicons/favicon.ico")
+	meta(name="msapplication-TileColor", content="#ffffff")
+	meta(name="msapplication-TileImage", content="assets/images/favicons/mstile-144x144.png")
+	meta(name="msapplication-config", content="assets/images/favicons/browserconfig.xml")
+	meta(name="theme-color", content="#ffffff")
+
+	= '\n'
+	title Dgraph | Page List
+	
+	= '\n'  
+
+	// fonts
+	link(href='https://fonts.googleapis.com/css?family=Work+Sans:400,700,900,300', rel='stylesheet' type='text/css')
+
+	// css
+	link(href="assets/css/style.css", rel="stylesheet" type="text/css")
+ 
+	= '\n'  
+	//modernizr
+	script(type="text/javascript", src="assets/js/modernizr.min.js")
+
+	//[if lt IE 9] <script src="assets/js/ie.min.js"></script> ![endif]
+	
+	style.
+		body {
+			background: #fafafa;
+			font-family: 'Work Sans', 'Helvetica Neue', Helvetica, Arial !important;
+			font-size: 16px;
+		}
+		
+		::moz-selection {
+			background-color: #f1f1f1;
+			color: #434343;
+		}
+
+		::selection {
+			background-color: #f1f1f1;
+			color: #434343;
+		}
+
+		h1 {
+			font-weight: 900;
+			font-size: 48px;
+			color: #434343;
+			margin: 0;
+			padding-top: 10px;
+		}
+
+		a {
+			color: #38a9ff;
+		}
+
+		a:hover {
+			color: #38a9ff;
+			text-decoration: underline;
+		}
+
+		.lb-header {
+			margin-top: 25px;
+		}
+
+		.lb-logo {
+			border-top: 2px solid #dadada;
+		}
+
+		.lb-logo img {
+			padding: 15px 15px 0;
+			max-width: 100%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.lb-title {
+			letter-spacing: -.015em;
+			border-top: 2px solid #dadada;
+			padding-left: 10px;
+			text-transform: none;
+		}
+
+		.lb-title small {
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: .04em;
+			color: #999;
+			display: block;
+			margin-top: 10px;
+		}
+
+		@media screen and (max-width: 990px) {
+			.lb-title {
+				font-size: 36px;
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			.lb-title,
+			.lb-meta {
+				margin-top: 15px;
+			}
+		}
+
+		@media screen and (max-width: 550px) {
+			.lb-title {
+				font-size: 28px;
+			}
+		}
+
+		.lb-meta {
+			border-top: 2px solid #dadada;
+			padding-top: 15px;
+			padding-left: 10px;
+			color: #434343;
+		}
+
+		.lb-meta-data {
+			display: block;
+			margin-bottom: 4px;
+			color: #666;
+		}
+
+		.lb-meta-data strong {
+			color: #434343;
+			font-weight: bold;
+		}
+
+		.lb-section {
+			margin: 150px 0 75px;
+		}
+
+		.lb-subsection {
+			margin-top: 75px;
+			-webkit-transition: all .25s ease-in;
+				 -moz-transition: all .25s ease-in;
+					-ms-transition: all .25s ease-in;
+					 -o-transition: all .25s ease-in;
+							transition: all .25s ease-in;      
+		}
+
+		.lb-subsection:first-child {
+			margin-top: 0;
+		}
+
+		.lb-subsection:hover .lb-category,
+		.lb-subsection:hover .lb-page-list {
+			border-color: #ccc;
+		}
+
+		.lb-subsection:hover .lb-page-list {
+			background-color: #f5f5f5;
+		}
+
+		.lb-category {
+			border-top: 2px solid #dadada;
+			padding: 15px 10px;
+			-webkit-transition: all .25s ease-in;
+				 -moz-transition: all .25s ease-in;
+					-ms-transition: all .25s ease-in;
+					 -o-transition: all .25s ease-in;
+							transition: all .25s ease-in; 
+		}
+
+		.lb-category__title {
+			font-weight: 700;
+			font-size: 24px;
+			color: #434343;
+			margin-bottom: 5px;
+			margin-top: 0;
+			letter-spacing: -.01em;
+		}
+
+		.lb-category__description {
+			font-size: 16px;
+			font-family: Georgia, serif;
+			font-style: italic;
+			line-height: 1;
+			letter-spacing: -.01em;
+			color: #999;
+		}
+
+		.lb-page-list {
+			border-top: 2px solid #dadada;
+			padding-left: 0;
+			-webkit-transition: all .25s ease-in;
+				 -moz-transition: all .25s ease-in;
+					-ms-transition: all .25s ease-in;
+					 -o-transition: all .25s ease-in;
+							transition: all .25s ease-in; 
+		}
+
+		.lb-page-list__item {
+			display: block;
+			list-style-type: none;
+			border-bottom: 1px solid #ddd;
+			margin-bottom: 0;
+		}
+
+		.lb-page-list__item--strong-separator {
+			border-color: #ccc;
+			border-width: 2px;
+		}
+
+		.lb-page-list__item:last-child {
+			border-bottom: none;
+		}
+
+		.lb-page-list__link {
+			font-size: 16px;
+			font-weight: bold;
+			color: #f96315;
+			display: block;
+			padding: 12px 10px 14px;
+		}
+
+		.lb-page-list__link:hover {
+			color: #f96315;
+			background: #fff;
+			text-decoration: none;
+		}
+
+		.lb-author {
+			font-weight: 700;
+			color: #999;
+			position: fixed;
+			bottom: 20px;
+			right: 30px;
+		}
+
+		.lb-author:hover,
+		.lb-author:active,
+		.lb-author:focus {
+			text-decoration: none;
+			color: #666;
+		}
+
+		.lb-author:hover .lb-author__name {
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		.lb-author:hover .lb-author__logo {
+			opacity: 1;
+			transform: translateX(0);
+			-webkit-filter: grayscale(0%);
+				 -moz-filter: grayscale(0%);
+					-ms-filter: grayscale(0%);
+					 -o-filter: grayscale(0%);
+		}
+
+		.lb-author__logo {
+			opacity: .5;
+			transform: translateX(150px);
+			transition: .3s all ease-in-out;
+			filter: none;
+			-webkit-filter: grayscale(100%);
+				 -moz-filter: grayscale(100%);
+					-ms-filter: grayscale(100%);
+					 -o-filter: grayscale(100%);
+			position: relative;
+			z-index: 2;
+		}
+
+		.lb-author__name {
+			opacity: 0;
+			transform: translateX(-20px);
+			transition: .4s all ease-in-out;
+			display: inline-block;
+			position: relative;
+			top: -10px;
+			margin-left: 5px;
+		}
+
+body
+	.container
+
+		header.lb-header
+			.row
+				.col-12.col-tablet-3
+					
+					.lb-logo
+						img(src="assets/images/logo.png" alt="Site Logo" width="233")
+
+				.col-12.col-tablet-6
+					h1.lb-title Dgraph #[small — June, 2016]
+
+				.col-12.col-tablet-3
+					.lb-meta
+						span.lb-meta-data #[strong Client: ] DGraph Labs, Inc.
+						span.lb-meta-data #[strong Design/Code: ]Superawesome
+
+		// / lb header
+		
+		section.lb-section
+
+			.row.lb-subsection
+
+				.col-12.col-tablet-3
+					.lb-category
+						h3.lb-category__title Project Pages
+						em.lb-category__description Coded pages for project webiste
+
+				.col-12.col-tablet-9
+
+						ul.lb-page-list
+							li.lb-page-list__item
+								a(href="index.html").lb-page-list__link Homepage
+							li.lb-page-list__item
+								a(href="about.html").lb-page-list__link About
+							li.lb-page-list__item
+								a(href="careers.html").lb-page-list__link Careers
+							li.lb-page-list__item.lb-page-list__item--strong-separator
+								a(href="contact.html").lb-page-list__link Contact
+							li.lb-page-list__item
+								a(href="blog.html").lb-page-list__link Blog listing
+							li.lb-page-list__item
+								a(href="blog-category.html").lb-page-list__link Blog category
+							li.lb-page-list__item
+								a(href="blog-article.html").lb-page-list__link Blog article
+			// / lb subsection
+
+
+		// / section
+
+		a(href="https://bitbucket.org/danijel_grabez/lifeboat-jade").lb-author 
+			svg(version="1.1" id="lifeboat" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="184 184 32 32" enable-background="new 184 184 32 32" xml:space="preserve").lb-author__logo
+				circle(fill="#FFFFFF" cx="200" cy="200" r="12.375")
+				g(transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)")
+					path(fill="#03C296" d="M1979.399,2149.062c-33.101-4.78-62.578-19.517-85.879-42.744c-21.299-21.372-34.8-46.685-41.436-77.705c-2.007-9.258-2.085-11.108-2.085-28.779c0-17.666,0.078-19.521,2.085-28.77c6.636-31.025,20.137-56.338,41.436-77.705c21.372-21.299,46.68-34.805,77.7-41.436c9.258-2.012,11.108-2.09,28.779-2.09c17.666,0,19.521,0.078,28.789,2.09c31.016,6.631,56.318,20.137,77.695,41.436c21.299,21.367,34.805,46.68,41.436,77.705c2.012,9.248,2.08,11.104,2.08,28.77c0,17.671-0.068,19.521-2.08,28.779c-6.631,31.021-20.137,56.333-41.436,77.705c-23.613,23.535-52.93,38.042-86.494,42.822C2010.107,2150.527,1989.121,2150.527,1979.399,2149.062z M2020.068,2121.362c25.537-4.399,46.826-15.122,65.508-33.101c37.959-36.65,48.301-92.905,25.85-140.811c-12.041-25.771-33.252-46.924-59.033-59.033c-47.92-22.451-104.165-12.119-140.815,25.85c-22.998,23.916-34.492,52.471-34.492,85.566c0,34.341,12.886,64.819,37.344,88.428c21.221,20.444,46.064,31.636,76.699,34.565C1996.533,2123.369,2013.271,2122.524,2020.068,2121.362z")
+					path(fill="#333333" d="M1964.507,1999.833v-64.805h50.542h50.537v15.039v15.049h-30.479h-30.479v49.766v49.771h-20.059h-20.063V1999.833z")
+			span.lb-author__name Made with Lifeboat
+
+

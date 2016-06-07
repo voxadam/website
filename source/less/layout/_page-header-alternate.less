@@ -1,0 +1,129 @@
+/* ===========================================
+   Header styling - Drawer Effect
+   =========================================== */
+
+.page-header {
+  background: @color-brand-secondary;
+	position: relative;
+
+	.container {							  // Modify container width for main navigation
+		@media screen and (min-width: @desktop-breakpoint) {
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+
+.page-logo {
+	.hide-text();
+	padding: 10px 0;
+	line-height: 1;
+	display: inline-block;
+	img {
+		display: block;
+		@media screen and (max-width: @tablet-breakpoint) {
+			display: block;
+			max-width: 200px;
+			height: auto;
+		}
+	}
+}
+
+.page-nav {
+	.clearfix();
+
+	&__list {
+		list-style: none;
+		padding: 13px 0;
+		float: right;
+		@media screen and (min-width: @desktop-breakpoint) {
+			margin-top: 10px;
+		}
+		@media screen and (max-width: @desktop-breakpoint) {
+			padding: 0 15px;
+			margin: 0;
+			float: none;
+			background: @color-brand-secondary;
+			width: 90%;
+			position: fixed;
+			z-index: @z-index-large;
+			top: 0;
+			bottom: 0;
+			left: 100%;
+			overflow-y: scroll;
+		}
+	}
+
+	&__item {
+		margin: 0;
+		padding: 0 10px;
+		display: inline-block;
+		line-height: 1;
+		&:first-child {
+			@media screen and (min-width: @desktop-breakpoint) {
+				padding-left: 0;
+			}
+		}
+		&:last-child {
+			@media screen and (min-width: @desktop-breakpoint) {
+				padding-right: 0;
+			}
+		}
+		@media screen and (max-width: @desktop-breakpoint) {
+			display: block;
+			padding: 0;
+		}
+	}
+
+	&__link {
+		font-family: @font-family-primary; 
+		font-weight: @font-weight-regular;
+		.font-size(16);
+		color: fade(@color-white, 80%);
+		display: block;
+		&:hover {
+			color: @color-white;
+		}
+		@media screen and (max-width: @desktop-breakpoint) {
+			padding: 20px 0;
+		}
+
+		&--active {
+			color: @color-brand-primary;
+			&:hover {
+				color: @color-brand-primary;
+			}
+		}
+	}
+}
+
+.page-nav-button {
+	.font-size(13);
+	font-family: @font-family-primary;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+	color: @color-white;
+	border-width: 2px;
+	border-color: @color-white;
+	border-radius: 3px;
+	padding: 5px 20px;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	@media screen and (min-width: @desktop-breakpoint) {
+		display: none;
+	}
+	@media screen and (max-width: @tablet-breakpoint) {
+		top: 11px;
+	}
+
+}
+
+.js-push-page {										// This class is added on body element via js.
+	transform: translateX(-250px);
+}
+body {
+	transition: all .2s ease-in-out;
+}

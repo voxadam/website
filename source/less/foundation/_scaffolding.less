@@ -1,0 +1,60 @@
+/* ===========================================
+ * General site styling
+ * =========================================== */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  .font-size(@font-size-base);
+  font-family: @font-family-base;
+  line-height: @line-height-base;
+  color: @color-text;
+  background-color: @body-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures, contextual;
+  font-variant-numeric: oldstyle-nums, proportional-nums;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  overflow-x: hidden;
+}
+
+::-moz-selection {
+  background: @color-brand-secondary;
+  color: @color-white;
+}
+
+::selection {
+  background: @color-brand-secondary;
+  color: @color-white;
+}
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+// Upstream patch for normalize.css submitted: https://github.com/necolas/normalize.css/pull/379 - remove this fix once that is merged
+[role="button"] {
+  cursor: pointer;
+}
+
+
+// Horizontal rules
+hr {
+  margin-top:    @line-height-computed;
+  margin-bottom: @line-height-computed;
+  border: 0;
+  border-top: 1px solid @hr-border;
+}

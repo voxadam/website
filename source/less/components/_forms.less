@@ -1,0 +1,188 @@
+/* ===========================================
+ * Form styling
+ * =========================================== */
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  .font-size(@font-size-base * 1.5);
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: @line-height-computed;
+  line-height: inherit;
+  border: 0;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="url"],
+input[type="email"],
+input[type="number"],
+input[type="passwod"],
+input[type="tel"],
+input[type="date"],
+textarea {
+  width: 100%;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+// Override content-box in Normalize (* isn't specific enough)
+input[type="search"] {
+  box-sizing: border-box;
+}
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9; // IE8-9
+  line-height: normal;
+}
+
+// Set the height of file controls to match text inputs
+input[type="file"] {
+  display: block;
+}
+
+// Search inputs in iOS
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+// Special styles for iOS temporal inputs
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] {
+    line-height: @input-height-base;
+  }
+}
+
+// Apply same disabled cursor tweak as for inputs
+// Some special care is needed because <label>s don't inherit their parent's `cursor`.
+//
+// Note: Neither radios nor checkboxes can be readonly.
+input[type="radio"],
+input[type="checkbox"] {
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: @cursor-disabled;
+  }
+}
+
+textarea {
+  resize: vertical;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+
+select {
+  text-transform: none;
+  height: 36px;
+  padding: 0 .4em;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+optgroup { font-weight: @font-weight-bold; }
+
+button {
+  overflow: visible;
+  text-transform: none;
+}
+
+button, html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled], html input[disabled] { cursor: default; }
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+// Stylize placeholder text color
+::-webkit-input-placeholder { color: @color-gray; }
+:-moz-placeholder { color: @color-gray; }
+::-moz-placeholder { color: @color-gray; }
+:-ms-input-placeholder { color: @color-gray; }
+
+// Custom Select
+.select {
+  border: 1px solid #ccc;
+  overflow: hidden;
+  height: 36px;
+  line-height: 32px;
+  position: relative;
+  display: block;
+  &:before {
+    content: "";
+    border: 6px solid transparent;
+    border-top-color: #676767;
+    top: 50%;
+    right: 10px;
+    margin-top: -3px;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 120%;
+    height: 36px;
+    padding: 0;
+    line-height: normal;
+    border: 0;
+    background: transparent;
+    display: block;
+    &:focus { outline: 0; }
+  }
+}

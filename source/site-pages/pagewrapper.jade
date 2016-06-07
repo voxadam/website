@@ -1,0 +1,115 @@
+//- Config.jade file holds values for variables which are placed inside pagewrapper.jade.
+//- Each .jade file can override variables defined in config.jade.
+
+//- Include config.jade file
+block page-config
+	include config 
+
+//- Begin
+doctype
+
+//[if IE 8] <html class="no-js lt-ie9"> ![endif]
+//[if gt IE 8] <!--> <html class="ie" lang="en"> <!-- ![endif]
+
+head
+	meta(charset="utf-8")
+	meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1")
+	meta(http-equiv="X-UA-Compatible", content="IE=edge")
+
+	meta(name="description", content="#{MetaDescription}")
+	meta(name="author", content="#{MetaAuthor}")
+	
+	= '\n'
+	//- give me some space so I can breathe human ;)
+
+	include partials/favicons
+
+	= '\n'
+	title #{PageTitle}
+	
+	= '\n'	
+	//- Google Fonts
+	//- This line of code will be inserted if the Google Font Family is specified inside config.jade file.
+	if GoogleFont
+		// fonts
+		link(href='https://fonts.googleapis.com/css?family=' + GoogleFont, rel='stylesheet' type='text/css')
+
+	= '\n'	
+	//css
+	link(href="assets/css/style.css", rel="stylesheet" type="text/css")
+
+	= '\n'	
+	//modernizr
+	script(type="text/javascript", src="assets/js/modernizr.min.js")
+
+	//[if lt IE 9] <script src="assets/js/ie.min.js"></script> ![endif]
+
+
+body(class="#{PageClass}")
+	// SVG holder is included via svg-local-storage script
+
+	//[if lt IE 9] 
+		<div class="browsehappy"> <a href="#" class="browsehappy__dismiss">Dismiss</a>
+			<h2 class="browsehappy__title">Your browser is not currently supported</h2>
+			<p>But there’s an easy fix! This web site works on a wide range of browsers. Click one of the buttons below and follow the instructions.</p>
+			<p>Find the latest versions of our supported browsers below:</p>
+			<ul class="browsehappy__list">
+				<li class="browsehappy__item"><a href="https://www.google.com/chrome/browser/desktop/" target="_blank" class="button browsehappy__button">Download Google Chrome</a></li>
+				<li class="browsehappy__item"><a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" class="button browsehappy__button">Download Firefox</a></li>
+				<li class="browsehappy__item"><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank" class="button browsehappy__button">Download Internet Explorer</a></li>
+			</ul>
+		</div> ![endif]
+	
+	//- Include additional partials if necessary.
+	block partials
+
+	//- Include default partials.
+	include partials/page-header
+	include partials/page-intro
+
+	div(class="page-content page-content--#{PageContentClass}" style="height: 500px")
+		block page-content
+
+	include partials/page-footer
+
+	= '\n'
+	// js
+	//- Inserting jQuery via true/false statements from config.jade file
+	if jQuery
+		script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+		script window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\/script>')
+
+	= '\n'
+	script(type='text/javascript').
+
+		//- // Cashing SVG Sprite in localStorage 
+		$(document).ready(function(){;(function(window,document)
+		{'use strict';
+			// Change revision of svg icons every time you add new icons
+			var file='assets/images/icons/svg-holder.html',
+				revision=1;
+		if(!document.createElementNS||!document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect){return true;}
+		var isLocalStorage='localStorage'in window&&window['localStorage']!==null,request,data,insertIT=function()
+		{document.body.insertAdjacentHTML('afterbegin',data);},insert=function()
+		{if(document.body){insertIT();}
+		else{document.addEventListener('DOMContentLoaded',insertIT);}};if(isLocalStorage&&localStorage.getItem('inlineSVGrev')===revision)
+		{data=localStorage.getItem('inlineSVGdata');if(data)
+		{insert();return true;}}
+		try
+		{request=new XMLHttpRequest();request.open('GET',file,true);request.onload=function()
+		{if(request.status>=200&&request.status<400)
+		{data=request.responseText;insert();if(isLocalStorage)
+		{localStorage.setItem('inlineSVGdata',data);localStorage.setItem('inlineSVGrev',revision);}}};request.send();}
+		catch(e){}}(window,document));});
+
+	script(type="text/javascript", src="assets/js/script.min.js")
+
+	//- Page specific scripts (in case script only needs to be loaded for e.g. on one page)
+	block additional-scripts
+
+	= '\n'
+	if GoogleAnalytics
+		// Google Analytics
+		script (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date; e=o.createElement(i);r=o.getElementsByTagName(i)[0]; e.src='//www.google-analytics.com/analytics.js'; r.parentNode.insertBefore(e,r)}(window,document,'script','ga')); ga('create','UA-XXXXX-X');ga('send','pageview');
+
+</html>

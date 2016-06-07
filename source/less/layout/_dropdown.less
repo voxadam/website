@@ -1,0 +1,58 @@
+/* ===========================================
+   Dropdown styling
+   =========================================== */
+
+// Variables
+// PS: If the dropdown is going to be used I suggest moving the dropdown variables
+// inside sourse/less/helpers/_variables.less file for consistency sake.
+
+@dropdown-max-width:						150px;
+@dropdown-arrow-width:					5px;
+@dropdown-color:								@color-brand-secondary;
+@dropdown-arrow-color:					@dropdown-color;
+
+.dropdown-environment {
+	position: relative;
+}
+
+.dropdown-trigger {
+	display: block;
+	margin-bottom: 15px;
+	&.is-active {
+		color: orange;
+	}
+}
+
+.dropdown {
+	position: absolute;
+	z-index: @z-index-dropdown;
+	max-width: @dropdown-max-width;
+	width: 100%;
+	display: inline-block;
+	background-color: @dropdown-color;
+	border-radius: 3px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+	transform: scale(.9);
+	opacity: 0;
+	visibility: hidden;
+	transition: all .1s ease-in-out;
+
+	&.is-open {
+		transform: scale(1);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.dropdown-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+	border-style: solid;
+	top: -@dropdown-arrow-width;
+  left: 50%;
+  margin-left: -@dropdown-arrow-width;
+  border-width: 0 @dropdown-arrow-width @dropdown-arrow-width;
+  border-bottom-color: @dropdown-arrow-color;
+}
