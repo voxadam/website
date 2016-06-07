@@ -3,24 +3,23 @@ header#page-header.page-header.page-header--animated
 		.row
 			.col-12.col-desktop-4
 				figure.page-logo
-					a: img(src="http://placehold.it/263x39/fff", width="263", height="39", alt="")
+					a: img(src="assets/images/logo.svg", width="233", height="70", alt="")
 			.col-12.col-desktop-8
 				nav.page-nav
 					ul.page-nav__list
 						li.page-nav__item
-							a(href="#" title="").page-nav__link Services
+							a(href="about.html" title="Learn more about us").page-nav__link About
 						li.page-nav__item
-							a(href="#" title="").page-nav__link Work
+							a(href="careers.html" title="See open positions").page-nav__link Careers
 						li.page-nav__item
-							a(href="#" title="").page-nav__link Our Products
+							a(href="contact.html" title="How can you reach us").page-nav__link Contact
 						li.page-nav__item
-							a(href="#" title="").page-nav__link About
+							a(href="blog.html" title="Thoughts on usage of graph database.").page-nav__link Blog
 						li.page-nav__item
-							a(href="#" title="").page-nav__link Blog
+							a(href="https://github.com/dgraph-io/dgraph" title="GihHub repository").page-nav__link Download
 						li.page-nav__item
-							a(href="#" title="").page-nav__link Contact
-						li.page-nav__item
-							a(href="#" title="").page-nav__link.button-project Start a Project
+							include misc/git-hub-star
+
 			a(href="javascript:void(0)", title="Site Navigation")#page-nav-button.button.page-nav-button Menu
 
 // / page-header

@@ -1905,33 +1905,6 @@ img[data-src] {
 .page-nav__link--active:hover {
   color: #f74b59;
 }
-.button-project.page-nav__link {
-  color: #03c296;
-  background-color: #ffffff;
-  border-width: 2px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.button-project.page-nav__link:hover {
-  color: #03c296;
-  border-color: #ffffff;
-}
-.button-project.page-nav__link:focus {
-  color: #03c296;
-  border-color: #02906f;
-}
-@media screen and (max-width: 989px) {
-  .button-project.page-nav__link {
-    margin: 15px;
-    color: #03c296;
-    background: #ffffff;
-    border: none;
-  }
-  .button-project.page-nav__link:hover,
-  .button-project.page-nav__link:focus {
-    color: #ffffff;
-  }
-}
 .is-visible {
   display: block !important;
 }

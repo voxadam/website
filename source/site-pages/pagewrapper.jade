@@ -102,7 +102,11 @@ body(class="#{PageClass}")
 		{localStorage.setItem('inlineSVGdata',data);localStorage.setItem('inlineSVGrev',revision);}}};request.send();}
 		catch(e){}}(window,document));});
 
+	// Minified script
 	script(type="text/javascript", src="assets/js/script.min.js")
+
+	// GitHub star button
+	script(async defer src="https://buttons.github.io/buttons.js")
 
 	//- Page specific scripts (in case script only needs to be loaded for e.g. on one page)
 	block additional-scripts
