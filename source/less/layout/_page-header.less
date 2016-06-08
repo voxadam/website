@@ -58,7 +58,9 @@
 
 		&--alternate {
 			float: none;
-			padding: 0;
+			@media screen and (min-width: @desktop-breakpoint) {
+				padding: 0;
+			}
 		}
 	}
 
