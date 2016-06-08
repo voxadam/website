@@ -12,10 +12,13 @@
 	position: relative;
 	background-color: #fff;
 	z-index: 5;
-	@media screen and (max-width: @desktop-breakpoint) {
+	@media screen and (min-width: @tablet-breakpoint) and (max-width: @desktop-breakpoint) {
 		padding-top: @spacing-base;
 	}
-
+	@media screen and (max-width: @tablet-breakpoint) {
+		padding-top: @spacing-small;
+	}
+					
 	&__wrapper {
 		margin-bottom: 200px;
 		position: relative;

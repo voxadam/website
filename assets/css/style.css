@@ -1093,8 +1093,8 @@ h6,
   }
   h3,
   .gamma {
-    font-size: 28px;
-    font-size: 1.75rem;
+    font-size: 24px;
+    font-size: 1.5rem;
   }
 }
 p {
@@ -1351,9 +1351,14 @@ hr {
   background-color: #fff;
   z-index: 5;
 }
-@media screen and (max-width: 989px) {
+@media screen and (min-width: 767px) and (max-width: 989px) {
   .demo {
     padding-top: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .demo {
+    padding-top: 25px;
   }
 }
 .demo__wrapper {
@@ -2378,6 +2383,7 @@ img[data-src] {
   .section-header__lead {
     font-size: 18px;
     font-size: 1.125rem;
+    margin-bottom: 25px;
   }
 }
 /* Vendor
