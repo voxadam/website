@@ -1,27 +1,22 @@
-# 🆕 TODO List                                 [14 •]
-    ☐ Regular list item #1                     •••◦        ’’’     ---
-    ☐ List item #2                             •◆          ’’      
-    ⚑ Urgent list item #3                      ••          ’’      -
-    ☐ List item #4                             •••◦        ’’’
-    ☐ List item #5                             ◦◦          ’’      ----
-    ☐ List item #6                             ◦           ’’      ----
-      + Combined list item #7
-      + Combined item #8
-
-    ☐ Unplanned list item #1
-    ⚑ Unplanned urgent list item #1
-    ☐ Unplanned list item #3
+# 🆕 TODO List                                 [12 •]
+    ☐ Page header                               •◆
+      + Page header alternate version
+    ☐ Page intro                                ◦
+    ☐ Demo section (no console)                 ◦◦
+    ☐ Use case section (no svg, only slider)    ◦◦◦◦
+    ☐ More info cta                             ◦◦
+    ☐ Page footer                               ◦◦
+    ☐ Define variables
 
 
 # ❔ Questions
-    ☐ List item #1
-    ☐ List item #2
+    ☐ Demo section
+    ☐ Search terms
 
 
 
 # 🕓 Later
-    ☐ List item #1
-    ☐ List item #1
+    ☐ Improve bolt graphic animation on hover state (on page load animate their movement)
 
 
 
@@ -66,3 +61,18 @@ In order to enable saving notes inside /documentation/notes/ folder you will nee
     Urgent          ⚑
     
         ¯\_(ツ)_/¯
+
+
+# 🆕 Pomodoro                                 [14 •]
+    ☐ Regular list item #1                     •••◦        ’’’     ---
+    ☐ List item #2                             •◆          ’’      
+    ⚑ Urgent list item #3                      ••          ’’      -
+    ☐ List item #4                             •••◦        ’’’
+    ☐ List item #5                             ◦◦          ’’      ----
+    ☐ List item #6                             ◦           ’’      ----
+      + Combined list item #7
+      + Combined item #8
+
+    ☐ Unplanned list item #1
+    ⚑ Unplanned urgent list item #1
+    ☐ Unplanned list item #3
