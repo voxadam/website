@@ -12,6 +12,9 @@
 	position: relative;
 	background-color: #fff;
 	z-index: 5;
+	@media screen and (max-width: @desktop-breakpoint) {
+		padding-top: @spacing-base;
+	}
 
 	&__wrapper {
 		margin-bottom: 200px;
@@ -34,11 +37,17 @@
 		}
 		&:before {
 			// Top diagonal
-	    top: -110px;
+	    top: -110px; 		
+	    @media screen and (max-width: @desktop-breakpoint) {
+	    	top: 40px;
+	    }
 		}
 		&:after {
 			// Bottom diagonal
 	    bottom: -110px;
+			@media screen and (max-width: @desktop-breakpoint) {
+	    	bottom: -120px;
+	    }
 		}
 	}
 
@@ -93,6 +102,13 @@
 			  }
 			}
 		}
+		@media screen and (max-width: @hd-breakpoint) {
+			&:before {
+				right: 0px;
+				top: -100px;
+			}
+		}
+				
 	}
 
 	&__title {
@@ -114,8 +130,12 @@
 }
 
 .dg-features {
-	margin-top: @spacing-medium;
-	margin-bottom: @spacing-large;
+	margin-top: @spacing-base;
+	margin-bottom: @spacing-base;
+	@media screen and (min-width: @desktop-breakpoint) {
+		margin-top: @spacing-medium;
+		margin-bottom: @spacing-medium;
+	}
 
 	&__list {
 		margin: 0;
@@ -129,12 +149,13 @@
 	&__item {
 		text-align: center;
 		list-style-type: none;
-		margin: 0;
+		margin-bottom: 30px;
 		@media screen and (min-width: @tablet-breakpoint) {
 			float: left;
 			width: 33.3333333%;
 			padding-left: 15px;
 			padding-right: 15px;	
+			margin: 0;
 		}
 	}
 
@@ -162,6 +183,7 @@
 	&__title {
 		.font-size(@font-size-small);
 		text-transform: uppercase;
+		line-height: 1.3;
 		letter-spacing: .015em;
 		margin-bottom: 15px;
 	}
@@ -185,6 +207,10 @@
 		width: 1300px;
 		height: 1600px;
 		// transition: all .5s ease-in-out 12s;
+		@media screen and (max-width: 600px) {
+			display: none;
+		}
+				
 	}
 
 	&--top-front {

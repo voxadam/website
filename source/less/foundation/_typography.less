@@ -47,7 +47,12 @@ h6, .zeta    { .font-size(@font-size-h6); }
 }
 
 @media screen and (max-width: @tablet-breakpoint) {
-  h2, .beta    { .font-size(@font-size-h3); }
+  h2, .beta   { .font-size(@font-size-h3); }
+}
+
+@media screen and (max-width: 400px) {
+  h2, .beta   { .font-size(@font-size-h4); }
+  h3, .gamma  { .font-size(@font-size-h4); }
 }
 
 
