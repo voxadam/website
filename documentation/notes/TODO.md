@@ -2,9 +2,9 @@
     ☐ Page header                               ••
       + Page header alternate version
       + Page intro
-    ☐ Demo section (no console)                 ••◆◆◦
-      + Revisit class naming convention         ◦
-    ☐ Use case section (no svg, only slider)    ◦◦◦◦
+    ☐ Demo section (no console)                 ••◆◆◆
+      + Revisit class naming convention         
+    ☐ Use case section (no svg, only slider)    •••◦
     ☐ More info cta                             ◦◦
     ☐ Page footer                               ◦◦
     ☐ Define variables

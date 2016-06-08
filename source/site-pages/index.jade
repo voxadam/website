@@ -26,13 +26,12 @@ block page-intro
 					p.page-intro__lead Dgraph is a solution for all your needs.
 
 block page-content
-	.bolt-image__wrapper
-		.bolt-image.bolt-image--top-front
-		.bolt-image.bolt-image--top-back
-		.bolt-image.bolt-image--bottom-front
-		.bolt-image.bolt-image--bottom-back
-	
 	.demo__wrapper
+		.bolt-image__wrapper
+			.bolt-image.bolt-image--top-front
+			.bolt-image.bolt-image--top-back
+		// /.bolt-image__wrapper--top
+
 		.demo
 			.container
 				.row
@@ -45,6 +44,7 @@ block page-content
 							header.demo-console__header
 								h5.demo-console__title Play with 21M facts from <a href="#">Freebase Film Data</a> loaded up on demo Dgraph instance, via GraphQL in real time.	
 							img(src="assets/images/homepage/demo-placeholder.png", alt="FPO").demo-console__screenshot
+						// /.demo-console
 
 						.dg-features
 							header.section-header
@@ -70,6 +70,47 @@ block page-content
 									.dg-features__description
 										h4.dg-features__title Open Source
 										p Written entirely in Go language, DGraph is available under a very liberal Apache License 2.0.
+							// /.demo-features
+				
+		// /.demo
+
+		.bolt-image__wrapper
+			.bolt-image.bolt-image--bottom-front
+			.bolt-image.bolt-image--bottom-back
+		// /.bolt-image__wrapper--bottom
+
+	// /.demo__wrapper
+	.usage
+		.container
+			.row
+				.col-12
+					header.section-header
+						h2.section-header__title Use Cases
+						p.section-header__lead See what the world is saying right now about the topics that matter to you, with results that are up-to-the-minute and personalized.
+					
+					.usage-carousel
+						nav.usage-carousel__nav
+							.usage-carousel__window
+								svg.icon
+									use(xlink:href="#icon-loupe" xmlns:xlink="http://www.w3.org/1999/	xlink")
+							
+							.usage-carousel__controls
+								a(href="javascript:;")#previous-slide.usage-carousel__control-up
+									svg.icon
+										use(xlink:href="#icon-chevron-up" xmlns:xlink="http://www.w3.org/1999/	xlink")
+
+								a(href="javascript:;")#next-slide.usage-carousel__control-down.js-usage-carousel-down
+									svg.icon
+										use(xlink:href="#icon-chevron-down" xmlns:xlink="http://www.w3.org/1999/	xlink")
+
+							ul.usage-carousel__list
+								li.usage-carousel__item File Search
+								li.usage-carousel__item LinkedIn Search
+								li.usage-carousel__item.is-active French Actors
+
+
+	// /.use-case
+
 
 block additional-scripts
 	//- include partials/path/to/additional/script.js

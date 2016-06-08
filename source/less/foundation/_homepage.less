@@ -7,7 +7,6 @@
 }
 
 // Demo section
-
 .demo {
 	position: relative;
 	background-color: #fff;
@@ -20,8 +19,11 @@
 	}
 					
 	&__wrapper {
-		margin-bottom: 200px;
+		margin-bottom: 100px;
 		position: relative;
+		@media screen and (min-width: 600px) {
+			margin-bottom: 200px;
+		}
 		&:before,
 		&:after {
 			content: '';
@@ -36,7 +38,6 @@
 	    z-index: 4;
 			pointer-events: none;
 			box-shadow: 0 0 50px rgba(0,0,0,.15);
-
 		}
 		&:before {
 			// Top diagonal
@@ -192,12 +193,123 @@
 	}
 }
 
+// Use case section
+.usage {
+	position: relative;
+	z-index: 5;
+	margin-bottom: 100px;
+}
+
+.usage-carousel {
+
+	&__nav {
+		.clearfix();
+		width: 100%;
+		max-width: 430px;
+		margin-top: 200px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+
+	&__controls {
+		width: 30px;
+		float: left;
+		margin-top: 10px;
+		margin-left: 15px;
+		position: relative;
+		z-index: 5;
+
+		.icon {
+			fill: #f0f0f0;
+			width: 30px;
+			height: 30px;
+			transition: .2s fill ease-in-out;
+			&:hover {
+				fill: @color-silver;
+			}
+		}
+	}
+
+	&__control-up {
+		.icon:active {
+			transform: translateY(-2px);
+		}
+	}
+
+	&__control-down {
+		.icon:active {
+			transform: translateY(2px);
+		}
+	}
+
+	&__window {
+		width: 100%;
+		max-width: 380px;
+		height: 84px;
+		background-color: @color-white;
+		position: relative;
+		float: left;
+		&:before {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			opacity: .4;
+			border-radius: 5px;
+			box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+			transition: opacity 0.3s ease-in-out;
+		}
+
+	&:hover {
+			&:before {
+				opacity: .8;
+			}
+		}
+
+		.icon {
+			width: 30px;
+			height: 30px;
+			fill: #00aeef;
+			margin-top: 27px;
+			margin-left: 20px;
+		}
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -160px;
+	}
+
+	&__item {
+		.font-size(28);
+		font-weight: @font-weight-medium;
+		color: @color-silver;
+		margin: 0;
+		list-style-type: none;
+		display: block;
+		&:not(:last-child) {
+			margin-bottom: 50px;
+		}
+
+		&.is-active {
+			color: @color-text;
+		}
+	}
+
+}
+
 // Bolt image in the background
 .bolt-image {
 	position: relative;
 
 	&__wrapper {
-		position: relative;
 	}
 
 	&:before {
@@ -236,10 +348,10 @@
 
 	&--bottom-front {
 		&:before {
-			bottom: -1000px;
-			left: -100px;
-			width: 600px;
-			height: 740px;
+			bottom: -600px;
+			left: -200px;
+			width: 1000px;
+			height: 1150px;
 			background: url('../images/homepage/bolt__bottom--front.png');
 			z-index: 2;
 		}
@@ -247,12 +359,12 @@
 
 	&--bottom-back {
 		&:before {
-			bottom: -1000px;
-			left: -150px;
-			width: 600px;
-			height: 740px;
+			bottom: -600px;
+			left: -220px;
+			width: 1000px;
+			height: 1150px;
 			background: url('../images/homepage/bolt__bottom--back.png');
-			z-index: 2;
+			z-index: 1;
 		}
 	}
 }
