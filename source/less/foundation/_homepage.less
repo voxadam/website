@@ -1,0 +1,229 @@
+/* ===========================================
+   Homepage styling
+   =========================================== */
+
+.homepage {
+	
+}
+
+// Demo section
+
+.demo {
+	position: relative;
+	background-color: #fff;
+	z-index: 5;
+
+	&__wrapper {
+		margin-bottom: 200px;
+		position: relative;
+		&:before,
+		&:after {
+			content: '';
+	    display: block;
+	    width: 3500px;
+	    height: 250px;
+	    position: absolute;
+	    background: #fff;
+	    transform: rotate(4deg);
+	    left: -10%;
+	    right: 0;
+	    z-index: 4;
+			pointer-events: none;
+			box-shadow: 0 0 50px rgba(0,0,0,.15);
+
+		}
+		&:before {
+			// Top diagonal
+	    top: -110px;
+		}
+		&:after {
+			// Bottom diagonal
+	    bottom: -110px;
+		}
+	}
+
+}
+
+.demo-console {
+
+	&__header {
+		color: @color-white;
+		text-align: center;
+		background-color: @color-brand-primary;
+		max-width: 750px;		
+		margin-left: auto;
+		margin-right: auto;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		padding: 10px 20px;
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			right: -250px;
+			top: -80px;
+			width: 167px;
+			height: 147px;
+			background: url('../images/homepage/demo-tip.png') center no-repeat;
+			pointer-events: none;
+
+			animation-name: rotateTip;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-out;
+			@keyframes rotateTip {
+			  0% {
+			    transform: rotate(0);
+			  }
+
+				25% {
+			    transform: rotate(5deg);
+			  }
+
+				50% {
+			    transform: rotate(0deg);
+			  }
+
+				75% {
+			    transform: rotate(-5deg);
+			  }
+
+			  100% {
+			    transform: rotate(0);
+			  }
+			}
+		}
+	}
+
+	&__title {
+		.font-size(@font-size-small - 2);
+		font-weight: @font-weight-regular;
+
+		a {
+			color: @color-white;
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	&__screenshot {
+		.image-responsive();
+	}
+}
+
+.dg-features {
+	margin-top: @spacing-medium;
+	margin-bottom: @spacing-large;
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		.clearfix();
+		@media screen and (min-width: @tablet-breakpoint) {
+			margin: 0 -15px;
+		}
+	}
+
+	&__item {
+		text-align: center;
+		list-style-type: none;
+		margin: 0;
+		@media screen and (min-width: @tablet-breakpoint) {
+			float: left;
+			width: 33.3333333%;
+			padding-left: 15px;
+			padding-right: 15px;	
+		}
+	}
+
+	&__figure {
+		margin-bottom: 30px;
+	}
+
+	&__image {
+		.image-responsive();
+		margin-left: auto;
+		margin-right: auto;
+		height: 170px;
+	}
+
+	&__description {
+
+		p {
+			.font-size(@font-size-small);
+			line-height: 1.65;
+			color: @color-bronco;
+			margin: 0;
+		}
+	}
+
+	&__title {
+		.font-size(@font-size-small);
+		text-transform: uppercase;
+		letter-spacing: .015em;
+		margin-bottom: 15px;
+	}
+}
+
+// Bolt image in the background
+.bolt-image {
+	position: relative;
+
+	&__wrapper {
+		position: relative;
+	}
+
+	&:before {
+		// opacity: .5;
+		content: '';
+		position: absolute;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		width: 1300px;
+		height: 1600px;
+		// transition: all .5s ease-in-out 12s;
+	}
+
+	&--top-front {
+		&:before {
+			top: -1000px;
+			right: -200px;
+			background: url('../images/homepage/bolt__top--front.png');
+			z-index: 2;
+		}
+	}
+
+	&--top-back {
+		&:before {
+			top: -1000px;
+			right: -250px;
+			background: url('../images/homepage/bolt__top--back.png');
+			z-index: 1;
+		}
+	}
+
+	&--bottom-front {
+		&:before {
+			bottom: -1000px;
+			left: -100px;
+			width: 600px;
+			height: 740px;
+			background: url('../images/homepage/bolt__bottom--front.png');
+			z-index: 2;
+		}
+	}
+
+	&--bottom-back {
+		&:before {
+			bottom: -1000px;
+			left: -150px;
+			width: 600px;
+			height: 740px;
+			background: url('../images/homepage/bolt__bottom--back.png');
+			z-index: 2;
+		}
+	}
+}

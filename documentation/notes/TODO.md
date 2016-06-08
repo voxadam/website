@@ -1,8 +1,9 @@
 # 🆕 TODO List                                 [12 •]
-    ☐ Page header                               •◆
+    ☐ Page header                               ••
       + Page header alternate version
-    ☐ Page intro                                ◦
-    ☐ Demo section (no console)                 ◦◦
+      + Page intro
+    ☐ Demo section (no console)                 ••◆◆
+      + Revisit class naming convention         ◦
     ☐ Use case section (no svg, only slider)    ◦◦◦◦
     ☐ More info cta                             ◦◦
     ☐ Page footer                               ◦◦
@@ -17,6 +18,8 @@
 
 # 🕓 Later
     ☐ Improve bolt graphic animation on hover state (on page load animate their movement)
+    ☐ Add canvas particles
+    ☐ Modify console header
 
 
 

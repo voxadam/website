@@ -6,20 +6,70 @@ append page-config
 	- var PageClass = 'homepage'
 	- var PageIntroClass = 'homepage'
 	- var PageContentClass = 'homepage'
+	- var MainHeader = false
+	- var AlternateHeader = true
 
 //- Begin
 block partials
 	//- include partials/modals/modal
 	//- include partials/overlays/overlay
 
-block page-intro	
-	h1 Hello World!
-
-block page-content
+block page-intro
 	.container
 		.row
-			.col-12
-				p Page content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis non facilis, sapiente fugit voluptas dolorem quos tempore facere culpa, commodi.
+			.col-12.col-desktop-4.hide-mobile.show-desktop
+				figure.page-intro__figure.page-intro__figure--logo
+					img(src="assets/images/logo.svg", alt="Dgraph logo – Scalable, Distributed, Low Latency, High Throughput Graph Database.")
+			.col-12.col-desktop-7
+				header.page-intro__header
+					h1.page-intro__title.page-intro__title--emphasized Scalable, Distributed, Low Latency, High Throughput Graph Database.
+					p.page-intro__lead Dgraph is a solution for all your needs.
+
+block page-content
+	.bolt-image__wrapper
+		.bolt-image.bolt-image--top-front
+		.bolt-image.bolt-image--top-back
+		.bolt-image.bolt-image--bottom-front
+		.bolt-image.bolt-image--bottom-back
+	
+	.demo__wrapper
+		.demo
+			.container
+				.row
+					.col-12
+						header.section-header
+							h2.section-header__title Search is now better than ever
+							p.section-header__lead See what the world is saying right now about the topics that matter to you, with results that are up-to-the-minute and personalized.
+						
+						.demo-console
+							header.demo-console__header
+								h5.demo-console__title Play with 21M facts from <a href="#">Freebase Film Data</a> loaded up on demo Dgraph instance, via GraphQL in real time.	
+							img(src="assets/images/homepage/demo-placeholder.png", alt="FPO").demo-console__screenshot
+
+						.dg-features
+							header.section-header
+								h3.section-header__title What are the advantages?
+								p.section-header__lead See what the world is saying right now about the topics that matter to you, with results that are up-to-the-minute and personalized.
+
+							ul.dg-features__list
+								li.dg-features__item
+									.dg-features__figure
+										img(src="assets/images/homepage/feature-01.svg", alt="Image for low latency, high throughout feature").dg-features__image
+									.dg-features__description
+										h4.dg-features__title Low Latency, High Throughout
+										p Storage layer of DGraph is designed for efficient retrieval, it offers low enough latency to be serving real time user queries, over terabytes of structured data.
+								li.dg-features__item
+									.dg-features__figure
+										img(src="assets/images/homepage/feature-02.svg", alt="Image for distributed and scalable feature").dg-features__image
+									.dg-features__description
+										h4.dg-features__title Distributed and Scalable
+										p Easily scale to multiple machines, or datacenters. DGraph's sharded storage and query processing were specifically designed to minimize the number of network calls.
+								li.dg-features__item
+									.dg-features__figure
+										img(src="assets/images/homepage/feature-03.svg", alt="Image for open source feature").dg-features__image
+									.dg-features__description
+										h4.dg-features__title Open Source
+										p Written entirely in Go language, DGraph is available under a very liberal Apache License 2.0.
 
 block additional-scripts
 	//- include partials/path/to/additional/script.js

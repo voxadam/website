@@ -15,3 +15,28 @@
 	&--blog {}
 	
 }
+
+.section-header {
+	text-align: center;
+	@media screen and (min-width: @desktop-breakpoint) {
+		margin-left: 200px;
+		margin-right: 200px;
+	}
+
+
+	&__title {
+
+	}
+	
+	&__lead {
+		.font-size(@font-size-large);
+		font-weight: @font-weight-medium;
+		line-height: 1.65;
+		color: @color-bronco;
+		margin: @spacing-small 0 @spacing-base;
+		@media screen and (max-width: @tablet-breakpoint) {
+			.font-size(@font-size-base);
+		}	
+	}
+
+}

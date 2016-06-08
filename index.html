@@ -62,21 +62,21 @@
   </div> ![endif]
   
   -->
-  <header id="page-header" class="page-header page-header--animated">
+  <header id="page-header" class="page-header page-header--alternate">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-desktop-4">
+        <div class="col-12 col-desktop-4 hide-desktop">
           <figure class="page-logo"><a><img src="assets/images/logo.svg" width="233" height="70" alt=""></a></figure>
         </div>
-        <div class="col-12 col-desktop-8">
+        <div class="col-12 col-desktop-8 push-desktop-4">
           <nav class="page-nav">
-            <ul class="page-nav__list">
+            <ul class="page-nav__list page-nav__list--alternate">
               <li class="page-nav__item"><a href="about.html" title="Learn more about us" class="page-nav__link">About</a></li>
               <li class="page-nav__item"><a href="careers.html" title="See open positions" class="page-nav__link">Careers</a></li>
               <li class="page-nav__item"><a href="contact.html" title="How can you reach us" class="page-nav__link">Contact</a></li>
               <li class="page-nav__item"><a href="blog.html" title="Thoughts on usage of graph database." class="page-nav__link">Blog</a></li>
               <li class="page-nav__item"><a href="https://github.com/dgraph-io/dgraph" title="GihHub repository" class="page-nav__link">Download</a></li>
-              <li class="page-nav__item"><a href="https://github.com/ntkme/github-buttons" data-style="mega" data-count-href="/ntkme/github-buttons/stargazers" data-count-api="/repos/ntkme/github-buttons#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star ntkme/github-buttons on GitHub" class="github-button">Star</a></li>
+              <li class="page-nav__item"><a href="https://github.com/dgraph-io/dgraph" data-style="mega" data-count-href="/dgraph-io/dgraph/stargazers" data-count-api="/repos/dgraph-io/dgraph#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star dgraph-io/dgraph on GitHub" class="github-button">Star</a></li>
             </ul>
           </nav>
         </div><a href="javascript:void(0)" title="Site Navigation" id="page-nav-button" class="button page-nav-button">Menu</a>
@@ -87,22 +87,71 @@
   <section class="page-intro page-intro--homepage">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          <div class="page-intro__fixed-height">
-            <header class="page-intro__header">
-              <h1>Hello World!</h1>
-            </header>
-          </div>
+        <div class="col-12 col-desktop-4 hide-mobile show-desktop">
+          <figure class="page-intro__figure page-intro__figure--logo"><img src="assets/images/logo.svg" alt="Dgraph logo – Scalable, Distributed, Low Latency, High Throughput Graph Database."></figure>
+        </div>
+        <div class="col-12 col-desktop-7">
+          <header class="page-intro__header">
+            <h1 class="page-intro__title page-intro__title--emphasized">Scalable, Distributed, Low Latency, High Throughput Graph Database.</h1>
+            <p class="page-intro__lead">Dgraph is a solution for all your needs.</p>
+          </header>
         </div>
       </div>
     </div>
   </section>
   <!-- / page-intro-->
-  <div style="height: 500px" class="page-content page-content--homepage">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <p>Page content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis non facilis, sapiente fugit voluptas dolorem quos tempore facere culpa, commodi.</p>
+  <div class="page-content page-content--homepage">
+    <div class="bolt-image__wrapper">
+      <div class="bolt-image bolt-image--top-front"></div>
+      <div class="bolt-image bolt-image--top-back"></div>
+      <div class="bolt-image bolt-image--bottom-front"></div>
+      <div class="bolt-image bolt-image--bottom-back"></div>
+    </div>
+    <div class="demo__wrapper">
+      <div class="demo">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <header class="section-header">
+                <h2 class="section-header__title">Search is now better than ever</h2>
+                <p class="section-header__lead">See what the world is saying right now about the topics that matter to you, with results that are up-to-the-minute and personalized.</p>
+              </header>
+              <div class="demo-console">
+                <header class="demo-console__header">
+                  <h5 class="demo-console__title">Play with 21M facts from <a href="#">Freebase Film Data</a> loaded up on demo Dgraph instance, via GraphQL in real time.	</h5>
+                </header><img src="assets/images/homepage/demo-placeholder.png" alt="FPO" class="demo-console__screenshot">
+              </div>
+              <div class="dg-features">
+                <header class="section-header">
+                  <h3 class="section-header__title">What are the advantages?</h3>
+                  <p class="section-header__lead">See what the world is saying right now about the topics that matter to you, with results that are up-to-the-minute and personalized.</p>
+                </header>
+                <ul class="dg-features__list">
+                  <li class="dg-features__item">
+                    <div class="dg-features__figure"><img src="assets/images/homepage/feature-01.svg" alt="Image for low latency, high throughout feature" class="dg-features__image"></div>
+                    <div class="dg-features__description">
+                      <h4 class="dg-features__title">Low Latency, High Throughout</h4>
+                      <p>Storage layer of DGraph is designed for efficient retrieval, it offers low enough latency to be serving real time user queries, over terabytes of structured data.</p>
+                    </div>
+                  </li>
+                  <li class="dg-features__item">
+                    <div class="dg-features__figure"><img src="assets/images/homepage/feature-02.svg" alt="Image for distributed and scalable feature" class="dg-features__image"></div>
+                    <div class="dg-features__description">
+                      <h4 class="dg-features__title">Distributed and Scalable</h4>
+                      <p>Easily scale to multiple machines, or datacenters. DGraph's sharded storage and query processing were specifically designed to minimize the number of network calls.</p>
+                    </div>
+                  </li>
+                  <li class="dg-features__item">
+                    <div class="dg-features__figure"><img src="assets/images/homepage/feature-03.svg" alt="Image for open source feature" class="dg-features__image"></div>
+                    <div class="dg-features__description">
+                      <h4 class="dg-features__title">Open Source</h4>
+                      <p>Written entirely in Go language, DGraph is available under a very liberal Apache License 2.0.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

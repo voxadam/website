@@ -54,10 +54,16 @@ $(document).ready(function() {
 		$('body').mousemove(function (e) {
 			var mousePosX = (e.pageX / $(window).width()) * 100;
 			// var mousePosY = (e.pageY / $(window).width()) * 100;
-			$('.bolt-image--top-front').css('left', (mousePosX / 30) + '%').delay(1800);
-			$('.bolt-image--top-back').css('right', (mousePosX / 60) + '%').delay(1800);
-			$('.bolt-image--bottom-front').css('left', (mousePosX / 30) + '%').delay(1800);
-			$('.bolt-image--bottom-back').css('left', (mousePosX / 60) + '%').delay(1800);
+
+			// setTimeout( function() {
+
+				$('.bolt-image--top-front').css('left', (mousePosX / 30) + '%');
+				$('.bolt-image--top-back').css('right', (mousePosX / 60) + '%');
+				$('.bolt-image--bottom-front').css('left', (mousePosX / 30) + '%');
+				$('.bolt-image--bottom-back').css('left', (mousePosX / 60) + '%');
+
+			// },300);
+			
 		});
 	}
 
