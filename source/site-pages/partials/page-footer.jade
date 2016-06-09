@@ -1,24 +1,50 @@
-.footer#page-footer.page-footer
-	.container
-		.row
-			.col-12
+.page-footer__wrapper
+	footer#page-footer.page-footer
+		.container
+			.row
+				.col-12.col-tablet-3
 
-				figure.page-logo-footer
-					a(href="#")
-						img(src="http://placehold.it/40x40/fff", 
-						alt="", width="40", height="40")
-						figcaption.page-logo-footer__caption Lorem ipsum dolor sit amet, consectetur.
+					figure.page-logo-footer
+						a(href="#")
+							img(src="assets/images/logo.svg", width="140", height="42", alt="Dgraph Logo")
+				
+				.col-4.col-tablet-2
+						nav.page-footer-nav
+							h6.page-footer-nav__title Company
+							ul.page-footer-nav__list
+								li.page-footer-nav__item
+									a(href="about.html" title="Learn more about us").page-footer-nav__link About
+								li.page-footer-nav__item
+									a(href="careers.html" title="See open positions").page-footer-nav__link Careers
+								li.page-footer-nav__item
+									a(href="contact.html" title="How can you reach us").page-footer-nav__link Contact
 
-				.imprint
-					nav.imprint__nav
-						ul.imprint__list
-							li.imprint__item
-								a(href="#", targer="_blank", title="",).imprint__link LinkedIn
-							li.imprint__item
-								a(href="#", targer="_blank", title="",).imprint__link Company #[small (pdf)]
-							li.imprint__item
-								a(href="#", targer="_blank", title="",).imprint__link Contact
+				.col-4.col-tablet-2
+						nav.page-footer-nav
+							h6.page-footer-nav__title Product
+							ul.page-footer-nav__list
+								li.page-footer-nav__item
+									a(href="https://github.com/dgraph-io/dgraph" title="Wa are on GitHub, check it out." target="_blank").page-footer-nav__link GitHub
+								li.page-footer-nav__item
+									a(href="https://discuss.dgraph.io/" title="Discuss about Dgraph with us." target="_blank").page-footer-nav__link Discuss
+								li.page-footer-nav__item
+									a(href="blog.html" title="Thoughts on usage of graph database.").page-footer-nav__link Blog
+								li.page-footer-nav__item
+									a(href="https://github.com/dgraph-io/dgraph", title="Download Dgraph from GitHub.").page-footer-nav__link.page-footer-nav__link--download Download
 
-					span.imprint__copyrights &copy; Lifeboat. All rights reserved.
+				.col-4.col-tablet-2
+						nav.page-footer-nav
+							h6.page-footer-nav__title Connect
+							ul.page-footer-nav__list
+								li.page-footer-nav__item
+									a(href="#", title="").page-footer-nav__link Facebook
+								li.page-footer-nav__item
+									a(href="#", title="").page-footer-nav__link Twitter
+								li.page-footer-nav__item
+									a(href="#", title="").page-footer-nav__link LinkedIn
 
-// / page-footer
+			.row
+				.col-12
+					span.imprint__copyrights Copyright &copy; 2016 Dgraph Labs, Inc.
+	// / page-footer
+// / page-footer__wrapper

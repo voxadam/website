@@ -1,17 +1,17 @@
-# 🆕 TODO List                                 [12 •]
-    ☐ Page header                               ••
-      + Page header alternate version
-      + Page intro
-    ☐ Demo section (no console)                 ••◆◆◆
-      + Revisit class naming convention         
-    ☐ Use case section (no svg, only slider)    •••◦
-    ☐ More info cta                             ◦◦
-    ☐ Page footer                               ◦◦
+# 🆕 TODO List                                 [16 •]
+    ☐ Page footer                               •
+    ☐ More info cta                             ◦◦◦
     ☐ Define variables
+    ☐ About page                                ◦◦◦
+    ☐ Careers page                              ◦◦◦
+    ☐ Contact page                              ◦◦
+
+    ☐ Polish use case section (css and js)      ◦◦      
+    ☐ SVG Lazy Line painter                     ◦◦◦◦    
 
 
 # ❔ Questions
-    ☐ Demo section
+    ☐ Demo section (for next week)
     ☐ Search terms
 
 
@@ -24,9 +24,12 @@
 
 
 # 📁 Archived
-~~✔ List item #1~~
-~~✔ List item #2~~
-~~✗ List item #3~~
+~~✔ Page header                               ••
+    + Page header alternate version
+    + Page intro
+  ✔ Demo section (no console)                 ••◆◆◆
+    + Revisit class naming convention         
+  ✔ Use case section (no svg, only slider)    •••~~
 
 
 

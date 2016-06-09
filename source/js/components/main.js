@@ -85,30 +85,9 @@ $(document).ready(function() {
 	//    and add active state to previous chile
 	// 4. Result contains needs to reaveal + lazy line painter
 
-// var $activeCarouselItem = $('.usage-carousel__item.is-active');
-
-
-
-// 	$('.js-usage-carousel-up').click(function () {
-// 		$('.usage-carousel__list').css({position:'absolute'});
-// 		$('.usage-carousel__list').animate({top: '+=90'});
-// 		$activeCarouselItem.prev().addClass( 'is-active' );
-// 		$activeCarouselItem.removeClass('is-active');
-// 	});
-
-// 	$('.js-usage-carousel-down').click(function () {
-// 		$('.usage-carousel__list').css({position:'absolute'});
-// 		$('.usage-carousel__list').animate({top: '-=90'});
-// 	});
-
-
-
-
-
-/////
-///
-
-
+	// From Milan
+	//  var $object = $('.element');
+	//  var property = $('.element').height();  don't add $ sign to property variables.
 
 var items = $('.usage-carousel__item');
 var currentItem = items.filter('.is-active');
