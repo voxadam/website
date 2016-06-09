@@ -1974,90 +1974,82 @@ hr {
   }
 }
 /* ===========================================
-   Careers page styling
+   Career page styling
    =========================================== */
-.member {
-  zoom: 1;
-  margin: 0 0 60px;
-}
-.member:before,
-.member:after {
-  content: "";
-  display: table;
-}
-.member:after {
-  clear: both;
+.career-perk__list {
+  padding: 0;
 }
 @media screen and (min-width: 550px) {
-  .member {
-    margin: 0 -15px 100px;
+  .career-perk__list {
+    zoom: 1;
+    margin: 0 -15px;
+  }
+  .career-perk__list:before,
+  .career-perk__list:after {
+    content: "";
+    display: table;
+  }
+  .career-perk__list:after {
+    clear: both;
   }
 }
-@media screen and (min-width: 550px) {
-  .member__figure,
-  .member__description {
-    float: left;
-    width: 50%;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-.member__figure {
+.career-perk__item {
   text-align: center;
-}
-.member__image {
-  border-radius: 50%;
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-@media screen and (max-width: 550px) {
-  .member__image {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-.member__description {
-  font-size: 16px;
-  font-size: 1rem;
-}
-@media screen and (max-width: 550px) {
-  .member__name,
-  .member__title {
-    text-align: center;
-  }
-}
-.member__name {
-  font-size: 27px;
-  font-size: 1.6875rem;
-  line-height: 1.1;
-  margin-bottom: 5px;
-}
-@media screen and (max-width: 550px) {
-  .member__name {
-    margin-top: -80px;
-  }
-}
-.member__title {
-  font-size: 22px;
-  font-size: 1.375rem;
-  font-weight: 500;
-  color: #a4958c;
+  width: 100%;
+  list-style-type: none;
   margin-bottom: 25px;
 }
-@media screen and (max-width: 550px) {
-  .member__title {
-    margin-bottom: 100px;
+@media screen and (min-width: 767px) {
+  .career-perk__item {
+    margin-bottom: 60px;
   }
 }
-.member__social {
-  margin-top: 15px;
-}
-@media screen and (max-width: 550px) {
-  .member__social {
-    position: relative;
-    bottom: -60px;
+@media screen and (min-width: 550px) {
+  .career-perk__item {
+    float: left;
+    padding: 0 15px;
   }
+}
+@media screen and (min-width: 550px) and (max-width: 767px) {
+  .career-perk__item {
+    width: 50%;
+  }
+  .career-perk__item:nth-child(3),
+  .career-perk__item:nth-child(5),
+  .career-perk__item:nth-child(7) {
+    clear: left;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1169px) {
+  .career-perk__item {
+    width: 33.3333%;
+  }
+  .career-perk__item:nth-child(4),
+  .career-perk__item:nth-child(7) {
+    clear: both;
+  }
+}
+@media screen and (min-width: 1169px) {
+  .career-perk__item {
+    width: 25%;
+  }
+  .career-perk__item:nth-child(5) {
+    clear: both;
+  }
+}
+.career-perk__icon {
+  width: 75px;
+  height: 75px;
+  fill: #c5bcb7;
+}
+.career-perk__title {
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.career-perk__description {
+  font-size: 16px;
+  font-size: 1rem;
 }
 /* ===========================================
    Cta section styling
@@ -2201,8 +2193,7 @@ hr {
     margin-top: 15px;
   }
 }
-.cta-wrapper--homepage,
-.cta-wrapper--about {
+.cta-wrapper {
   padding-bottom: 80px;
 }
 /* ===========================================

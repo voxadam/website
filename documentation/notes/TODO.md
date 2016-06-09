@@ -3,7 +3,7 @@
     ✔ More info cta                             •••
     ☐ Define variables
     ✔ About page                                •••◆◆
-    ☐ Careers page                              ◦◦◦
+    ☐ Careers page                              •◦◦
     ☐ Contact page                              ◦◦
 
     ☐ Polish use case section (css and js)      ◦◦      
