@@ -1,0 +1,52 @@
+extends pagewrapper
+
+//- Override config.jade file
+append page-config
+	- var PageTitle = 'About Us | Dgraph team'
+	- var PageClass = 'about'
+	- var PageIntroClass = 'about'
+	- var PageContentClass = 'about'
+
+//- Begin
+block partials
+	//- include partials/modals/modal
+	//- include partials/overlays/overlay
+
+block page-intro
+	.container
+		.row
+			.col-12.col-desktop-10.push-desktop-1.col-hd-8.push-hd-2
+				header.page-intro__header
+					h1.page-intro__title Who stands behind Dgraph?
+					p.page-intro__lead Lorem ipsum dolor sit amet, esse elitr blandit te duo, sea urbanitas argumentum quaerendum et. Sed te solum dicit admodum, vix doming quaerendum ut. Eum cu agam utinam, paulo civibus malis causae vidisse quo ne, modus fugit facer eu eost.
+
+block page-content
+
+	.cta__about
+		.container
+			.row
+				.col-12
+					.cta
+						.cta__box
+							h4.cta__title Download Dgraph
+							p Slightly longer subtitle explaining Dgraph download. Should span in a couple of rows. Slightly longer subtitle explaining Dgraph download. Should span in a couple of rows.
+							a(href="#").button.button--white.button--jumbo.cta__button Download Dgraph
+
+						.cta__more
+							h4.cta__title More information about Dgraph
+							ul.cta__more-list
+								li.cta__more-item
+									a(href="#").cta__more-link.cta__more-link--github GitHub
+								li.cta__more-item
+									a(href="#").cta__more-link.cta__more-link--gitter Gitter
+								li.cta__more-item
+									a(href="#").cta__more-link.cta__more-link--discourse Discourse
+								li.cta__more-item
+									a(href="#").cta__more-link.cta__more-link--blog Dgraph’s blog
+								li.cta__more-item
+									a(href="#").cta__more-link.cta__more-link--email Email us for more information
+
+	// /.cta
+
+block additional-scripts
+	//- include partials/path/to/additional/script.js
