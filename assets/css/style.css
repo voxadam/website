@@ -2138,6 +2138,9 @@ hr {
   margin-bottom: 10px;
 }
 /* ===========================================
+   Contact page styling
+   =========================================== */
+/* ===========================================
    Cta section styling
    =========================================== */
 .cta {
@@ -2192,6 +2195,42 @@ hr {
   .cta__box {
     padding: 60px;
   }
+}
+.cta__box--contact {
+  position: relative;
+  background-image: url('../images/contact/new-york.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.cta__box-address {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+.cta__box-link {
+  color: #ffffff;
+  opacity: .6;
+}
+.cta__box-link:hover,
+.cta__box-link:active,
+.cta__box-link:focus {
+  color: #ffffff;
+  opacity: 1;
+}
+.cta__box-link--contact {
+  margin-top: 25px;
+}
+@media screen and (min-width: 989px) {
+  .cta__box-link--contact {
+    position: absolute;
+    bottom: 60px;
+  }
+}
+.cta__box-icon {
+  top: 2px;
+  margin-right: 5px;
 }
 .cta__more {
   margin-top: 60px;
@@ -2278,6 +2317,45 @@ hr {
     display: block;
     margin-top: 15px;
   }
+}
+.cta__contact {
+  margin-top: 60px;
+}
+@media screen and (min-width: 989px) {
+  .cta__contact {
+    margin-left: 490px;
+  }
+}
+.cta__contact-list {
+  margin: 0;
+  padding: 0;
+}
+.cta__contact-item {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 20px 0;
+  border-bottom: 2px solid #f0f0f0;
+  display: block;
+}
+@media screen and (min-width: 450px) {
+  .cta__contact-item {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+}
+.cta__contact-item:first-child {
+  padding-top: 0;
+}
+.cta__contact-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.cta__contact-link {
+  display: block;
+  position: relative;
 }
 .cta-wrapper {
   padding-bottom: 80px;

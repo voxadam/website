@@ -44,6 +44,44 @@
 		@media screen and (min-width: @tablet-breakpoint) {
 			padding: @spacing-base;
 		}
+
+		&--contact {
+			position: relative;
+			background-image: url('../images/contact/new-york.jpg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+	}
+
+	&__box-address {
+		.font-size(20);
+		font-weight: @font-weight-medium;
+		line-height: 1.8;
+	}
+
+	&__box-link {
+		color: @color-white;
+		opacity: .6;
+		&:hover,
+		&:active,
+		&:focus {
+			color: @color-white;
+			opacity: 1;
+		}
+
+		&--contact {
+			margin-top: @spacing-small;
+			@media screen and (min-width: @desktop-breakpoint) {
+				position: absolute;
+				bottom: @spacing-base;
+			}	
+		}
+	}
+
+	&__box-icon {
+		top: 2px;
+		margin-right: 5px;
 	}
 
 	// More links
@@ -149,6 +187,47 @@
 		}
 	}
 
+
+
+	// Contact links
+	&__contact {
+		margin-top: @spacing-base;
+		@media screen and (min-width: @desktop-breakpoint) {
+			margin-left: 490px;
+		}
+	}
+
+	&__contact-list {
+		margin: 0;
+		padding: 0;
+	}
+
+	&__contact-item {
+		.font-size(@font-size-small);
+		list-style-type: none;
+		margin: 0;
+		padding: 20px 0;
+		border-bottom: 2px solid #f0f0f0;
+		display: block;
+		@media screen and (min-width: 450px) {
+			.font-size(20);
+			line-height: 1.8;
+		}
+	
+		&:first-child {
+			padding-top: 0;
+		}
+		&:last-child {
+			border-bottom: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	&__contact-link {
+		display: block;
+		position: relative;
+	}	
+
 }
 
 
@@ -164,6 +243,10 @@
 	}
 
 	&--career {
-		
+
+	}
+
+	&--contact {
+
 	}
 }

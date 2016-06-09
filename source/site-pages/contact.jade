@@ -1,0 +1,51 @@
+extends pagewrapper
+
+//- Override config.jade file
+append page-config
+	- var PageTitle = 'Concat Us | Dgraph.'
+	- var PageClass = 'contact'
+	- var PageIntroClass = 'contact'
+	- var PageContentClass = 'contact'
+
+//- Begin
+block partials
+	//- include partials/modals/modal
+	//- include partials/overlays/overlay
+
+block page-intro
+	.container
+		.row
+			.col-12.col-desktop-10.push-desktop-1.col-hd-8.push-hd-2
+				header.page-intro__header
+					h1.page-intro__title Lets make magic
+					p.page-intro__lead Lorem ipsum dolor sit amet, esse elitr blandit te duo, sea urbanitas argumentum quaerendum et. Sed te solum dictit admodum vix doming quaerendum ut.
+
+block page-content
+
+	.cta-wrapper.cta-wrapper--contact
+		.container
+			.row
+				.col-12
+					.cta
+						.cta__box.cta__box--contact
+							h4.cta__title Visit us
+							address.cta__box-address 110 5th Ave, Floor 5 #[br] New York, NY 10011
+							a(href="https://goo.gl/maps/9vcadZ45AwM2" target="_blank").cta__box-link.cta__box-link--contact
+								svg.icon.cta__box-icon
+									use(xlink:href="#icon-pin" xmlns:xlink="http://www.w3.org/1999/xlink")
+								| Show on map
+
+						.cta__contact
+							h4.cta__title Contact us
+							ul.cta__contact-list
+								li.cta__contact-item
+									strong For general inquires you can reach us via:
+									a(href="mailto:info@dgraph.com").cta__contact-link info@dgraph.com
+								li.cta__contact-item
+									strong For job offers drop us a line via:
+									a(href="mailto:jobs@dgraph.com").cta__contact-link jobs@dgraph.com
+
+	// /.cta
+
+block additional-scripts
+	//- include partials/path/to/additional/script.js
