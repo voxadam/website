@@ -63,8 +63,13 @@
 
 // Button outline
 .button--outline {
-  border: 2px solid @color-brand-primary;
+  border: 2px solid #f0f0f0;
   border-radius: @border-radius-base;
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    color: @color-brand-primary;
+  }
 }
 
 // Button behaves as link

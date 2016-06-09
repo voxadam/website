@@ -1298,7 +1298,7 @@ a:hover {
   outline: 0;
 }
 a:focus {
-  color: purple;
+  color: #f96315;
   outline: 0;
 }
 a:active {
@@ -2066,8 +2066,13 @@ hr {
   }
 }
 .button--outline {
-  border: 2px solid #f96315;
+  border: 2px solid #f0f0f0;
   border-radius: 4px;
+  background-color: transparent;
+}
+.button--outline:hover,
+.button--outline:focus {
+  color: #f96315;
 }
 .button--link {
   color: #f96315;
@@ -2597,6 +2602,15 @@ img[data-src] {
 @media screen and (max-width: 989px) {
   .page-nav__link {
     padding: 20px 0;
+  }
+}
+.page-nav__link--button {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media screen and (max-width: 989px) {
+  .page-nav__link--button.button {
+    border: none;
   }
 }
 .page-nav iframe {
