@@ -1,0 +1,81 @@
+/* ===========================================
+   Careers page styling
+   =========================================== */
+
+.about {
+	
+}
+
+.team-members {
+
+}
+
+.member {
+	.clearfix();
+  margin: 0 0 @spacing-base;
+	@media screen and (min-width: 550px) {
+		margin: 0 -15px @spacing-large;
+	}
+	
+	&__figure,
+	&__description {
+		@media screen and (min-width: 550px) {
+			float: left;
+			width: 50%;
+			padding-left: 15px;
+	    padding-right: 15px;
+		}		
+	}
+
+	&__figure {
+		text-align: center;
+	}
+
+	&__image {
+		.image-circle();
+		.image-responsive();
+		@media screen and (max-width: 550px) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	&__description {
+		.font-size(16);
+	}
+
+	&__name,
+	&__title {
+		@media screen and (max-width: 550px) {
+			text-align: center;
+		}
+	}
+
+	&__name {
+		.font-size(27);
+		line-height: 1.1;
+		margin-bottom: 5px;
+		@media screen and (max-width: 550px) {
+			margin-top: -80px;
+		}
+	}
+
+	&__title {
+		.font-size(22);
+		font-weight: @font-weight-medium;
+		color: @color-bronco;
+		margin-bottom: @spacing-small;
+		@media screen and (max-width: 550px) {
+			margin-bottom: 100px;
+		}
+	}
+
+	&__social {
+		margin-top: 15px;
+		@media screen and (max-width: 550px) {
+			position: relative;
+			bottom: -60px;
+		}
+	}
+
+}

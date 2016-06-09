@@ -2,7 +2,7 @@
     ✔ Page footer                               •
     ✔ More info cta                             •••
     ☐ Define variables
-    ✔ About page                                •••◆
+    ✔ About page                                •••◆◆
     ☐ Careers page                              ◦◦◦
     ☐ Contact page                              ◦◦
 
