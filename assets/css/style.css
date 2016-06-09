@@ -1976,8 +1976,12 @@ hr {
 /* ===========================================
    Career page styling
    =========================================== */
+.career-perk__wrapper {
+  margin-bottom: 60px;
+}
 .career-perk__list {
   padding: 0;
+  margin: 0;
 }
 @media screen and (min-width: 550px) {
   .career-perk__list {
@@ -2037,6 +2041,9 @@ hr {
     clear: both;
   }
 }
+.career-perk__item p {
+  margin-bottom: 0;
+}
 .career-perk__icon {
   width: 75px;
   height: 75px;
@@ -2050,6 +2057,85 @@ hr {
 .career-perk__description {
   font-size: 16px;
   font-size: 1rem;
+}
+.job-offer {
+  font-size: 16px;
+  font-size: 1rem;
+  margin: 25px 0;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #f0f0f0;
+}
+@media screen and (min-width: 767px) {
+  .job-offer {
+    margin: 60px 0;
+    padding-bottom: 60px;
+  }
+}
+.job-offer:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border: 0;
+}
+.job-offer__wrapper {
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 767px) {
+  .job-offer__wrapper {
+    margin-bottom: 100px;
+  }
+}
+.job-offer__title {
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 767px) {
+  .job-offer__title {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
+}
+.job-offer__subtitle {
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 767px) {
+  .job-offer__subtitle {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .job-offer p {
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #999;
+  }
+}
+.job-offer__requirements {
+  margin-top: 25px;
+}
+@media screen and (min-width: 767px) {
+  .job-offer__requirements {
+    margin-top: 50px;
+  }
+}
+.job-offer__requirements-list {
+  padding: 0;
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 767px) {
+  .job-offer__requirements-list {
+    margin-bottom: 20px;
+  }
+}
+.job-offer__requirements-list:last-child {
+  margin-bottom: 0;
+}
+.job-offer__requirements-item {
+  list-style-type: circle;
+  list-style-position: inside;
+  margin-bottom: 10px;
 }
 /* ===========================================
    Cta section styling
