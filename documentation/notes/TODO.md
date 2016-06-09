@@ -1,10 +1,9 @@
 # 🆕 TODO List                                 [16 •]
     ✔ Page footer                               •
     ✔ More info cta                             •••
-    ☐ Define variables
     ✔ About page                                •••◆◆
     ✔ Careers page                              •••
-    ☐ Contact page                              ◦◦
+    ✔ Contact page                              •◦
 
     ☐ Polish use case section (css and js)      ◦◦      
     ☐ SVG Lazy Line painter                     ◦◦◦◦    
