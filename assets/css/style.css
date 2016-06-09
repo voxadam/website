@@ -1942,9 +1942,10 @@ hr {
   }
 }
 .member__name {
-  font-size: 28px;
-  font-size: 1.75rem;
-  line-height: 1.5;
+  font-size: 27px;
+  font-size: 1.6875rem;
+  line-height: 1.1;
+  margin-bottom: 5px;
 }
 @media screen and (max-width: 550px) {
   .member__name {
@@ -1952,8 +1953,8 @@ hr {
   }
 }
 .member__title {
-  font-size: 24px;
-  font-size: 1.5rem;
+  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 500;
   color: #a4958c;
   margin-bottom: 25px;
@@ -1969,7 +1970,7 @@ hr {
 @media screen and (max-width: 550px) {
   .member__social {
     position: relative;
-    bottom: -80px;
+    bottom: -60px;
   }
 }
 /* ===========================================
