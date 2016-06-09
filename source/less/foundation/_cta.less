@@ -1,0 +1,126 @@
+/* ===========================================
+   Cta section styling
+   =========================================== */
+
+.cta {
+	.clearfix();
+
+	&__title {
+		margin-bottom: @spacing-small;
+	}
+
+	p {
+		.font-size(16);
+		line-height: 1.5;
+	}
+
+	&__button {
+		.font-size(20);
+		margin-top: @spacing-small / 1.5;
+		@media screen and (min-width: @tablet-breakpoint) {
+			margin-top: 40px;
+		}
+	}
+
+	// Brand box
+	&__box {
+		background-color: @color-brand-primary;
+		color: @color-white;
+		padding: @spacing-small;
+		@media screen and (min-width: @desktop-breakpoint) {
+			float: left;
+			width: 460px;
+			height: 460px;	
+		}
+		@media screen and (min-width: @tablet-breakpoint) {
+			padding: @spacing-base;
+		}
+	}
+
+	// More links
+	&__more {
+		margin-top: @spacing-base;
+		@media screen and (min-width: @desktop-breakpoint) {
+			margin-left: 490px;
+		}
+	}
+
+	&__more-list {
+		margin: 0;
+		padding: 0;
+	}
+
+	&__more-item {
+		list-style-type: none;
+		margin: 0;
+		padding: 20px 0;
+		border-bottom: 2px solid #f0f0f0;
+		display: block;
+		&:first-child {
+			padding-top: 0;
+		}
+		&:last-child {
+			border-bottom: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	&__more-link {
+		.font-size(@font-size-base);
+		font-weight: @font-weight-bold;
+		color: @color-text;
+		padding-left: 40px;
+		display: block;
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 24px;
+			height: 24px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+
+		&--github {
+			&:before {
+				background-image: url('../images/social-icons/icon-github.png');
+			}
+		}
+
+		&--gitter {
+			&:before {
+				background-image: url('../images/social-icons/icon-gitter.png');
+			}
+		}
+
+		&--discourse {
+			&:before {
+				background-image: url('../images/social-icons/icon-discourse.png');
+			}
+		}
+
+		&--blog {
+			&:before {
+				background-image: url('../images/social-icons/icon-dgraph.png');
+			}
+		}
+
+		&--email {
+			&:before {
+				background-image: url('../images/social-icons/icon-email.png');
+			}
+		}
+	}
+
+}
+
+
+.cta {
+
+	&__homepage {
+		padding-bottom: @spacing-medium;
+	}
+}

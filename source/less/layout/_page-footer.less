@@ -6,7 +6,10 @@
 	background: @color-white;
 	position: relative;
 	z-index: 5;
-	margin-top: 260px;
+	margin-top: 80px;
+	@media screen and (min-width: @desktop-breakpoint) {
+		margin-top: 180px;
+	}
 	
 	&__wrapper {
 		position: relative;

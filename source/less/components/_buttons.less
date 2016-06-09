@@ -28,6 +28,39 @@
   }
 }
 
+// Button white
+.button--white {
+  border-radius: @border-radius-base;
+  background-color: @color-white;
+  color: @color-brand-primary;
+  font-weight: @font-weight-bold;
+  &:hover,
+  &:focus {
+    color: darken(@color-brand-primary, 10%);
+  }
+  &:active {
+    color: @color-brand-primary;
+  }
+}
+
+// Button block
+.button--jumbo {
+  display: block;
+  padding: 40px 0;
+  box-shadow: 0 0 15px rgba(0,0,0,.15);
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 30px rgba(0,0,0,.25);
+  }
+  &:active {
+    box-shadow: 0 0 15px rgba(0,0,0,.15);
+  }
+  @media screen and (max-width: @tablet-breakpoint) {
+    padding: 20px 0;
+  }
+      
+}
+
 // Button outline
 .button--outline {
   border: 2px solid @color-brand-primary;

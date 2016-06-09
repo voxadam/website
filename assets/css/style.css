@@ -1271,6 +1271,11 @@ h6,
     font-size: 24px;
     font-size: 1.5rem;
   }
+  h4,
+  .delta {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
 }
 p {
   margin: 0 0 13px;
@@ -1888,6 +1893,119 @@ hr {
   background: url('../images/homepage/bolt__bottom--back.png');
   z-index: 1;
 }
+/* ===========================================
+   Cta section styling
+   =========================================== */
+.cta {
+  zoom: 1;
+}
+.cta:before,
+.cta:after {
+  content: "";
+  display: table;
+}
+.cta:after {
+  clear: both;
+}
+.cta__title {
+  margin-bottom: 25px;
+}
+.cta p {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.cta__button {
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-top: 16.66666667px;
+}
+@media screen and (min-width: 767px) {
+  .cta__button {
+    margin-top: 40px;
+  }
+}
+.cta__box {
+  background-color: #f96315;
+  color: #ffffff;
+  padding: 25px;
+}
+@media screen and (min-width: 989px) {
+  .cta__box {
+    float: left;
+    width: 460px;
+    height: 460px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .cta__box {
+    padding: 60px;
+  }
+}
+.cta__more {
+  margin-top: 60px;
+}
+@media screen and (min-width: 989px) {
+  .cta__more {
+    margin-left: 490px;
+  }
+}
+.cta__more-list {
+  margin: 0;
+  padding: 0;
+}
+.cta__more-item {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px 0;
+  border-bottom: 2px solid #f0f0f0;
+  display: block;
+}
+.cta__more-item:first-child {
+  padding-top: 0;
+}
+.cta__more-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.cta__more-link {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+  padding-left: 40px;
+  display: block;
+  position: relative;
+}
+.cta__more-link:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.cta__more-link--github:before {
+  background-image: url('../images/social-icons/icon-github.png');
+}
+.cta__more-link--gitter:before {
+  background-image: url('../images/social-icons/icon-gitter.png');
+}
+.cta__more-link--discourse:before {
+  background-image: url('../images/social-icons/icon-discourse.png');
+}
+.cta__more-link--blog:before {
+  background-image: url('../images/social-icons/icon-dgraph.png');
+}
+.cta__more-link--email:before {
+  background-image: url('../images/social-icons/icon-email.png');
+}
+.cta__homepage {
+  padding-bottom: 80px;
+}
 /* Components
  * =========================================================== */
 /* ===========================================
@@ -1916,6 +2034,36 @@ hr {
 .button:active {
   color: #fff;
   text-decoration: none;
+}
+.button--white {
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #f96315;
+  font-weight: 700;
+}
+.button--white:hover,
+.button--white:focus {
+  color: #d64d05;
+}
+.button--white:active {
+  color: #f96315;
+}
+.button--jumbo {
+  display: block;
+  padding: 40px 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+.button--jumbo:hover,
+.button--jumbo:focus {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+}
+.button--jumbo:active {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+@media screen and (max-width: 767px) {
+  .button--jumbo {
+    padding: 20px 0;
+  }
 }
 .button--outline {
   border: 2px solid #f96315;
@@ -2488,7 +2636,12 @@ img[data-src] {
   background: #ffffff;
   position: relative;
   z-index: 5;
-  margin-top: 260px;
+  margin-top: 80px;
+}
+@media screen and (min-width: 989px) {
+  .page-footer {
+    margin-top: 180px;
+  }
 }
 .page-footer__wrapper {
   position: relative;

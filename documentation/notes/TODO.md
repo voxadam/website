@@ -1,6 +1,6 @@
 # 🆕 TODO List                                 [16 •]
-    ☐ Page footer                               •
-    ☐ More info cta                             ◦◦◦
+    ✔ Page footer                               •
+    ✔ More info cta                             •••
     ☐ Define variables
     ☐ About page                                ◦◦◦
     ☐ Careers page                              ◦◦◦
