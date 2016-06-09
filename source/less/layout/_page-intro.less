@@ -4,8 +4,10 @@
 
 .page-intro {
 	margin-top: 30px;
+	margin-bottom: @spacing-base;
 	@media screen and (min-width: @desktop-breakpoint) {
 		margin-top: 100px;
+		margin-bottom: 100px;
 	}
 
 	&__header {}
@@ -60,6 +62,7 @@
 		position: relative;
 		z-index: 5;
 		min-height: 450px;
+		margin-bottom: 0;
 		@media screen and (min-width: @desktop-breakpoint) {
 			min-height: 600px;
 		}

@@ -1,0 +1,64 @@
+/* ===========================================
+   Social links styling
+   =========================================== */
+
+.social {
+
+	&__nav {}
+
+	&__list {}
+
+	&__item {}
+
+	&__link {}
+}
+
+
+
+/* ===========================================
+ * Social links
+ * =========================================== */
+
+.social {
+
+	&__nav {
+		display: inline-block;
+		text-align: left;
+	}
+
+	&__list {
+		padding: 0;
+		margin: 0;
+	}
+
+	&__item {
+		list-style-type: none;
+		margin: 0 0 10px;
+	}
+
+
+	&__link {
+		.font-size(16);
+		color: @color-text;
+
+		&:hover {
+
+		}
+	}
+
+	&__icon {
+		width: 20px;
+		height: 20px;
+		top: 5px;
+		margin-right: 10px;
+
+		&--twitter {
+			fill: @color-twitter;
+		}
+
+		&--linkedin {
+			fill: @color-linkedin;
+		}
+	}
+
+}

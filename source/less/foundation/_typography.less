@@ -75,7 +75,7 @@ p {
 a {
   color: @color-link;
   text-decoration: none;
-  transition: all .3s;
+  transition: all .3s ease-in-out;
   &:hover {
     color: @color-link-hover;
     outline: 0;
@@ -85,7 +85,7 @@ a {
     outline: 0;
   }
   &:active {
-    color: darken(@color-link, 30%);
+    color: darken(@color-link, 15%);
   }
 }
 
@@ -93,20 +93,17 @@ a {
 
 // Link with arrow on hover
 .link-arrow {
-  .font-size(@font-size-small);
-  &:after {
-    content: '\2192';
-    font-family: 'Arial';
-    position: relative;
-    left: -5%;
-    top: 2px;
-    opacity: 0;
-    transition: all .3s;
+
+  .icon {
+    width: .9em;
+    height: .9em;
+    top: 3px;
+    transition: all .3s ease-in-out;
   }
   &:hover {
-    &:after {
-      opacity: 1;
-      left: 3px;
+    .icon {
+      transform: translateX(5px);
+      fill: @color-link-hover;
     }
   }
 }
