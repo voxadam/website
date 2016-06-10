@@ -5,8 +5,9 @@
       + Category page
     ✔ Article intro                              ••
     ✔ Article content                            ••◆◆
-    ☐ Article about section                      ◦◦
-      + Disquss integration
+    ☐ Disquss integration and section            ◦◦
+    ✔ Article about section                      • ◦ (1 manje)
+    
 
     ☐ Polish use case section (css and js)      ◦◦      
     ☐ SVG Lazy Line painter                     ◦◦◦◦    

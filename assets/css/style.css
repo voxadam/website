@@ -2382,16 +2382,21 @@ hr {
   color: #a4958c;
   margin-bottom: 25px;
 }
-.article-footer {
+.article-category {
   margin-top: 60px;
 }
-.article-footer__title {
+.article-category__title {
   font-weight: 500;
   margin-bottom: 15px;
 }
 .article-comment {
   margin-top: 60px;
   margin-bottom: 60px;
+}
+@media screen and (min-width: 767px) {
+  .article-comment {
+    margin-bottom: 80px;
+  }
 }
 .article-comment__button {
   font-size: 13px;
@@ -2420,6 +2425,94 @@ hr {
 .article-comment__count .icon {
   top: 2px;
   margin-right: 3px;
+}
+.article-footer {
+  padding: 60px 0 230px;
+  background-color: #f9f7f6;
+  margin-bottom: -200px;
+}
+@media screen and (min-width: 767px) {
+  .article-footer {
+    padding-top: 80px;
+  }
+}
+.article-author {
+  zoom: 1;
+  margin-bottom: 30px;
+}
+.article-author:before,
+.article-author:after {
+  content: "";
+  display: table;
+}
+.article-author:after {
+  clear: both;
+}
+.article-author__figure {
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 450px) {
+  .article-author__figure {
+    float: left;
+    margin-bottom: 0;
+  }
+}
+.article-author__image {
+  border-radius: 50%;
+  display: block;
+  max-width: 64px;
+  height: auto;
+}
+@media screen and (min-width: 450px) {
+  .article-author__bio {
+    margin-left: 90px;
+  }
+}
+.article-author__name {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+.article-author__social {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.article-author p {
+  font-size: 16px;
+  font-size: 1rem;
+  margin: 0;
+}
+@media screen and (min-width: 450px) {
+  .similar-article {
+    margin-left: 90px;
+  }
+}
+.similar-article__title {
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: #a4958c;
+  margin-bottom: 30px;
+}
+.similar-article__list {
+  margin: 0;
+  padding: 0;
+}
+.similar-article__item {
+  list-style-type: none;
+  padding-bottom: 20px;
+}
+.similar-article__item:not(:last-child) {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e1d9d4;
+}
+.similar-article__link {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #333333;
+  display: block;
+}
+.similar-article__link:hover {
+  color: #f96315;
 }
 /* ===========================================
    Blog navigation styling
@@ -2930,9 +3023,24 @@ hr {
   padding: 0;
   margin: 0;
 }
+.social__list--inline {
+  zoom: 1;
+}
+.social__list--inline:before,
+.social__list--inline:after {
+  content: "";
+  display: table;
+}
+.social__list--inline:after {
+  clear: both;
+}
 .social__item {
   list-style-type: none;
   margin: 0 0 10px;
+}
+.social__item--inline {
+  float: left;
+  margin: 0;
 }
 .social__link {
   font-size: 16px;

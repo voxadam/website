@@ -11,7 +11,7 @@
 }
 
 ////////////////////////////////////////
-// Blog listing and blog intro stylings
+// Blog listing and intro stylings
 .article {
 
 	&__list {
@@ -149,7 +149,6 @@
 		line-height: 1.5;
 	}
 
-
 	// Code
 	pre {
 		margin-top: @spacing-small;
@@ -247,8 +246,8 @@
 
 }
 
-// Article footer
-.article-footer {
+// Article category
+.article-category {
 	margin-top: @spacing-base;
 
 	&__title {
@@ -261,12 +260,16 @@
 .article-comment {
 	margin-top: @spacing-base;
 	margin-bottom: @spacing-base;
+	@media screen and (min-width: @tablet-breakpoint) {
+		margin-bottom: @spacing-medium;
+	}
 
 	&__button {
 		.font-size(13);
 		font-weight: @font-weight-bold;
 		text-transform: uppercase;
 		letter-spacing: .03em;
+
 		&.button {
 			font-weight: @font-weight-bold;
 			padding: 15px 30px;
@@ -277,7 +280,7 @@
 		}
 	}
 
-	// placed in intro section
+	// Placed in intro section
 	&__count {
 		.font-size(13);
 		font-weight: @font-weight-medium;
@@ -290,6 +293,95 @@
 		.icon {
 			top: 2px;
 			margin-right: 3px;
+		}
+	}
+}
+
+// Footer
+.article-footer {
+	padding: @spacing-base 0 230px;
+	background-color: #f9f7f6;
+	@media screen and (min-width: @tablet-breakpoint) {
+		padding-top: @spacing-medium;
+	}
+
+	// hack due to diagonal footer layout
+	margin-bottom: -200px;
+}
+
+.article-author {
+	.clearfix();
+	margin-bottom: 30px;
+
+	&__figure {
+		margin-bottom: 15px;
+		@media screen and (min-width: 450px) {
+			float: left;
+			margin-bottom: 0;
+		}
+	}
+
+	&__image {
+		border-radius: 50%;
+    display: block;
+    max-width: 64px;
+    height: auto;
+	}
+
+	&__bio {
+		@media screen and (min-width: 450px) {
+			margin-left: 90px;
+		}
+	}
+
+	&__name {
+		.font-size(18);
+	}
+
+	&__social {
+		margin-top: 5px;
+		margin-bottom: 15px;
+	}
+
+	p {
+		.font-size(16);
+		margin: 0;
+	}
+
+}
+
+.similar-article {
+	@media screen and (min-width: 450px) {
+		margin-left: 90px;
+	}
+
+	&__title {
+		.font-size(18);
+		color: @color-bronco;
+		margin-bottom: 30px;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {
+		list-style-type: none;
+		padding-bottom: 20px;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+			border-bottom: 1px solid @color-westar;
+		}
+	}
+
+	&__link {
+		.font-size(18);
+		font-weight: @font-weight-medium;
+		color: @color-text;
+		display: block;
+		&:hover {
+			color: @color-brand-primary;
 		}
 	}
 }

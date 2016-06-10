@@ -166,8 +166,8 @@ block page-content
 					
 				// /.article-content
 
-				footer.article-footer
-					h5.article-footer__title Filed Under:
+				div.article-category
+					h5.article-category__title Filed Under:
 					ul.blog-tag__list
 							li.blog-tag__item
 								a(href="blog-category.html").blog-tag Graph
@@ -176,11 +176,50 @@ block page-content
 							li.blog-tag__item
 								a(href="blog-category.html").blog-tag Database
 
-				// /.article-footer
+				// /.article-category
 				
 				#article-comment.article-comment
 					a(href="#").button.article-comment__button <svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> Show comments (12)
+				
+				// /.article-comment
 
+	footer.article-footer
+		.container
+			.row
+				.col-12.col-desktop-10.push-desktop-1.col-hd-8.push-hd-2
+					.article-author
+						figure.article-author__figure
+							img(src="assets/images/about/team-manish.jpg", alt="Manish Rai Jain").article-author__image
+
+						.article-author__bio
+							h4.article-author__name Manish Rai Jain
+							nav.social__nav.article-author__social
+								ul.social__list.social__list--inline
+									li.social__item.social__item--inline
+										a(href="#").social__link
+											svg.icon.social__icon.social__icon--linkedin
+												use(xlink:href="#icon-linkedin" xmlns:xlink="http://www.w3.org/1999/xlink")
+									li.social__item.social__item--inline
+										a(href="#").social__link
+											svg.icon.social__icon.social__icon--twitter
+												use(xlink:href="#icon-twitter" xmlns:xlink="http://www.w3.org/1999/xlink")
+							p Manish is the Chief decision maker at DGraph. He got thrust into distributed systems right out of college, working on real time web indexing system at Google. He then lead various projects to consolidate and serve knowledge graph right behind web search.
+					
+					// /.article-author
+					
+					.similar-article
+						h4.similar-article__title Smilar articles:
+						ul.similar-article__list
+							li.similar-article__item
+								a(href="#").similar-article__link Official Release: 3 Essentials of Dgraph 3.0, from Scale to Productivity &amp; Deployment
+							li.similar-article__item
+								a(href="#").similar-article__link Answering All Your Questions: Dgraph Knowledge Base
+							li.similar-article__item
+								a(href="#").similar-article__link Stop Fraud Rings in Their Tracks with Dgraph
+					
+					// /.similar-article
+
+	// /.article-footer
 
 block additional-scripts
 	// Highlight JS plugin for article page
