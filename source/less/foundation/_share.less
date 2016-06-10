@@ -1,0 +1,60 @@
+/* ===========================================
+   Share section styling
+   =========================================== */
+
+.share {
+
+	&__list {
+		.clearfix();
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {
+		line-height: 1;
+		float: left;
+		display: block;
+		list-style-type: none;
+		margin: 0 15px 0 0;
+	}
+
+	&__link {
+		&:hover {
+
+			.share__icon--twitter {
+				fill: darken(@color-twitter, 10%);
+			}
+
+			.share__icon--facebook {
+				fill: darken(@color-facebook, 5%);
+			}
+
+			.share__icon--google-plus {
+				fill: darken(@color-google-plus, 10%);
+			}
+
+		}
+
+	}
+
+	&__icon {
+		transition: all .3s ease-in-out;
+		width: 20px;
+		height: 20px;
+		
+		&--twitter {
+			fill: @color-twitter;
+		}
+		
+		&--facebook {
+			fill: @color-facebook;
+		}
+
+		&--google-plus {
+			top: -2px;
+			width: 24px;
+			height: 24px;
+			fill: @color-google-plus;
+		}
+	}
+}
