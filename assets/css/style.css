@@ -1404,12 +1404,12 @@ body {
   overflow-x: hidden;
 }
 ::-moz-selection {
-  background: #a4958c;
-  color: #ffffff;
+  background: #f0f0f0;
+  color: #333333;
 }
 ::selection {
-  background: #a4958c;
-  color: #ffffff;
+  background: #f0f0f0;
+  color: #333333;
 }
 [role="button"] {
   cursor: pointer;
@@ -2196,7 +2196,7 @@ hr {
 .article__summary {
   margin-bottom: 25px;
 }
-@media screen and (min-width: 767px) {
+@media screen and (max-width: 767px) {
   .article__summary {
     font-size: 16px;
     font-size: 1rem;
@@ -2204,6 +2204,135 @@ hr {
 }
 .article .blog-tag:first-child {
   margin-left: 0;
+}
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  font-weight: 500;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.article-content h1,
+.article-content h2,
+.article-content h3 {
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+@media screen and (max-width: 400px) {
+  .article-content h1,
+  .article-content h2,
+  .article-content h3 {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
+}
+.article-content p {
+  line-height: 1.555555556;
+  letter-spacing: -0.01em;
+}
+@media screen and (max-width: 767px) {
+  .article-content p {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+.article-content a {
+  text-decoration: underline;
+}
+.article-content blockquote,
+.article-content .blockquote {
+  font-size: 28px;
+  font-size: 1.75rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: -10%;
+  margin-right: -10%;
+}
+.article-content pre {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: -10%;
+  margin-right: -10%;
+}
+.article-content code.hljs {
+  background: #f9f5f2;
+}
+.article-content ol,
+.article-content ul {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.article-content li {
+  line-height: 1.5;
+}
+.article-content table {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.article-content img {
+  width: 100%;
+  display: block;
+  height: auto;
+  margin: 25px 0 15px;
+}
+.article-content .figure {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.article-content .figure--bleed {
+  margin-left: -10%;
+  margin-right: -10%;
+}
+.article-content .figure-inline {
+  width: 50%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.article-content .figure-inline--left {
+  float: left;
+  margin-right: 25px;
+  margin-left: -10%;
+}
+.article-content .figure-inline--right {
+  float: right;
+  margin-left: 25px;
+  margin-right: -10%;
+}
+.article-content .figure-inline figcaption,
+.article-content .figure-inline .figcation {
+  text-align: left;
+}
+.article-content .figure img {
+  margin: 0 0 15px;
+}
+.article-content .figure figcaption,
+.article-content .figure .figcaption {
+  margin-bottom: 0;
+}
+.article-content figcaption,
+.article-content .figcaption {
+  font-size: 16px;
+  font-size: 1rem;
+  text-align: center;
+  color: #a4958c;
+  margin-bottom: 25px;
+}
+.article-comment__count {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  float: right;
+  position: relative;
+  top: 3px;
+}
+.article-comment__count .icon {
+  top: 2px;
+  margin-right: 3px;
 }
 /* ===========================================
    Blog navigation styling
@@ -2350,6 +2479,7 @@ hr {
   list-style-type: none;
   display: inline-block;
   float: left;
+  line-height: 1;
 }
 .pagination {
   text-align: center;
@@ -2430,6 +2560,56 @@ hr {
   color: #f96315;
   background-color: #ffe8e1;
   border-radius: 2px;
+}
+/* ===========================================
+   Share section styling
+   =========================================== */
+.share__list {
+  zoom: 1;
+  margin: 0;
+  padding: 0;
+}
+.share__list:before,
+.share__list:after {
+  content: "";
+  display: table;
+}
+.share__list:after {
+  clear: both;
+}
+.share__item {
+  line-height: 1;
+  float: left;
+  display: block;
+  list-style-type: none;
+  margin: 0 15px 0 0;
+}
+.share__link:hover .share__icon--twitter {
+  fill: #02bfff;
+}
+.share__link:hover .share__icon--facebook {
+  fill: #034685;
+}
+.share__link:hover .share__icon--google-plus {
+  fill: #b03626;
+}
+.share__icon {
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+  width: 20px;
+  height: 20px;
+}
+.share__icon--twitter {
+  fill: #35ccff;
+}
+.share__icon--facebook {
+  fill: #03539e;
+}
+.share__icon--google-plus {
+  top: -2px;
+  width: 24px;
+  height: 24px;
+  fill: #d34836;
 }
 /* ===========================================
    Cta section styling
@@ -2655,9 +2835,6 @@ hr {
 /* ===========================================
    Social links styling
    =========================================== */
-/* ===========================================
- * Social links
- * =========================================== */
 .social__nav {
   display: inline-block;
   text-align: left;
@@ -2953,22 +3130,22 @@ code {
   font-size: 1.125rem;
   padding: 2px 4px;
   color: #c7254e;
-  background-color: #f9f2f4;
+  background-color: #fafafa;
   border-radius: 4px;
 }
 pre {
   display: block;
   padding: 12px;
   margin: 0 0 13px;
-  font-size: 17px;
-  font-size: 1.0625rem;
+  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.42857143;
   word-break: break-all;
   word-wrap: break-word;
   color: #555;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  background-color: #f9f5f2;
+  border: 1px solid #e1d9d4;
+  border-radius: 2px;
 }
 pre code {
   padding: 0;
@@ -2984,9 +3161,7 @@ pre code {
 blockquote {
   font-size: 20px;
   font-size: 1.25rem;
-  padding: 12.5px 25px;
   margin: 0 0 25px;
-  border-left: 5px solid #f96315;
 }
 blockquote p:last-child,
 blockquote ul:last-child,
@@ -3069,7 +3244,7 @@ caption {
   font-weight: 700;
   text-align: left;
   padding: .5em 0;
-  border-bottom: 1px solid #d7d7d7;
+  border-bottom: 1px solid #e1d9d4;
 }
 table {
   font-size: 15px;
@@ -3080,15 +3255,26 @@ table {
   margin: 1em 0;
   text-align: left;
 }
-table thead td,
+table thead th {
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  color: #696060;
+  padding: .8em .5em;
+  border-bottom: 4px solid #e1d9d4;
+}
 table tbody td,
-table tfoot td,
-table thead th,
-table tbody th,
-table tfoot th {
+table tfoot td {
   color: #585858;
   padding: .8em .5em;
-  border-bottom: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e1d9d4;
+  border-right: 1px solid #e1d9d4;
+}
+table tbody td:last-child,
+table tfoot td:last-child {
+  border-right: 0;
 }
 @media screen and (max-width: 767px) {
   .table-scroll-indicator {
@@ -3502,6 +3688,20 @@ img[data-src] {
 .page-intro__figure--logo {
   margin-top: 40px;
 }
+.page-intro__footer {
+  zoom: 1;
+  margin-top: 40px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e1d9d4;
+}
+.page-intro__footer:before,
+.page-intro__footer:after {
+  content: "";
+  display: table;
+}
+.page-intro__footer:after {
+  clear: both;
+}
 .page-intro--homepage {
   position: relative;
   z-index: 5;
@@ -3515,6 +3715,9 @@ img[data-src] {
 }
 .page-intro--homepage .page-intro__lead {
   text-align: left;
+}
+.page-intro--blog-article {
+  margin-bottom: 60px;
 }
 /* ===========================================
    Page content styling
@@ -3545,3 +3748,65 @@ img[data-src] {
 }
 /* Vendor
  * =========================================================== */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #8e908c;
+}
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #c82829;
+}
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #f5871f;
+}
+/* Tomorrow Yellow */
+.hljs-attribute {
+  color: #eab700;
+}
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #718c00;
+}
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+  color: #4271ae;
+}
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #8959a8;
+}
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: white;
+  color: #4d4d4c;
+  padding: 0.5em;
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: bold;
+}

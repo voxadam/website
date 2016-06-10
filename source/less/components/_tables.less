@@ -8,7 +8,7 @@ caption {
   font-weight: @font-weight-bold;
   text-align: left;
   padding: .5em 0;
-  border-bottom: 1px solid #d7d7d7;
+  border-bottom: 1px solid @color-westar;
 }
 
 table {
@@ -19,17 +19,33 @@ table {
   margin: 1em 0;
   text-align: left;
 
-  thead,
+  thead {
+
+    th {
+      .font-size(12);
+      font-weight: @font-weight-bold;
+      text-transform: uppercase;
+      letter-spacing: .01em;
+      color: #696060;
+      padding: .8em .5em;
+      border-bottom: 4px solid @color-westar;
+    }
+  }
+
   tbody,
   tfoot {
 
-    td,
-    th {
+    td {
       color: #585858;
       padding: .8em .5em;
-      border-bottom: 1px solid #e9e9e9;
+      border-bottom: 1px solid @color-westar;
+      border-right: 1px solid @color-westar;
+      &:last-child {
+        border-right: 0;
+      }
     }
   }
+
 }
 
 // Scrollable table styles for smaller screen resolution

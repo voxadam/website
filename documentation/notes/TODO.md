@@ -3,7 +3,10 @@
     ✔ Blog listing item                         • ◦  
     ✔ Pagination                                •• (1/2 drugog)  
       + Category page
-    ☐ Blog article                              ◦◦◦◦◦    
+    ☐ Article intro                              ••
+    ☐ Article content                            ••◆
+    ☐ Article about section                      ◦◦
+      + Disquss integration
 
     ☐ Polish use case section (css and js)      ◦◦      
     ☐ SVG Lazy Line painter                     ◦◦◦◦    
