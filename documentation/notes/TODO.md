@@ -1,7 +1,7 @@
 # 🆕 TODO List                                 [16 •]
-    ☐ Blog listing intro                        •••
-    ☐ Blog listing item                         ◦◦  
-    ☐ Pagination                                ◦◦  
+    ✔ Blog listing intro                        •••
+    ✔ Blog listing item                         • ◦  
+    ✔ Pagination                                •• (1/2 drugog)  
       + Category page
     ☐ Blog article                              ◦◦◦◦◦    
 

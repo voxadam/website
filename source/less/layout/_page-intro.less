@@ -21,7 +21,8 @@
 		@media screen and (min-width: @desktop-breakpoint) {
 			.font-size(48);
 		}	
-
+		
+		// Used on homepage
 		&--emphasized {
 			.font-size(28);
 			font-weight: @font-weight-extra-bold;
@@ -38,6 +39,7 @@
 			}
 		}
 
+		// Used on blog pages
 		&--blog {
 			.font-size(28);
 			font-weight: @font-weight-medium;
@@ -50,6 +52,11 @@
 				.font-size(38);
 			}
 		}
+
+		&--blog-category {
+			display: block;
+		}
+
 	}
 
 	&__lead {
@@ -59,7 +66,8 @@
 		color: @color-bronco;
 		margin-top: 30px;
 	}
-
+	
+	// Used on homepage
 	&__figure {
 
 		&--logo {

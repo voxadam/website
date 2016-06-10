@@ -2,7 +2,7 @@ extends pagewrapper
 
 //- Override config.jade file
 append page-config
-	- var PageTitle = 'Dgraph Blog | Opinions and shared thoughts on inovative usage of graph database.'
+	- var PageTitle = 'Dgraph Articles Tagged Knowledge Base'
 	- var PageClass = 'blog'
 	- var PageIntroClass = 'blog'
 	- var PageContentClass = 'blog'
@@ -17,7 +17,7 @@ block page-intro
 		.row
 			.col-12.col-desktop-10.push-desktop-1.col-hd-8.push-hd-2
 				header.page-intro__header
-					h1.page-intro__title.page-intro__title--blog Opinions and shared thoughts on inovative usage of graph database.
+					h1.page-intro__title.page-intro__title--blog All Dgraph articles tagged as: #[a(href="#").page-intro__title--blog-category Knowledge Base]
 					
 					nav.blog-nav
 						.blog-nav__item.blog-nav__item--large
@@ -310,6 +310,10 @@ block page-content
 							a(href="blog-category.html").pagination__link 12
 						li.pagination__item.next
 							a(href="blog-category.html").pagination__link Next<svg class="icon"><use xlink:href="#icon-next" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg>
+
+					// /.pageination__list
+
+				// /.pagination
 
 block additional-scripts
 	//- include partials/path/to/additional/script.js

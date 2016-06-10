@@ -15,14 +15,17 @@
 
 	&__item {
 		list-style-type: none;
-		
+		padding-bottom: @spacing-small;
+		margin-bottom: 0;
+		@media screen and (min-width: @tablet-breakpoint) {
+			padding-bottom: @spacing-base;
+		}	
+
 		&:not(:last-child) {
 			margin: 0 0 @spacing-small;
-			padding-bottom: @spacing-small;
 			border-bottom: 1px solid @color-westar;
 			@media screen and (min-width: @tablet-breakpoint) {
 				margin: 0 0 @spacing-base;
-				padding-bottom: @spacing-base;
 			}	
 		}
 	}

@@ -2149,16 +2149,21 @@ hr {
 }
 .article__item {
   list-style-type: none;
+  padding-bottom: 25px;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 767px) {
+  .article__item {
+    padding-bottom: 60px;
+  }
 }
 .article__item:not(:last-child) {
   margin: 0 0 25px;
-  padding-bottom: 25px;
   border-bottom: 1px solid #e1d9d4;
 }
 @media screen and (min-width: 767px) {
   .article__item:not(:last-child) {
     margin: 0 0 60px;
-    padding-bottom: 60px;
   }
 }
 .article__meta {
@@ -2345,6 +2350,86 @@ hr {
   list-style-type: none;
   display: inline-block;
   float: left;
+}
+.pagination {
+  text-align: center;
+  position: relative;
+  border-top: 2px solid #e1d9d4;
+  padding-top: 25px;
+  padding-bottom: 80px;
+}
+.pagination__list {
+  zoom: 1;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.pagination__list:before,
+.pagination__list:after {
+  content: "";
+  display: table;
+}
+.pagination__list:after {
+  clear: both;
+}
+.pagination__item {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  float: left;
+}
+@media screen and (max-width: 550px) {
+  .pagination__item {
+    display: none;
+  }
+}
+.pagination__item.ellipsis {
+  color: #a4958c;
+}
+.pagination__item.prev,
+.pagination__item.next {
+  position: absolute;
+}
+@media screen and (max-width: 550px) {
+  .pagination__item.prev,
+  .pagination__item.next {
+    display: block;
+  }
+}
+.pagination__item.prev .icon,
+.pagination__item.next .icon {
+  width: 12px;
+  height: 12px;
+}
+.pagination__item.prev {
+  left: 0;
+}
+.pagination__item.prev .icon {
+  margin-right: 5px;
+}
+.pagination__item.next {
+  right: 0;
+}
+.pagination__item.next .icon {
+  top: 1px;
+  margin-left: 5px;
+}
+.pagination__link {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #a4958c;
+  padding: 0 7px;
+  margin: 0 7px;
+  display: block;
+}
+.pagination__link:hover {
+  color: #f96315;
+}
+.pagination__link.is-active {
+  color: #f96315;
+  background-color: #ffe8e1;
+  border-radius: 2px;
 }
 /* ===========================================
    Cta section styling
@@ -3402,6 +3487,9 @@ img[data-src] {
     font-size: 38px;
     font-size: 2.375rem;
   }
+}
+.page-intro__title--blog-category {
+  display: block;
 }
 .page-intro__lead {
   font-size: 20px;
