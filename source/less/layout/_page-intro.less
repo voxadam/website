@@ -6,8 +6,8 @@
 	margin-top: 30px;
 	margin-bottom: @spacing-base;
 	@media screen and (min-width: @desktop-breakpoint) {
-		margin-top: 100px;
-		margin-bottom: 100px;
+		margin-top: @spacing-large;
+		margin-bottom: @spacing-large;
 	}
 
 	&__header {}
@@ -30,6 +30,19 @@
 			letter-spacing: .02em;
 			line-height: 1.3;
 			color: @color-jaffa;
+			@media screen and (min-width: @tablet-breakpoint) {
+				.font-size(34);
+			}
+			@media screen and (min-width: @hd-breakpoint) {
+				.font-size(38);
+			}
+		}
+
+		&--blog {
+			.font-size(28);
+			font-weight: @font-weight-medium;
+			line-height: 1.421052632;
+			text-align: left;
 			@media screen and (min-width: @tablet-breakpoint) {
 				.font-size(34);
 			}
@@ -78,6 +91,8 @@
 
 	&--contact {}
 
-	&--blog {}
+	&--blog {
+
+	}
 
 }

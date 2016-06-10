@@ -132,5 +132,33 @@ $('#next-slide').on('click', function() {
     }
 });
 
+
+  // ===========================================================================
+  //
+	// Blog
+
+
+  function closeGranular() {
+    $('.js-granular-trigger').removeClass('is-active');
+    $('.blog-nav-granular__item').slideUp(400).removeClass('is-open');
+  }
+
+	$('.js-granular-trigger').click(function (e) {
+		// Grab current anchor value
+		var currentAttrValue = $(this).attr('href');
+
+		if($(e.target).is('.is-active')) {
+      closeGranular();
+    }else {
+      closeGranular();
+
+      // Add is-active class to dropdown
+      $(this).addClass('is-active');
+      // Open up the hidden content panel
+      $('.blog-nav-granular ' + currentAttrValue).slideDown(300).addClass('is-open'); 
+    }
+
+		e.preventDefault();
+	});
 	
 }); // end document ready

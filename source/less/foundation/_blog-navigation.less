@@ -1,0 +1,155 @@
+/* ===========================================
+   Blog navigation styling
+   =========================================== */
+
+// Skelet
+.blog-nav {
+	.clearfix();
+	.font-size(16);
+	margin-top: @spacing-base;
+	border-top: 2px solid @color-westar;
+	border-bottom: 2px solid @color-westar;
+	@media screen and (min-width: @tablet-breakpoint) {
+		margin-top: @spacing-large;
+	}
+
+	&__item {
+		float: left;
+		width: 50%;
+		@media screen and (min-width: 550px) {
+			width: 25%;
+
+			&:nth-child(2) {
+				border-left: 1px solid @color-westar;
+			}
+		}
+
+		&:nth-child(2) {
+			border-right: 1px solid @color-westar;
+		}
+
+		&--large {
+			width: 100%;
+			border-bottom: 1px solid @color-westar;
+
+			@media screen and (min-width: 550px) {
+				width: 50%;
+				border-bottom: 0;
+			}
+		}
+	}
+}
+
+
+// Form
+.blog-nav {
+
+	&__form {
+
+	}
+
+	&__input {
+		color: @color-bronco;
+		padding: 5px 15px 5px 35px;
+		line-height: 50px;
+		-webkit-appearance: none;
+		-moz-appearance: none; 
+		outline: none;
+		border: none;
+		background-image: url('../images/png-icons/form-search.png');
+		background-repeat: no-repeat;
+		background-position: 10px center;
+	}
+
+	&__dropdown {
+		font-weight: @font-weight-medium;
+		color: @color-bronco;
+		display: block;
+		line-height: 50px;
+		padding: 5px 15px;
+		position: relative;
+		&:active,
+		&:focus {
+			color: @color-bronco;
+		}
+
+		&.is-active {
+			color: @color-brand-primary;
+			
+			.icon-dropdown {
+				fill: @color-brand-primary;
+				transform: rotate(180deg);
+			}
+		}
+
+		.icon-label,
+		.icon-folder {
+			top: 3px;
+			margin-right: 5px;
+		}
+
+		.icon-dropdown {
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			right: 15px;
+			top: 25px;
+		}
+	}
+}
+
+// Accordion mechanism
+.blog-nav-granular {
+
+	&__item {
+		display: none;
+		border-bottom: 2px solid @color-westar;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		&.is-open {
+			display: block;
+		}
+	}
+
+	&__year {
+		
+		&:not(:last-child) {
+			border-bottom: 1px solid @color-westar;
+			padding-bottom: 10px;
+			margin-bottom: 10px;
+		}
+
+		h6 {
+			.font-size(15);
+			color: @color-bronco;
+			margin-left: 3px;
+		}
+	}
+}
+
+// Tags
+.blog-tag {
+	.font-size(12);
+	font-weight: @font-weight-medium;
+	text-transform: uppercase;
+	letter-spacing: .01em;
+	background-color: @color-pippin;
+	border-radius: 2px;	
+	padding: 2px 6px;
+	margin-left: 3px;
+	margin-right: 3px;
+
+	&__list {
+		.clearfix();
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {
+		list-style-type: none;
+		display: inline-block;
+		float: left;
+	}
+}
+

@@ -1,16 +1,18 @@
 # 🆕 TODO List                                 [16 •]
-    ✔ Page footer                               •
-    ✔ More info cta                             •••
-    ✔ About page                                •••◆◆
-    ✔ Careers page                              •••
-    ✔ Contact page                              •◦
+    ☐ Blog listing intro                        •••
+    ☐ Blog listing item                         ◦◦  
+    ☐ Pagination                                ◦◦  
+      + Category page
+    ☐ Blog article                              ◦◦◦◦◦    
 
     ☐ Polish use case section (css and js)      ◦◦      
     ☐ SVG Lazy Line painter                     ◦◦◦◦    
+    ☐ Define variables
+
 
 
 # ❔ Questions
-    ☐ Demo section (for next week)
+    ☐ Demo section
     ☐ Search terms
 
 
@@ -18,17 +20,24 @@
 # 🕓 Later
     ☐ Improve bolt graphic animation on hover state (on page load animate their movement)
     ☐ Add canvas particles
-    ☐ Modify console header
+    ☐ Style console section (for next week)
 
 
 
 # 📁 Archived
-~~✔ Page header                               ••
-    + Page header alternate version
-    + Page intro
-  ✔ Demo section (no console)                 ••◆◆◆
-    + Revisit class naming convention         
-  ✔ Use case section (no svg, only slider)    •••~~
+~~08.06.2016
+    ✔ Page header                           ••
+      - Page header alternate version
+      - Page intro
+    ✔ Demo section (no console)             ••◆◆◆
+      - Revisit class naming convention         
+    ✔ Use case section (no svg, only slider)•••~~
+~~09.06.2016
+    ✔ Page footer                               •
+    ✔ More info cta                             •••
+    ✔ About page                                •••◆◆
+    ✔ Careers page                              •••
+    ✔ Contact page                              •◦~~
 
 
 
@@ -66,6 +75,7 @@ In order to enable saving notes inside /documentation/notes/ folder you will nee
     Urgent          ⚑
     
         ¯\_(ツ)_/¯
+
 
 
 # 🆕 Pomodoro                                 [14 •]
