@@ -2242,75 +2242,137 @@ hr {
 .article-content a {
   text-decoration: underline;
 }
-.article-content blockquote,
-.article-content .blockquote {
-  font-size: 28px;
-  font-size: 1.75rem;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-left: -10%;
-  margin-right: -10%;
+.article-content blockquote p,
+.article-content .blockquote p {
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-top: 25px;
 }
-.article-content pre {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-left: -10%;
-  margin-right: -10%;
+@media screen and (min-width: 450px) {
+  .article-content blockquote p,
+  .article-content .blockquote p {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
 }
-.article-content code.hljs {
-  background: #f9f5f2;
+@media screen and (min-width: 989px) {
+  .article-content blockquote p,
+  .article-content .blockquote p {
+    font-size: 28px;
+    font-size: 1.75rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+}
+.article-content table {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 .article-content ol,
 .article-content ul {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+@media screen and (max-width: 767px) {
+  .article-content ol,
+  .article-content ul {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
 .article-content li {
   line-height: 1.5;
 }
-.article-content table {
+.article-content pre {
   margin-top: 25px;
   margin-bottom: 25px;
+}
+@media screen and (min-width: 989px) {
+  .article-content pre {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+}
+.article-content code.hljs {
+  background: #f9f5f2;
+}
+.article-content .figure,
+.article-content figure {
+  margin: 25px 0 15px;
+}
+@media screen and (min-width: 989px) {
+  .article-content .figure--bleed,
+  .article-content figure--bleed {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+}
+.article-content .figure-inline,
+.article-content figure-inline {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 767px) {
+  .article-content .figure-inline,
+  .article-content figure-inline {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 767px) {
+  .article-content .figure-inline--left,
+  .article-content figure-inline--left {
+    float: left;
+    margin-right: 25px;
+  }
+}
+@media screen and (min-width: 989px) {
+  .article-content .figure-inline--left,
+  .article-content figure-inline--left {
+    margin-left: -10%;
+  }
+}
+@media screen and (min-width: 767px) {
+  .article-content .figure-inline--right,
+  .article-content figure-inline--right {
+    float: right;
+    margin-left: 25px;
+  }
+}
+@media screen and (min-width: 989px) {
+  .article-content .figure-inline--right,
+  .article-content figure-inline--right {
+    margin-right: -10%;
+  }
+}
+@media screen and (min-width: 767px) {
+  .article-content .figure-inline figcaption,
+  .article-content figure-inline figcaption,
+  .article-content .figure-inline .figcation,
+  .article-content figure-inline .figcation {
+    text-align: left;
+  }
+}
+.article-content .figure img,
+.article-content figure img {
+  margin: 0 0 15px;
+}
+.article-content .figure figcaption,
+.article-content figure figcaption,
+.article-content .figure .figcaption,
+.article-content figure .figcaption {
+  margin-bottom: 0;
 }
 .article-content img {
   width: 100%;
   display: block;
   height: auto;
   margin: 25px 0 15px;
-}
-.article-content .figure {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.article-content .figure--bleed {
-  margin-left: -10%;
-  margin-right: -10%;
-}
-.article-content .figure-inline {
-  width: 50%;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-.article-content .figure-inline--left {
-  float: left;
-  margin-right: 25px;
-  margin-left: -10%;
-}
-.article-content .figure-inline--right {
-  float: right;
-  margin-left: 25px;
-  margin-right: -10%;
-}
-.article-content .figure-inline figcaption,
-.article-content .figure-inline .figcation {
-  text-align: left;
-}
-.article-content .figure img {
-  margin: 0 0 15px;
-}
-.article-content .figure figcaption,
-.article-content .figure .figcaption {
-  margin-bottom: 0;
 }
 .article-content figcaption,
 .article-content .figcaption {
@@ -2320,10 +2382,35 @@ hr {
   color: #a4958c;
   margin-bottom: 25px;
 }
-.article-comment__count {
+.article-footer {
+  margin-top: 60px;
+}
+.article-footer__title {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.article-comment {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.article-comment__button {
   font-size: 13px;
   font-size: 0.8125rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.article-comment__button.button {
+  font-weight: 700;
+  padding: 15px 30px;
+}
+.article-comment__button .icon {
+  top: 2px;
+}
+.article-comment__count {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: .01em;
   float: right;
@@ -2887,6 +2974,7 @@ hr {
 .button:hover,
 .button:focus {
   color: #fff;
+  background-color: #d64d05;
   text-decoration: none;
 }
 .button:active {
@@ -3137,8 +3225,8 @@ pre {
   display: block;
   padding: 12px;
   margin: 0 0 13px;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.42857143;
   word-break: break-all;
   word-wrap: break-word;

@@ -1,10 +1,10 @@
 # 🆕 TODO List                                 [16 •]
     ✔ Blog listing intro                        •••
-    ✔ Blog listing item                         • ◦  
+    ✔ Blog listing item                         • ◦ (1 manje) 
     ✔ Pagination                                •• (1/2 drugog)  
       + Category page
-    ☐ Article intro                              ••
-    ☐ Article content                            ••◆
+    ✔ Article intro                              ••
+    ✔ Article content                            ••◆◆
     ☐ Article about section                      ◦◦
       + Disquss integration
 

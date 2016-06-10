@@ -2,7 +2,7 @@ extends pagewrapper
 
 //- Override config.jade file
 append page-config
-	- var PageTitle = 'Dgraph Articles Tagged Knowledge Base'
+	- var PageTitle = 'What is Dgraph and why it was created'
 	- var PageClass = 'blog-article'
 	- var PageIntroClass = 'blog-article'
 	- var PageContentClass = 'blog-article'
@@ -23,7 +23,7 @@ block page-intro
 					h1.page-intro__title.page-intro__title--blog What is Dgraph and why it was created
 				
 				.page-intro__footer
-					a(href="#article-comments").article-comment__count.js-scroll-to <svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> 15 comments
+					a(href="#article-comment").article-comment__count.js-scroll-to <svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> 15 comments
 
 					.share
 						ul.share__list
@@ -79,8 +79,7 @@ block page-content
 									beginnerProgram
 											{ model = 0, view = view
 											, update = \Increment model -&gt;
-							view model =
-									div [] [ div [] [ text (toString model) ], button [ onClick Increment ] [ text "+" ] ]
+											view model = div [] [ div [] [ text (toString model) ], button [ onClick Increment ] [ text "+" ] ]
 
 					p A graph database is a database that uses graph structures with nodes and edges to represent, store and serve data.
 
@@ -147,30 +146,41 @@ block page-content
 					table
 						thead
 							tr
-								th Table Header name
-								th Table Header name
-								th Table Header name
+								th Table Header
+								th Table Header
 						tbody
 							tr
 								td Table data text
 								td Table data text
+							tr
+								td Table data text
 								td Table data text
 							tr
 								td Table data text
 								td Table data text
-								td Table data text
 							tr
-								td Table data text
-								td Table data text
-								td Table data text
-							tr
-								td Table data text
 								td Table data text
 								td Table data text
 
 					p Github repository, then find us hanging out at discuss.dgraph.io and come talk to us. Written by Manish R Jain. Thanks to Prashanth Koppula and the team for proof reading. Originally published at #[a(href="#") blog.dgraph.io].
-
+					
 				// /.article-content
+
+				footer.article-footer
+					h5.article-footer__title Filed Under:
+					ul.blog-tag__list
+							li.blog-tag__item
+								a(href="blog-category.html").blog-tag Graph
+							li.blog-tag__item
+								a(href="blog-category.html").blog-tag Big Data
+							li.blog-tag__item
+								a(href="blog-category.html").blog-tag Database
+
+				// /.article-footer
+				
+				#article-comment.article-comment
+					a(href="#").button.article-comment__button <svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> Show comments (12)
+
 
 block additional-scripts
 	// Highlight JS plugin for article page

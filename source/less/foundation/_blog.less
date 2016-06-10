@@ -10,6 +10,8 @@
 
 }
 
+////////////////////////////////////////
+// Blog listing and blog intro stylings
 .article {
 
 	&__list {
@@ -80,6 +82,8 @@
 
 }
 
+////////////////////////////////////////
+// Article content section
 .article-content {
 
 	h1, h2, h3, h4, h5, h6 {
@@ -106,85 +110,114 @@
 	a {
 		text-decoration: underline;
 	}
-
-	blockquote,
-	.blockquote {
-		.font-size(28);
-		margin-top: @spacing-base - 10;
-		margin-bottom: @spacing-base - 10;
-		margin-left: -10%;
-		margin-right: -10%;
-
-		p {
-
+	
+	// Blocquotes
+	blockquote p,
+	.blockquote p {
+		.font-size(20);
+		margin-top: @spacing-small;
+		margin-top: @spacing-small;
+		@media screen and (min-width: 450px) {
+			.font-size(24);	
+		}	
+		@media screen and (min-width: @desktop-breakpoint) {
+			.font-size(28);
+			margin-top: @spacing-base - 10;
+			margin-bottom: @spacing-base - 10;
+			margin-left: -10%;
+			margin-right: -10%;
 		}
 	}
 
-	pre {
-		margin-top: @spacing-base - 10;
-		margin-bottom: @spacing-base - 10;
-		margin-left: -10%;
-		margin-right: -10%;
+	// Tables
+	table {
+		margin-top: @spacing-small;
+		margin-bottom: @spacing-small;
 	}
-
-	code.hljs {
-		background: #f9f5f2;
-	}
-
+	
+	// Lists
 	ol,
 	ul {
 		margin-top: @spacing-small;
 		margin-bottom: @spacing-small;
+		@media screen and (max-width: @tablet-breakpoint) {
+			.font-size(16);
+		}
 	}
 
 	li {
 		line-height: 1.5;
 	}
 
-	table {
+
+	// Code
+	pre {
 		margin-top: @spacing-small;
 		margin-bottom: @spacing-small;
-	}
-
-	img {
-		width: 100%;
-		display: block;
-		height: auto;
-		margin: @spacing-small 0 15px;
-	}
-
-	.figure {
-		margin-top: @spacing-base - 10;
-		margin-bottom: @spacing-base - 10;
-		
-		&--bleed {
+		@media screen and (min-width: @desktop-breakpoint) {
+			margin-top: @spacing-base - 10;
+			margin-bottom: @spacing-base - 10;
 			margin-left: -10%;
 			margin-right: -10%;
+		}	
+	}
+
+	code.hljs {
+		background: #f9f5f2;  // highlight-js override
+	}
+
+	// Images
+	.figure,
+	figure {
+		margin: @spacing-small 0 15px;
+		
+		// Images exceeds container width from both sides
+		// This behaviour exists on screen resolutions > 990px
+		&--bleed {
+			@media screen and (min-width: @desktop-breakpoint) {
+				margin-top: @spacing-base - 10;
+				margin-bottom: @spacing-base - 10;
+				margin-left: -10%;
+				margin-right: -10%;
+			}	
 		}
 
+		// Images are floatad on one side with following text on right
+		// This behaviour exists on screen resolutions > 768px
 		&-inline {
-			width: 50%;
 			margin-top: @spacing-small;
 			margin-bottom: @spacing-small;
+			@media screen and (min-width: @tablet-breakpoint) {
+				width: 50%;
+			}
 			
 			&--left {
-				float: left;
-				margin-right: @spacing-small;
-				margin-left: -10%;
+				@media screen and (min-width: @tablet-breakpoint) {
+					float: left;
+					margin-right: @spacing-small;
+				}	
+				@media screen and (min-width: @desktop-breakpoint) {
+					margin-left: -10%;
+				}
 			}
 			
 			&--right {
-				float: right;
-				margin-left: @spacing-small;
-				margin-right: -10%;
+				@media screen and (min-width: @tablet-breakpoint) {
+					float: right;
+					margin-left: @spacing-small;
+				}	
+				@media screen and (min-width: @desktop-breakpoint) {
+					margin-right: -10%;
+				}
 			}
 
 			figcaption,
 			.figcation {
-				text-align: left;
+				@media screen and (min-width: @tablet-breakpoint) {
+					text-align: left;
+				}
 			}
 		}
-
 
 		img {
 			margin: 0 0 15px;
@@ -195,7 +228,13 @@
 			margin-bottom: 0;
 		}
 
+	}
 
+	img {
+		width: 100%;
+		display: block;
+		height: auto;
+		margin: @spacing-small 0 15px;
 	}
 
 	figcaption,
@@ -208,11 +247,40 @@
 
 }
 
-.article-comment {
+// Article footer
+.article-footer {
+	margin-top: @spacing-base;
 
-	&__count {
+	&__title {
+		font-weight: @font-weight-medium;
+		margin-bottom: 15px;
+	}
+}
+
+// Comment section
+.article-comment {
+	margin-top: @spacing-base;
+	margin-bottom: @spacing-base;
+
+	&__button {
 		.font-size(13);
 		font-weight: @font-weight-bold;
+		text-transform: uppercase;
+		letter-spacing: .03em;
+		&.button {
+			font-weight: @font-weight-bold;
+			padding: 15px 30px;
+		}
+
+		.icon {
+			top: 2px;
+		}
+	}
+
+	// placed in intro section
+	&__count {
+		.font-size(13);
+		font-weight: @font-weight-medium;
 		text-transform: uppercase;
 		letter-spacing: .01em;
 		float: right;

@@ -34,7 +34,7 @@
   <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
-  <title>Dgraph Articles Tagged Knowledge Base</title>
+  <title>What is Dgraph and why it was created</title>
 
   <!-- fonts-->
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,800,700,500" rel="stylesheet" type="text/css">
@@ -92,7 +92,7 @@
             <div class="article__meta"><span class="article__meta-item article__date">25.04.2016 </span><span class="article__meta-item article__author">by Manish Jain</span></div>
             <h1 class="page-intro__title page-intro__title--blog">What is Dgraph and why it was created</h1>
           </header>
-          <div class="page-intro__footer"><a href="#article-comments" class="article-comment__count js-scroll-to"><svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> 15 comments</a>
+          <div class="page-intro__footer"><a href="#article-comment" class="article-comment__count js-scroll-to"><svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> 15 comments</a>
             <div class="share">
               <ul class="share__list">
                 <li class="share__item"><a href="#" class="share__link">
@@ -140,11 +140,9 @@
                 <main>=
                   <beginnerProgram>{ model = 0, view = view
 , update = \Increment model -&gt;
+                    <view>model = div [] [ div [] [ text (toString model) ], button [ onClick Increment ] [ text "+" ] ]</view>
                   </beginnerProgram>
-                </main>
-                <view>model =
-                  <div>[] [ div [] [ text (toString model) ], button [ onClick Increment ] [ text "+" ] ]</div>
-                </view></code></pre>
+                </main></code></pre>
             <p>A graph database is a database that uses graph structures with nodes and edges to represent, store and serve data.</p>
             <h4>But who really uses graph databases?</h4>
             <p>More teams and companies than you’d think. Google, Facebook, Twitter, eBay, LinkedIn, Amazon, Dropbox, Pinterest — pick a company you are familiar with. If they’re doing something smart, chances are they’re probably using a graph database. Even very simple web apps have much to gain from graph databases. In the past, I’ve built a graph based REST framework, and using that cut down the code in half.</p><img src="assets/images/blog/article-image-02.jpg" alt="Hello, World! Image: Mars Rover Curiosity in Buckskin Selfie">
@@ -186,29 +184,24 @@
             <table>
               <thead>
                 <tr>
-                  <th>Table Header name</th>
-                  <th>Table Header name</th>
-                  <th>Table Header name</th>
+                  <th>Table Header</th>
+                  <th>Table Header</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Table data text</td>
                   <td>Table data text</td>
+                </tr>
+                <tr>
+                  <td>Table data text</td>
                   <td>Table data text</td>
                 </tr>
                 <tr>
                   <td>Table data text</td>
                   <td>Table data text</td>
-                  <td>Table data text</td>
                 </tr>
                 <tr>
-                  <td>Table data text</td>
-                  <td>Table data text</td>
-                  <td>Table data text</td>
-                </tr>
-                <tr>
-                  <td>Table data text</td>
                   <td>Table data text</td>
                   <td>Table data text</td>
                 </tr>
@@ -217,6 +210,16 @@
             <p>Github repository, then find us hanging out at discuss.dgraph.io and come talk to us. Written by Manish R Jain. Thanks to Prashanth Koppula and the team for proof reading. Originally published at <a href="#">blog.dgraph.io</a>.</p>
           </div>
           <!-- /.article-content-->
+          <footer class="article-footer">
+            <h5 class="article-footer__title">Filed Under:</h5>
+            <ul class="blog-tag__list">
+              <li class="blog-tag__item"><a href="blog-category.html" class="blog-tag">Graph</a></li>
+              <li class="blog-tag__item"><a href="blog-category.html" class="blog-tag">Big Data</a></li>
+              <li class="blog-tag__item"><a href="blog-category.html" class="blog-tag">Database</a></li>
+            </ul>
+          </footer>
+          <!-- /.article-footer-->
+          <div id="article-comment" class="article-comment"><a href="#" class="button article-comment__button"><svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> Show comments (12)</a></div>
         </div>
       </div>
     </div>
