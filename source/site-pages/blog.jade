@@ -1,0 +1,149 @@
+extends pagewrapper
+
+//- Override config.jade file
+append page-config
+	- var PageTitle = 'Dgraph Blog | Opinions and shared thoughts on inovative usage of graph database.'
+	- var PageClass = 'blog'
+	- var PageIntroClass = 'blog'
+	- var PageContentClass = 'blog'
+
+//- Begin
+block partials
+	//- include partials/modals/modal
+	//- include partials/overlays/overlay
+
+block page-intro
+	.container
+		.row
+			.col-12.col-desktop-10.push-desktop-1.col-hd-8.push-hd-2
+				header.page-intro__header
+					h1.page-intro__title.page-intro__title--blog Opinions and shared thoughts on inovative usage of graph database.
+					
+					nav.blog-nav
+						.blog-nav__item.blog-nav__item--large
+							form(action="").blog-nav__form
+								input(type="text" placeholder="Search blog").blog-nav__input
+						
+						.blog-nav__item
+							a(href="#blog-labels").blog-nav__dropdown.js-granular-trigger
+								svg.icon.icon-label
+									use(xlink:href="#icon-label" xmlns:xlink="http://www.w3.org/1999/xlink")
+								| Labels
+								svg.icon.icon-dropdown
+									use(xlink:href="#icon-dropdown" xmlns:xlink="http://www.w3.org/1999/xlink")
+						
+						.blog-nav__item
+							a(href="#blog-archive").blog-nav__dropdown.js-granular-trigger
+								svg.icon.icon-folder
+									use(xlink:href="#icon-folder" xmlns:xlink="http://www.w3.org/1999/xlink")
+								| Archive
+								svg.icon.icon-dropdown.js-granular-trigger
+									use(xlink:href="#icon-dropdown" xmlns:xlink="http://www.w3.org/1999/xlink")
+					
+					// /.blog-nav
+
+					.blog-nav-granular
+						#blog-labels.blog-nav-granular__item
+							ul.blog-tag__list
+								li.blog-tag__item
+									a(href="#").blog-tag Graph
+								li.blog-tag__item
+									a(href="#").blog-tag Big Data
+								li.blog-tag__item
+									a(href="#").blog-tag Database
+								li.blog-tag__item
+									a(href="#").blog-tag Release Update
+								li.blog-tag__item
+									a(href="#").blog-tag Dgraph Update
+								li.blog-tag__item
+									a(href="#").blog-tag knowledge base
+								li.blog-tag__item
+									a(href="#").blog-tag Q/A
+								li.blog-tag__item
+									a(href="#").blog-tag Tip
+								li.blog-tag__item
+									a(href="#").blog-tag Big Data
+								li.blog-tag__item
+									a(href="#").blog-tag Bug Fix
+								li.blog-tag__item
+									a(href="#").blog-tag Graph
+								li.blog-tag__item
+									a(href="#").blog-tag Fun
+								li.blog-tag__item
+									a(href="#").blog-tag Database
+								li.blog-tag__item
+									a(href="#").blog-tag Tip
+								li.blog-tag__item
+									a(href="#").blog-tag Dgraph Update
+								li.blog-tag__item
+									a(href="#").blog-tag Bug Fix
+								li.blog-tag__item
+									a(href="#").blog-tag Q/A
+								li.blog-tag__item
+									a(href="#").blog-tag Release Update
+								li.blog-tag__item
+									a(href="#").blog-tag Fun
+								li.blog-tag__item
+									a(href="#").blog-tag Knowledge base
+
+						// /.blog-nav-granular__item
+
+						#blog-archive.blog-nav-granular__item
+							div.blog-nav-granular__year
+								h6 2016
+								ul.blog-tag__list
+									li.blog-tag__item
+										a(href="#").blog-tag Jan.
+									li.blog-tag__item
+										a(href="#").blog-tag Feb.
+									li.blog-tag__item
+										a(href="#").blog-tag Mar.
+									li.blog-tag__item
+										a(href="#").blog-tag Apr.
+									li.blog-tag__item
+										a(href="#").blog-tag May
+									li.blog-tag__item
+										a(href="#").blog-tag Jun.
+
+							div.blog-nav-granular__year
+								h6 2015
+								ul.blog-tag__list
+									li.blog-tag__item
+										a(href="#").blog-tag Jan.
+									li.blog-tag__item
+										a(href="#").blog-tag Feb.
+									li.blog-tag__item
+										a(href="#").blog-tag Mar.
+									li.blog-tag__item
+										a(href="#").blog-tag Apr.
+									li.blog-tag__item
+										a(href="#").blog-tag May
+									li.blog-tag__item
+										a(href="#").blog-tag Jun.
+									li.blog-tag__item
+										a(href="#").blog-tag Jul.
+									li.blog-tag__item
+										a(href="#").blog-tag Aug.
+									li.blog-tag__item
+										a(href="#").blog-tag Sept.
+									li.blog-tag__item
+										a(href="#").blog-tag Oct.
+									li.blog-tag__item
+										a(href="#").blog-tag Nov.
+									li.blog-tag__item
+										a(href="#").blog-tag Dec.
+				
+						// /.blog-nav-granular__item
+
+					// /.blog-nav-granular
+
+block page-content
+	.container
+		.row
+			.col-12.col-desktop-10.push-desktop-1.col-hd-8.push-hd-2
+
+				.blog__listing
+					h3 content
+
+block additional-scripts
+	//- include partials/path/to/additional/script.js
