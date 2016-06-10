@@ -2143,6 +2143,63 @@ hr {
 /* ===========================================
    Blog listing styling
    =========================================== */
+.article__list {
+  margin: 0;
+  padding: 0;
+}
+.article__item {
+  list-style-type: none;
+}
+.article__item:not(:last-child) {
+  margin: 0 0 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e1d9d4;
+}
+@media screen and (min-width: 767px) {
+  .article__item:not(:last-child) {
+    margin: 0 0 60px;
+    padding-bottom: 60px;
+  }
+}
+.article__meta {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #a4958c;
+  margin-bottom: 5px;
+}
+.article__title {
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 767px) {
+  .article__title {
+    font-size: 28px;
+    font-size: 1.75rem;
+  }
+}
+.article__title a {
+  display: block;
+  color: #333333;
+}
+.article__title a:hover {
+  color: #f96315;
+}
+.article__summary {
+  margin-bottom: 25px;
+}
+@media screen and (min-width: 767px) {
+  .article__summary {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+.article .blog-tag:first-child {
+  margin-left: 0;
+}
 /* ===========================================
    Blog navigation styling
    =========================================== */
@@ -2251,10 +2308,13 @@ hr {
   margin-bottom: 10px;
 }
 .blog-nav-granular__year h6 {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: .01em;
   color: #a4958c;
   margin-left: 3px;
+  margin-bottom: 3px;
 }
 .blog-tag {
   font-size: 12px;
