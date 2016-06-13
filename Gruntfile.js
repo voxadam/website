@@ -150,8 +150,9 @@ module.exports = function(grunt) {
               banner: '/* Author: Danijel Grabež */\n'             // Banner will be added at the top of the compiled file.
             },
             files: [{
-              src: [                                                          // List of plugins which are used on this project, along with
-                'source/js/components/main.js'                                // custom made javascript.
+              src: [                                                                  // List of plugins which are used on this project, along with
+                'source/js/vendor/lazy-line-painter/jquery.lazylinepainter-1.7.0.js', // custom made javascript.
+                'source/js/components/main.js'                                        
               ],
               dest: 'assets/js/script.min.js'
             }]
