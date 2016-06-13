@@ -3,11 +3,8 @@
     ✔ Disquss and comments section              •
     
     Homepage
-    ☐ Console section
-    ☐ Polish use case section (css and js)
-    ☐ SVG Lazy Line painter
-    ☐ Add canvas particles
-    ☐ Improve bolt graphic animation on hover state (on page load animate their movement)
+    ☐ Polish use case section (css and js)      •◦
+    ☐ SVG Lazy Line painter                     ◦◦◦◦
 
 
 
@@ -18,7 +15,9 @@
 
 
 # 🕓 Later
-    ☐ Item number 1 
+    ☐ Console section
+    ☐ Add canvas particles
+    ☐ Improve bolt graphic animation on hover state (on page load animate their movement)
 
 
 

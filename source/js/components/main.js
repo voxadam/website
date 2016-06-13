@@ -79,58 +79,76 @@ $(document).ready(function() {
 	// Usage carousel
 	// 
 	// TODO:
-	// 1. Last <li> is active.
-	// 2. On click down script needs to prevent position change
-	// 3. On click up script needs to append position change,
-	//    and add active state to previous chile
+	// ✔ 1. Last <li> is active.  
+	// ✔ 2. On click down script needs to prevent position change
+	// ✔ 3. On click up script needs to append position change,
+	//      and add active state to previous chile
 	// 4. Result contains needs to reaveal + lazy line painter
 
-	// From Milan
-	//  var $object = $('.element');
-	//  var property = $('.element').height();  don't add $ sign to property variables.
 
-var items = $('.usage-carousel__item');
-var currentItem = items.filter('.is-active');
-var carouselPosition = $('.usage-carousel__list');
-
-
-$('#previous-slide').on('click', function() {
-		// $carouselPosition.
-    var previousItem = currentItem.prev();
 		
-		console.log(previousItem); //for debugging
-    
-    console.log(items.last().hasClass('is-active')); //for debugging
-    if ( items.first().hasClass('is-active') ) {
-    	return false;
-    }
+	var $searchTerm = $('.usage-carousel__item'),
+			$activeTerm = $searchTerm.filter('.is-active'),
+			$termList = $('.usage-carousel__list');
+
+	
+	// When user click on chevron up icon
+	$('#previous-slide').on('click', function() {
+
+	  var $previousTerm = $activeTerm.prev();
+		
+		// If first item is active item, don't translate search terms list, just tilt it
+	  if ( $searchTerm.first().hasClass('is-active') ) {
+	  	
+	  	// Add subtle tilt effect
+	  	$termList.addClass('js-tilt js-tilt--up');
+			setTimeout(function () { 
+			    $termList.removeClass('js-tilt js-tilt--up');
+			}, 300);
+
+			// Prevent search term list from moving up
+	  	return false;
+	  }
 
 
-    currentItem.removeClass('is-active');
-    carouselPosition.css({position:'absolute'}).animate({top: '+=90'});
+	  // Remove active state from the previous search term and position the list to the next search term.
+	  $activeTerm.removeClass('is-active');
+	  $termList.css({position:'absolute'}).animate({top: '+=90'});
 
-    if ( previousItem.length ) {
-      currentItem = previousItem.addClass('is-active');
-    }
+		// Add active state on next search term
+	  if ( $previousTerm.length ) {
+	    $activeTerm = $previousTerm.addClass('is-active');
+	  }
 
+	});
 
-});
+	// When user click on chevron down icon
+	$('#next-slide').on('click', function() {
 
-$('#next-slide').on('click', function() {
+	  var $nextTerm = $activeTerm.next();
 
-    var nextItem = currentItem.next();
+		// If last item is active item, don't translate search terms list, just tilt it
+	  if ( $searchTerm.last().hasClass('is-active') ) {
 
-		console.log(items.last().hasClass('is-active')); //for debugging
-    if ( items.last().hasClass('is-active') ) {
-    	return false;
-    }
+	  	// Add subtle tilt effect
+	  	$termList.addClass('js-tilt js-tilt--down');
+			setTimeout(function () { 
+			    $termList.removeClass('js-tilt js-tilt--down');
+			}, 300);
 
-    currentItem.removeClass('is-active');
-    carouselPosition.css({position:'absolute'}).animate({top: '-=90'});
-    if ( nextItem.length ) {
-      currentItem = nextItem.addClass('is-active');
-    }
-});
+			// Prevent search term list from moving down
+	  	return false;
+	  }
+
+	  // Remove active state from the previous search term and position the list to the next search term.
+	  $activeTerm.removeClass('is-active');
+	  $termList.css({position:'absolute'}).animate({top: '-=90'});
+	  
+		// Add active state on next search term
+	  if ( $nextTerm.length ) {
+	    $activeTerm = $nextTerm.addClass('is-active');
+	  }
+	});
 
 
   // ===========================================================================

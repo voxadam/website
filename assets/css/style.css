@@ -1744,11 +1744,12 @@ hr {
 .usage {
   position: relative;
   z-index: 5;
+  margin-bottom: 500px;
 }
 .usage-carousel__nav {
   zoom: 1;
   width: 100%;
-  max-width: 430px;
+  max-width: 400px;
   margin-top: 200px;
   margin-left: auto;
   margin-right: auto;
@@ -1761,6 +1762,9 @@ hr {
 }
 .usage-carousel__nav:after {
   clear: both;
+}
+.usage-carousel__nav:hover .usage-carousel__window:before {
+  opacity: .8;
 }
 .usage-carousel__controls {
   width: 30px;
@@ -1790,7 +1794,7 @@ hr {
 }
 .usage-carousel__window {
   width: 100%;
-  max-width: 380px;
+  max-width: 350px;
   height: 84px;
   background-color: #ffffff;
   position: relative;
@@ -1808,9 +1812,6 @@ hr {
   -webkit-transition: opacity 0.3s ease-in-out;
           transition: opacity 0.3s ease-in-out;
 }
-.usage-carousel__window:hover:before {
-  opacity: .8;
-}
 .usage-carousel__window .icon {
   width: 30px;
   height: 30px;
@@ -1825,7 +1826,19 @@ hr {
   position: absolute;
   left: 0;
   right: 0;
-  top: -160px;
+  top: -158px;
+}
+.usage-carousel__list.js-tilt {
+  -webkit-transition: all .3s ease;
+          transition: all .3s ease;
+}
+.usage-carousel__list.js-tilt--up {
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
+}
+.usage-carousel__list.js-tilt--down {
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
 }
 .usage-carousel__item {
   font-size: 28px;
@@ -3132,6 +3145,7 @@ hr {
 .button--outline:hover,
 .button--outline:focus {
   color: #f96315;
+  background-color: transparent;
 }
 .button--link {
   color: #f96315;

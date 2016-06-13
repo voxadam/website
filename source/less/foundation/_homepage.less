@@ -197,6 +197,10 @@
 .usage {
 	position: relative;
 	z-index: 5;
+
+
+	// test
+	margin-bottom: 500px;
 }
 
 .usage-carousel {
@@ -204,11 +208,19 @@
 	&__nav {
 		.clearfix();
 		width: 100%;
-		max-width: 430px;
+		max-width: 400px;
 		margin-top: 200px;
 		margin-left: auto;
 		margin-right: auto;
 		position: relative;
+		&:hover {
+
+			.usage-carousel__window {
+				&:before {
+					opacity: .8;
+				}
+			}
+		}
 	}
 
 	&__controls {
@@ -244,7 +256,7 @@
 
 	&__window {
 		width: 100%;
-		max-width: 380px;
+		max-width: 350px;
 		height: 84px;
 		background-color: @color-white;
 		position: relative;
@@ -259,12 +271,6 @@
 			border-radius: 5px;
 			box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 			transition: opacity 0.3s ease-in-out;
-		}
-
-	&:hover {
-			&:before {
-				opacity: .8;
-			}
 		}
 
 		.icon {
@@ -283,7 +289,19 @@
 		position: absolute;
 		left: 0;
 		right: 0;
-		top: -160px;
+		top: -158px;
+
+		&.js-tilt {
+			transition: all .3s ease;
+			
+			&--up {
+				transform: translateY(15px);
+			}
+
+			&--down {
+				transform: translateY(-15px);
+			}
+		}
 	}
 
 	&__item {
