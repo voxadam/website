@@ -93,7 +93,7 @@
             <h1 class="page-intro__title page-intro__title--blog">What is Dgraph and why it was created</h1>
           </header>
           <div class="page-intro__footer">
-            <div class="article-comment__count"><svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg><a href="http://localhost:9000/blog-article.html#disqus_thread" class="js-reveal-disqus"></a></div>
+            <div class="article-comment__count"><svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg><a href="http://localhost:9000/blog-article.html#disqus_thread" class="js-reveal-comments"></a></div>
             <div class="share">
               <ul class="share__list">
                 <li class="share__item"><a href="#" class="share__link">
@@ -220,21 +220,8 @@
             </ul>
           </div>
           <!-- /.article-category-->
-          <div id="article-comment" class="article-comment"><a href="http://localhost:9000/blog-article.html#disqus_thread" class="button article-comment__button js-reveal-disqus js-reveal-disqus--button"></a>
-            <div id="disqus_thread" class="article-comment__content is-hidden">
-              <script>
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                
-                s.src = '//skgamingtest.disqus.com/embed.js';
-                
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-                
-              </script>
-              <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus</a></noscript>
-            </div>
+          <div id="article-comment" class="article-comment"><a href="http://localhost:9000/blog-article.html#disqus_thread" class="button article-comment__button js-reveal-comments"></a>
+            <div id="disqus_thread"></div>
           </div>
           <!-- /.article-comment-->
         </div>

@@ -165,19 +165,19 @@ $('#next-slide').on('click', function() {
   //
   // Disqus comments section
 
-	$('.js-reveal-disqus').click(function (e) {
-		
-		// Reveal disquss comment section
-		$('#disqus_thread').removeClass('is-hidden');
-		
-		// Remove Show comments button
-		$('.js-reveal-disqus--button').hide();
+	$('.js-reveal-comments').on('click', function(){
+	  var disqus_shortname = 'skgamingtest'; // Replace this value with *your* username.
 
-		// Scroll to comment section
-		$('html, body').animate({
-        scrollTop: $("#disqus_thread").offset().top
-    }, 300);
-		e.preventDefault();
+	  // ajax request to load the disqus javascript
+	  $.ajax({
+      type: "GET",
+      url: "http://" + disqus_shortname + ".disqus.com/embed.js",
+      dataType: "script",
+      cache: true
+	  });
+	  
+	  // hide the button once comments load
+	  $('.article-comment__button').fadeOut();
 	});
 	
 }); // end document ready

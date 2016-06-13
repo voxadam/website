@@ -2431,9 +2431,6 @@ hr {
   top: 2px;
   margin-right: 5px;
 }
-.article-comment__content.is-hidden {
-  display: none;
-}
 .article-footer {
   padding: 60px 0 230px;
   background-color: #f9f7f6;
