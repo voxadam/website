@@ -163,12 +163,21 @@ $('#next-slide').on('click', function() {
 
   // ===========================================================================
   //
-  // Smooth scroll-to links
-	$('.js-scroll-to').click(function(e){
-	  $('html, body').animate({
-	      scrollTop: $( $.attr(this, 'href') ).offset().top
-	  }, 300);
-	  e.preventDefault();
+  // Disqus comments section
+
+	$('.js-reveal-disqus').click(function (e) {
+		
+		// Reveal disquss comment section
+		$('#disqus_thread').removeClass('is-hidden');
+		
+		// Remove Show comments button
+		$('.js-reveal-disqus--button').hide();
+
+		// Scroll to comment section
+		$('html, body').animate({
+        scrollTop: $("#disqus_thread").offset().top
+    }, 300);
+		e.preventDefault();
 	});
 	
 }); // end document ready

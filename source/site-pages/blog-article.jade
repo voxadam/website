@@ -23,7 +23,9 @@ block page-intro
 					h1.page-intro__title.page-intro__title--blog What is Dgraph and why it was created
 				
 				.page-intro__footer
-					a(href="#article-comment").article-comment__count.js-scroll-to <svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> 15 comments
+					.article-comment__count
+						<svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg>
+						a(href="http://localhost:9000/blog-article.html#disqus_thread").js-reveal-disqus
 
 					.share
 						ul.share__list
@@ -179,7 +181,20 @@ block page-content
 				// /.article-category
 				
 				#article-comment.article-comment
-					a(href="#").button.article-comment__button <svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> Show comments (12)
+					a(href="http://localhost:9000/blog-article.html#disqus_thread").button.article-comment__button.js-reveal-disqus.js-reveal-disqus--button
+					
+					#disqus_thread.article-comment__content.is-hidden
+						script.
+							(function() { // DON'T EDIT BELOW THIS LINE
+							var d = document, s = d.createElement('script');
+
+							s.src = '//skgamingtest.disqus.com/embed.js';
+
+							s.setAttribute('data-timestamp', +new Date());
+							(d.head || d.body).appendChild(s);
+							})();
+
+						noscript Please enable JavaScript to view the #[a(href="https://disqus.com/?ref_noscript" rel="nofollow") comments powered by Disqus]
 				
 				// /.article-comment
 
@@ -226,3 +241,7 @@ block additional-scripts
 	script(type="text/javascript", src="assets/js/unminified/vendor/highlight-js/highlight.pack.js")
 	script(type='text/javascript').
 		hljs.initHighlightingOnLoad();
+	
+	// Disqus comment count
+	// Info: https://help.disqus.com/customer/portal/articles/565624
+	script(id="dsq-count-scr" src="//skgamingtest.disqus.com/count.js" async)

@@ -273,6 +273,10 @@
 		&.button {
 			font-weight: @font-weight-bold;
 			padding: 15px 30px;
+			background-image: url('../images/png-icons/icon-comment.png');
+			background-repeat: no-repeat;
+			background-position: 15px center;
+			padding-left: 40px;
 		}
 
 		.icon {
@@ -291,8 +295,16 @@
 		top: 3px;
 
 		.icon {
+			fill: @color-brand-primary;
 			top: 2px;
-			margin-right: 3px;
+			margin-right: 5px;
+		}
+	}
+
+	&__content {
+
+		&.is-hidden {
+			display: none;
 		}
 	}
 }

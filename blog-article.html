@@ -92,7 +92,8 @@
             <div class="article__meta"><span class="article__meta-item article__date">25.04.2016 </span><span class="article__meta-item article__author">by Manish Jain</span></div>
             <h1 class="page-intro__title page-intro__title--blog">What is Dgraph and why it was created</h1>
           </header>
-          <div class="page-intro__footer"><a href="#article-comment" class="article-comment__count js-scroll-to"><svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> 15 comments</a>
+          <div class="page-intro__footer">
+            <div class="article-comment__count"><svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg><a href="http://localhost:9000/blog-article.html#disqus_thread" class="js-reveal-disqus"></a></div>
             <div class="share">
               <ul class="share__list">
                 <li class="share__item"><a href="#" class="share__link">
@@ -219,7 +220,22 @@
             </ul>
           </div>
           <!-- /.article-category-->
-          <div id="article-comment" class="article-comment"><a href="#" class="button article-comment__button"><svg class="icon"><use xlink:href="#icon-comment" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> Show comments (12)</a></div>
+          <div id="article-comment" class="article-comment"><a href="http://localhost:9000/blog-article.html#disqus_thread" class="button article-comment__button js-reveal-disqus js-reveal-disqus--button"></a>
+            <div id="disqus_thread" class="article-comment__content is-hidden">
+              <script>
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                
+                s.src = '//skgamingtest.disqus.com/embed.js';
+                
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus</a></noscript>
+            </div>
+          </div>
           <!-- /.article-comment-->
         </div>
       </div>
@@ -343,7 +359,13 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Highlight JS plugin for article page-->
   <script type="text/javascript" src="assets/js/unminified/vendor/highlight-js/highlight.pack.js"></script>
-  <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+    
+  </script>
+  <!-- Disqus comment count-->
+  <!-- Info: https://help.disqus.com/customer/portal/articles/565624-->
+  <script id="dsq-count-scr" src="//skgamingtest.disqus.com/count.js" async></script>
 
   <!-- Google Analytics-->
   <script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date; e=o.createElement(i);r=o.getElementsByTagName(i)[0]; e.src='//www.google-analytics.com/analytics.js'; r.parentNode.insertBefore(e,r)}(window,document,'script','ga')); ga('create','UA-XXXXX-X');ga('send','pageview');</script>

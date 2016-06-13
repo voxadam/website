@@ -1,17 +1,13 @@
 # 🆕 TODO List                                 [16 •]
-    ✔ Blog listing intro                        •••
-    ✔ Blog listing item                         • ◦ (1 manje) 
-    ✔ Pagination                                •• (1/2 drugog)  
-      + Category page
-    ✔ Article intro                              ••
-    ✔ Article content                            ••◆◆
-    ☐ Disquss integration and section            ◦◦
-    ✔ Article about section                      • ◦ (1 manje)
+    Article
+    ✔ Disquss and comments section              •
     
-
-    ☐ Polish use case section (css and js)      ◦◦      
-    ☐ SVG Lazy Line painter                     ◦◦◦◦    
-    ☐ Define variables
+    Homepage
+    ☐ Console section
+    ☐ Polish use case section (css and js)
+    ☐ SVG Lazy Line painter
+    ☐ Add canvas particles
+    ☐ Improve bolt graphic animation on hover state (on page load animate their movement)
 
 
 
@@ -22,9 +18,7 @@
 
 
 # 🕓 Later
-    ☐ Improve bolt graphic animation on hover state (on page load animate their movement)
-    ☐ Add canvas particles
-    ☐ Style console section (for next week)
+    ☐ Item number 1 
 
 
 
@@ -42,6 +36,14 @@
     ✔ About page                                •••◆◆
     ✔ Careers page                              •••
     ✔ Contact page                              •◦~~
+~~10.06.2016
+    ✔ Blog listing intro                        •••
+    ✔ Blog listing item                         • ◦ (1 manje) 
+    ✔ Pagination                                •• (1/2 drugog)  
+      + Category page
+    ✔ Article intro                              ••
+    ✔ Article content                            ••◆◆
+    ✔ Article about section                      • ◦ (1 manje)~~
 
 
 
