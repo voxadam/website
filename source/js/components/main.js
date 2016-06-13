@@ -88,65 +88,93 @@ $(document).ready(function() {
 
 		
 	var $searchTerm = $('.usage-carousel__item'),
-			$activeTerm = $searchTerm.filter('.is-active'),
-			$termList = $('.usage-carousel__list');
+			$activeSearchTerm = $searchTerm.filter('.is-active'),
+			$searchTermList = $('.usage-carousel__list'),
+			$result = $('.result__item'),
+			$activeResult = $('.result__item').filter('.is-active');
 
 	
 	// When user click on chevron up icon
 	$('#previous-slide').on('click', function() {
 
-	  var $previousTerm = $activeTerm.prev();
+	  var $previousSearchTerm = $activeSearchTerm.prev();
+	  var $previousResult = $activeResult.prev();
 		
 		// If first item is active item, don't translate search terms list, just tilt it
-	  if ( $searchTerm.first().hasClass('is-active') ) {
+	  if ($searchTerm.first().hasClass('is-active')) {
 	  	
-	  	// Add subtle tilt effect
-	  	$termList.addClass('js-tilt js-tilt--up');
+	  	// Add subtle tilt effect to seach term list
+	  	$searchTermList.addClass('js-tilt js-tilt--up');
 			setTimeout(function () { 
-			    $termList.removeClass('js-tilt js-tilt--up');
+			    $searchTermList.removeClass('js-tilt js-tilt--up');
 			}, 300);
 
 			// Prevent search term list from moving up
 	  	return false;
+
+	  }
+
+	  // If first result item is active item, don't do anything
+	  if ($result.first().hasClass('is-active')) {
+	  	return false;
 	  }
 
 
-	  // Remove active state from the previous search term and position the list to the next search term.
-	  $activeTerm.removeClass('is-active');
-	  $termList.css({position:'absolute'}).animate({top: '+=90'});
-
-		// Add active state on next search term
-	  if ( $previousTerm.length ) {
-	    $activeTerm = $previousTerm.addClass('is-active');
+	  // Remove active state from search term
+	  $activeSearchTerm.removeClass('is-active');
+	  // Remove active state from result item
+	  $activeResult.removeClass('is-active');
+	  // Position the list to the previous search term.
+	  $searchTermList.css({position:'absolute'}).animate({top: '+=90'});
+		// Add active state on previous search term
+	  if ( $previousSearchTerm.length ) {
+	    $activeSearchTerm = $previousSearchTerm.addClass('is-active');
 	  }
+		// Add active state on previous result item
+	  if ( $previousResult.length ) {
+	    $activeResult = $previousResult.addClass('is-active');
+	  }
+
 
 	});
 
 	// When user click on chevron down icon
 	$('#next-slide').on('click', function() {
 
-	  var $nextTerm = $activeTerm.next();
+	  var $nextSearchTerm = $activeSearchTerm.next();
+	  var $nextResult = $activeResult.next();
 
 		// If last item is active item, don't translate search terms list, just tilt it
-	  if ( $searchTerm.last().hasClass('is-active') ) {
+	  if ($searchTerm.last().hasClass('is-active')) {
 
-	  	// Add subtle tilt effect
-	  	$termList.addClass('js-tilt js-tilt--down');
+	  	// Add subtle tilt effect to seach term list
+	  	$searchTermList.addClass('js-tilt js-tilt--down');
 			setTimeout(function () { 
-			    $termList.removeClass('js-tilt js-tilt--down');
+			   $searchTermList.removeClass('js-tilt js-tilt--down');
 			}, 300);
 
 			// Prevent search term list from moving down
 	  	return false;
 	  }
 
-	  // Remove active state from the previous search term and position the list to the next search term.
-	  $activeTerm.removeClass('is-active');
-	  $termList.css({position:'absolute'}).animate({top: '-=90'});
-	  
+	  // If last result item is active item, don't do anything
+	  if ($result.last().hasClass('is-active')) {
+	  	return false;
+	  }
+
+	  // Remove active state from search term
+	  $activeSearchTerm.removeClass('is-active');
+	  // Remove active state from result item
+	  $activeResult.removeClass('is-active');
+	  // Position the list to the next search term.
+	  $searchTermList.css({position:'absolute'}).animate({top: '-=90'});
 		// Add active state on next search term
-	  if ( $nextTerm.length ) {
-	    $activeTerm = $nextTerm.addClass('is-active');
+	  if ($nextSearchTerm.length) {
+	    $activeSearchTerm = $nextSearchTerm.addClass('is-active');
+	  }
+	  // Add active state on next result item
+	  if ( $nextResult.length ) {
+	    $activeResult = $nextResult.addClass('is-active');
 	  }
 	});
 

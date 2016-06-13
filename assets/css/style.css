@@ -1744,16 +1744,16 @@ hr {
 .usage {
   position: relative;
   z-index: 5;
-  margin-bottom: 500px;
 }
 .usage-carousel__nav {
   zoom: 1;
   width: 100%;
   max-width: 400px;
-  margin-top: 200px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 .usage-carousel__nav:before,
 .usage-carousel__nav:after {
@@ -1765,6 +1765,21 @@ hr {
 }
 .usage-carousel__nav:hover .usage-carousel__window:before {
   opacity: .8;
+}
+.usage-carousel__nav:before,
+.usage-carousel__nav:after {
+  content: '';
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.usage-carousel__nav:before {
+  top: -70px;
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.5) 100%);
+  background: linear-gradient(rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.5) 100%);
 }
 .usage-carousel__controls {
   width: 30px;
@@ -1826,7 +1841,7 @@ hr {
   position: absolute;
   left: 0;
   right: 0;
-  top: -158px;
+  top: -58px;
 }
 .usage-carousel__list.js-tilt {
   -webkit-transition: all .3s ease;
@@ -1854,6 +1869,22 @@ hr {
 }
 .usage-carousel__item.is-active {
   color: #333333;
+}
+.result__list {
+  margin-bottom: 100px;
+  min-height: 550px;
+}
+.result__item {
+  display: none;
+}
+.result__item.is-active {
+  display: block;
+}
+.result__item img {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .bolt-image {
   position: relative;
@@ -1924,7 +1955,6 @@ hr {
   .member__figure,
   .member__description {
     float: left;
-    width: 50%;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -1932,21 +1962,28 @@ hr {
 .member__figure {
   text-align: center;
 }
+@media screen and (min-width: 550px) {
+  .member__figure {
+    width: 40%;
+  }
+}
 .member__image {
   border-radius: 50%;
   display: block;
   max-width: 100%;
   height: auto;
-}
-@media screen and (max-width: 550px) {
-  .member__image {
-    margin-left: auto;
-    margin-right: auto;
-  }
+  max-width: 136px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .member__description {
   font-size: 16px;
   font-size: 1rem;
+}
+@media screen and (min-width: 550px) {
+  .member__description {
+    width: 60%;
+  }
 }
 @media screen and (max-width: 550px) {
   .member__name,
@@ -1979,6 +2016,12 @@ hr {
 }
 .member__social {
   margin-top: 15px;
+}
+@media screen and (min-width: 989px) and (max-width: 1169px) {
+  .member__social .social__link {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
 }
 @media screen and (max-width: 550px) {
   .member__social {
@@ -3115,6 +3158,7 @@ hr {
 }
 .button--white:hover,
 .button--white:focus {
+  background-color: #ffffff;
   color: #d64d05;
 }
 .button--white:active {

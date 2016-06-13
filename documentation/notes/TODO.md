@@ -3,7 +3,7 @@
     ✔ Disquss and comments section              •
     
     Homepage
-    ☐ Polish use case section (css and js)      •◦
+    ✔ Polish use case section (css and js)      ••
     ☐ SVG Lazy Line painter                     ◦◦◦◦
 
 
