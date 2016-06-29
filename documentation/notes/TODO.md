@@ -1,10 +1,8 @@
 # 🆕 TODO List                                 [16 •]
-    Article
-    ✔ Disquss and comments section              •
-    
-    Homepage
-    ✔ Polish use case section (css and js)      ••
     ☐ SVG Lazy Line painter                     ◦◦◦◦
+    ☐ Add canvas particles                      ◦◦
+    ☐ Improve bolt graphic animation            ◦◦◦
+      (on page load animate their movement)
 
 
 
@@ -16,8 +14,6 @@
 
 # 🕓 Later
     ☐ Console section
-    ☐ Add canvas particles
-    ☐ Improve bolt graphic animation on hover state (on page load animate their movement)
 
 
 
@@ -43,7 +39,9 @@
     ✔ Article intro                              ••
     ✔ Article content                            ••◆◆
     ✔ Article about section                      • ◦ (1 manje)~~
-
+~~13.06.2016
+    ✔ Disquss and comments section              •
+    ✔ Polish use case section (css and js)      ••~~
 
 
 # 📎 Additional Notes
