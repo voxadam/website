@@ -59,6 +59,16 @@
 				padding: 0;
 			}
 		}
+
+
+		iframe {
+			position: relative;
+			top: 5px;
+			@media screen and (max-width: @desktop-breakpoint) {
+				top: 0;
+				margin: 15px 0 0;
+			}
+		}
 	}
 
 	&__item {
@@ -104,15 +114,14 @@
 		}
 				
 	}
+}
 
-	iframe {
-		position: relative;
-		top: 3px;
-		@media screen and (max-width: @desktop-breakpoint) {
-			top: 0;
-			margin: 15px 0 0;
-		}
+.github-star--mobile {
+	@media screen and (min-width: @desktop-breakpoint) {
+		display: none;
 	}
+			
+	text-align: right;
 }
 
 .is-visible {

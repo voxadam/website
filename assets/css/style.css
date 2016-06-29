@@ -3694,6 +3694,16 @@ img[data-src] {
     padding: 0;
   }
 }
+.page-nav__list iframe {
+  position: relative;
+  top: 5px;
+}
+@media screen and (max-width: 989px) {
+  .page-nav__list iframe {
+    top: 0;
+    margin: 15px 0 0;
+  }
+}
 .page-nav__item {
   margin: 0;
   padding: 0 10px;
@@ -3737,14 +3747,12 @@ img[data-src] {
     border: none;
   }
 }
-.page-nav iframe {
-  position: relative;
-  top: 3px;
+.github-star--mobile {
+  text-align: right;
 }
-@media screen and (max-width: 989px) {
-  .page-nav iframe {
-    top: 0;
-    margin: 15px 0 0;
+@media screen and (min-width: 989px) {
+  .github-star--mobile {
+    display: none;
   }
 }
 .is-visible {
