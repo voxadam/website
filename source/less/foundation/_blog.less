@@ -343,6 +343,20 @@
 		.font-size(18);
 	}
 
+	&__title {
+		.font-size(12);
+		font-weight: @font-weight-medium;
+		text-transform: uppercase;
+		letter-spacing: .03em;
+		color: @color-brand-secondary;
+		&:before {
+			content: '•';
+			color: @color-brand-secondary;
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+	}
+
 	&__social {
 		margin-top: 5px;
 		margin-bottom: 15px;

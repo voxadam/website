@@ -2533,6 +2533,20 @@ hr {
   font-size: 18px;
   font-size: 1.125rem;
 }
+.article-author__title {
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: #a4958c;
+}
+.article-author__title:before {
+  content: '•';
+  color: #a4958c;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 .article-author__social {
   margin-top: 5px;
   margin-bottom: 15px;
