@@ -142,11 +142,11 @@
 	}
 
 	&__list {
-		margin: 0;
+		margin: @spacing-small 0 0;
 		padding: 0;
 		.clearfix();
 		@media screen and (min-width: @tablet-breakpoint) {
-			margin: 0 -15px;
+			margin: @spacing-base -15px 0;
 		}
 	}
 
@@ -197,6 +197,11 @@
 .usage {
 	position: relative;
 	z-index: 5;
+
+	.section-header {
+		position: relative;
+		z-index: 6;
+	}
 }
 
 .usage-carousel {

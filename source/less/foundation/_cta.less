@@ -150,6 +150,12 @@
 			}
 		}
 
+		&--slack {
+			&:before {
+				background-image: url('../images/png-icons/icon-slack.png');
+			}
+		}
+
 		&--blog {
 			&:before {
 				background-image: url('../images/png-icons/icon-dgraph.png');
@@ -165,7 +171,8 @@
 
 	// Next up (About page CTA for Careers page)
 	&__next {
-		margin-top: @spacing-base;
+		margin-top: 50px;
+		backface-visibility: hidden;
 		@media screen and (min-width: @desktop-breakpoint) {
 			margin-left: 490px;
 			position: relative;
@@ -218,6 +225,7 @@
 		&:first-child {
 			padding-top: 0;
 		}
+
 		&:last-child {
 			border-bottom: 0;
 			padding-bottom: 0;
@@ -245,6 +253,12 @@
 
 	&--career {
 
+		.cta__next {
+			margin-top: 80px;
+			@media screen and (max-width: @desktop-breakpoint) {
+				margin-top: 50px;
+			}
+		}
 	}
 
 	&--contact {

@@ -140,19 +140,14 @@ block page-content
 							p Slightly longer subtitle explaining Dgraph download. Should span in a couple of rows. Slightly longer subtitle explaining Dgraph download. Should span in a couple of rows.
 							a(href="#").button.button--white.button--jumbo.cta__button Download Dgraph
 
-						.cta__more
-							h4.cta__title More information about Dgraph
-							ul.cta__more-list
-								li.cta__more-item
-									a(href="#").cta__more-link.cta__more-link--github GitHub
-								li.cta__more-item
-									a(href="#").cta__more-link.cta__more-link--gitter Gitter
-								li.cta__more-item
-									a(href="#").cta__more-link.cta__more-link--discourse Discourse
-								li.cta__more-item
-									a(href="#").cta__more-link.cta__more-link--blog Dgraph’s blog
-								li.cta__more-item
-									a(href="#").cta__more-link.cta__more-link--email Email us for more information
+						.cta__next
+							h4.cta__title.no-margin Next section:
+							h4.cta__title #[a(href="contact.html") Contact Us]
+							p Have a question? Feel free to reach us.
+							a(href="contact.html").link-arrow.cta__next-link
+								| Visit our Contact page
+								svg.icon
+										use(xlink:href="#icon-chevron-right" xmlns:xlink="http://www.w3.org/1999/xlink")
 
 	// /.cta
 
