@@ -9,6 +9,7 @@ $(document).ready(function() {
 		ieNotification.remove();
 	});
 
+
 	// ===========================================================================
 	//
 	// SVG Fallback for older browsers
@@ -37,33 +38,28 @@ $(document).ready(function() {
 		}
 	});
 
-
   
 
   // ===========================================================================
   //
 	// Image panning
+	// Homepage intro section
 
-	function screenSize(){
+	function screenSize() {
 		if ($(window).width() >= 990) {
 			panning();
 		}
 	}
 
-	function panning(){
+	function panning() {
 		$('body').mousemove(function (e) {
 			var mousePosX = (e.pageX / $(window).width()) * 100;
-			// var mousePosY = (e.pageY / $(window).width()) * 100;
 
-			// setTimeout( function() {
+			$('.bolt-image--top-front').css('left', (mousePosX / 30) + '%');
+			$('.bolt-image--top-back').css('right', (mousePosX / 60) + '%');
+			$('.bolt-image--bottom-front').css('left', (mousePosX / 30) + '%');
+			$('.bolt-image--bottom-back').css('left', (mousePosX / 60) + '%');
 
-				$('.bolt-image--top-front').css('left', (mousePosX / 30) + '%');
-				$('.bolt-image--top-back').css('right', (mousePosX / 60) + '%');
-				$('.bolt-image--bottom-front').css('left', (mousePosX / 30) + '%');
-				$('.bolt-image--bottom-back').css('left', (mousePosX / 60) + '%');
-
-			// },300);
-			
 		});
 	}
 
@@ -82,17 +78,13 @@ $(document).ready(function() {
 	// ✔ 1. Last <li> is active.  
 	// ✔ 2. On click down script needs to prevent position change
 	// ✔ 3. On click up script needs to append position change,
-	//      and add active state to previous chile
-	// 4. Result contains needs to reaveal + lazy line painter
-
-
+	//      and add active state to previous child
 		
 	var $searchTerm = $('.usage-carousel__item'),
 			$activeSearchTerm = $searchTerm.filter('.is-active'),
 			$searchTermList = $('.usage-carousel__list'),
 			$result = $('.result__item'),
 			$activeResult = $('.result__item').filter('.is-active');
-
 	
 	// When user click on chevron up icon
 	$('#previous-slide').on('click', function() {
@@ -119,7 +111,6 @@ $(document).ready(function() {
 	  	return false;
 	  }
 
-
 	  // Remove active state from search term
 	  $activeSearchTerm.removeClass('is-active');
 	  // Remove active state from result item
@@ -135,8 +126,8 @@ $(document).ready(function() {
 	    $activeResult = $previousResult.addClass('is-active');
 	  }
 
-
 	});
+
 
 	// When user click on chevron down icon
 	$('#next-slide').on('click', function() {
@@ -179,11 +170,9 @@ $(document).ready(function() {
 	});
 
 
-
   // ===========================================================================
   //
 	// Blog
-
 
   function closeGranular() {
     $('.js-granular-trigger').removeClass('is-active');
@@ -196,7 +185,7 @@ $(document).ready(function() {
 
 		if($(e.target).is('.is-active')) {
       closeGranular();
-    }else {
+    } else {
       closeGranular();
 
       // Add is-active class to dropdown
@@ -207,6 +196,7 @@ $(document).ready(function() {
 
 		e.preventDefault();
 	});
+
 
   // ===========================================================================
   //
