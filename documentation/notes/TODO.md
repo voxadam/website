@@ -1,6 +1,5 @@
 # 🆕 TODO List                                 [16 •]
-    ☐ Demo section
-    ☐ Feedback tweaks                           ◦
+    ☐ Demo section                              ?
     ☐ Add canvas particles                      ◦◦
 
 
@@ -18,7 +17,8 @@
 # 📁 Archived
 ~~05.07.2016
     ✗ SVG Lazy Line painter                 ◦◦◦◦
-    ✗ Improve bolt graphic animation        ◦◦◦~~
+    ✗ Improve bolt graphic animation        ◦◦◦
+    ✔ Feedback tweaks                       •• ~~
 ~~08.06.2016
     ✔ Page header                           ••
       - Page header alternate version

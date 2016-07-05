@@ -151,8 +151,7 @@ module.exports = function(grunt) {
             },
             files: [{
               src: [                                                                  // List of plugins which are used on this project, along with
-                'source/js/vendor/lazy-line-painter/jquery.lazylinepainter-1.7.0.js', // custom made javascript.
-                'source/js/components/main.js'                                        
+                'source/js/components/main.js'                                        // custom made javascript.
               ],
               dest: 'assets/js/script.min.js'
             }]
