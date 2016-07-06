@@ -1316,6 +1316,9 @@ a:active {
           transform: translateX(5px);
   fill: #d64d05;
 }
+.link-alias:hover {
+  cursor: alias;
+}
 b,
 strong {
   font-weight: 700;
@@ -3026,6 +3029,9 @@ hr {
 }
 .cta__more-link--email:before {
   background-image: url('../images/png-icons/icon-email.png');
+}
+.cta__more-link--wiki:before {
+  background-image: url('../images/png-icons/icon-wiki.png');
 }
 .cta__next {
   margin-top: 50px;
