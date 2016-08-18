@@ -1,0 +1,139 @@
+<!-- Start Demo section -->
+<div class="codepen from-bottom ng-cloak" ng-app="darthGraph" ng-controller="GraphMagic">
+
+    <ul class=querytabs>
+        <li ng-repeat='tab in examples' ng-click='activate($index)' class="{{tab.active ? 'active' : ''}}">
+            <button ng-click='activate($index)'>{{ tab.title}}</button>
+        </li>
+    </ul>
+
+    <div class=query>
+        <h2>graphql query</h2>
+        <div class="root-id">
+            Name:
+            <input type="text"
+                   ng-model="typeahead_root_id"
+                   uib-typeahead="x.name for x in fetch_kg($viewValue)" huy="| filter:$viewValue | limitTo:10"
+                   typeahead-editable="false"
+                   select-on-click
+                   />
+        </div>
+        <div ui-ace="{
+               useWrapMode : true,
+               showGutter: false,
+               theme:'tomorrow_night_eighties',
+               mode: 'javascript',
+               onLoad: queryEditorLoaded,
+               require: ['ace/ext/language_tools'],
+               advanced: {
+                   enableSnippets: false,
+                   enableBasicAutocompletion: true,
+                   enableLiveAutocompletion: true
+               },
+             }"
+             ng-model="active_tab.code" class=editor></div>
+        <div class=float>
+            <!-- <button class="positive">Run Query</button> -->
+            <button ng-click="reset_example_code()" class="danger" ng-class="{hidden: active_tab.code == active_tab.sample_code}">Undo Changes</button>
+        </div>
+    </div>
+
+    <div class=result>
+        <span class='spinner' ng-show="isNetPending()">
+            <i class="fa fa-spinner icon-myspin"></i>
+            Processing...
+        </span>
+        <table class="latencycontainer" ng-hide="isNetPending()">
+            <tr class="entities">
+                <td>Entities found</td>
+                <td>:</td>
+                <td>{{latency_data.entity_count}}</td>
+            </tr>
+            <tr class="total">
+                <td>Server latency</td>
+                <td>:</td>
+                <td>{{ latency_data.total }}</td>
+            </tr>
+            <tr>
+                <td class="processing">Processing</td>
+                <td>:</td>
+                <td>{{latency_data.processing}}</td>
+            </tr>
+            <tr>
+                <td class="jsongen">JSON Conversion</td>
+                <td>:</td>
+                <td>{{latency_data.json}}</td>
+            </tr>
+        </table>
+        <div class="tabcontainer">
+            <h2 class="resulttab"
+                ng-class="{active: result_json}"
+                ng-click="result_json=true">
+                json
+            </h2>
+            <h2 class="resulttab"
+                ng-class="{active:!result_json}"
+                ng-click="result_json=false">
+                tree
+            </h2>
+        </div>
+        <div ui-ace="{
+                useWrapMode : true,
+                showGutter: false,
+                readOnly: true,
+                theme:'tomorrow_night_eighties',
+                mode: 'javascript',
+                onLoad: responseEditorLoaded,
+             }"
+             readonly
+             ng-model="json_result"
+             ng-show="result_json"
+             class=editor></div>
+        <div class="tree" ng-if="!result_json">
+            <tree obj="query_result" expanded="true"></tree>
+            <div ng-if="!query_result">query result is not available</div>
+        </div>
+        <div ng-if="had_network_error" style="color:#f2777a">Error talking to server</div>
+    </div>
+
+    <script type="text/ng-template" id="tree_node.html">
+        <div ng-if="obj" class="treenode">
+            <div class="title" ng-click="expanded=!expanded">
+                {{summary.title}}
+            </div>
+            <div ng-if="expanded" ng-repeat="field in fields" class="field">
+                <div class="key">{{field.key}}</div>
+                <div class="atomvalue"> {{field.value}}</div>
+                <div class="objvalue">
+                    <tree ng-if="field.subobj" obj="field.subobj" expanded="false"></tree>
+                    <div ng-if="field.array">
+                        <div class="arraysummary"
+                             ng-if="!field.expanded"
+                             ng-click="field.expanded=true">
+                            <i class="fa fa-plus-circle"></i>
+                            {{field.array.length}} item{{field.array.length!=1?'s':''}}
+                        </div>
+                        <div ng-if="field.expanded">
+                            <div class="arrayoutline" ng-click="field.expanded=false">
+                                <i class="fa fa-minus-circle"></i>
+                                {{field.array.length}} item{{field.array.length!=1?'s':''}}
+                            </div>
+                            <table>
+                                <tr ng-repeat="el in field.array track by el._uid_">
+                                    <td>{{$index}}&nbsp;</td>
+                                    <td>
+                                        <tree
+                                              ng-class-odd='"odd"'
+                                              obj="el"
+                                              expanded="false"></tree>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</div> <!-- /codepen -->
+<!-- End Demo section -->
