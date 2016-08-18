@@ -37,6 +37,10 @@ head
 	= '\n'	
 	//css
 	link(href="assets/css/style.css", rel="stylesheet" type="text/css")
+	
+	//- Page specific styles (in case CSS only needs to be loaded for e.g. on one page)
+	block additional-styles
+
 
 	= '\n'	
 	//modernizr
