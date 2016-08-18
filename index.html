@@ -41,6 +41,12 @@
 
   <!--css-->
   <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  <!-- CSS styles for Demo section-->
+  <link rel="stylesheet" href="assets/css/demo-section/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/demo-section/color-red-medium.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/demo-section/html5-boilerplate-main.css">
+  <link rel="stylesheet" href="assets/css/demo-section/main.css">
+  <!-- End CSS styles for Demo section-->
 
   <!--modernizr-->
   <script type="text/javascript" src="assets/js/modernizr.min.js"></script>
@@ -119,7 +125,145 @@
               <div class="demo-console">
                 <header class="demo-console__header">
                   <h5 class="demo-console__title">Play with 21M facts from <a href="#">Freebase Film Data</a> loaded up on demo Dgraph instance, via GraphQL in real time.	</h5>
-                </header><img src="assets/images/homepage/demo-placeholder.png" alt="FPO" class="demo-console__screenshot">
+                </header><img src="assets/images/homepage/demo-placeholder.png" alt="FPO" class="demo-console__screenshot"><!-- Start Demo section -->
+<div class="codepen from-bottom ng-cloak" ng-app="darthGraph" ng-controller="GraphMagic">
+
+    <ul class=querytabs>
+        <li ng-repeat='tab in examples' ng-click='activate($index)' class="{{tab.active ? 'active' : ''}}">
+            <button ng-click='activate($index)'>{{ tab.title}}</button>
+        </li>
+    </ul>
+
+    <div class=query>
+        <h2>graphql query</h2>
+        <div class="root-id">
+            Name:
+            <input type="text"
+                   ng-model="typeahead_root_id"
+                   uib-typeahead="x.name for x in fetch_kg($viewValue)" huy="| filter:$viewValue | limitTo:10"
+                   typeahead-editable="false"
+                   select-on-click
+                   />
+        </div>
+        <div ui-ace="{
+               useWrapMode : true,
+               showGutter: false,
+               theme:'tomorrow_night_eighties',
+               mode: 'javascript',
+               onLoad: queryEditorLoaded,
+               require: ['ace/ext/language_tools'],
+               advanced: {
+                   enableSnippets: false,
+                   enableBasicAutocompletion: true,
+                   enableLiveAutocompletion: true
+               },
+             }"
+             ng-model="active_tab.code" class=editor></div>
+        <div class=float>
+            <!-- <button class="positive">Run Query</button> -->
+            <button ng-click="reset_example_code()" class="danger" ng-class="{hidden: active_tab.code == active_tab.sample_code}">Undo Changes</button>
+        </div>
+    </div>
+
+    <div class=result>
+        <span class='spinner' ng-show="isNetPending()">
+            <i class="fa fa-spinner icon-myspin"></i>
+            Processing...
+        </span>
+        <table class="latencycontainer" ng-hide="isNetPending()">
+            <tr class="entities">
+                <td>Entities found</td>
+                <td>:</td>
+                <td>{{latency_data.entity_count}}</td>
+            </tr>
+            <tr class="total">
+                <td>Server latency</td>
+                <td>:</td>
+                <td>{{ latency_data.total }}</td>
+            </tr>
+            <tr>
+                <td class="processing">Processing</td>
+                <td>:</td>
+                <td>{{latency_data.processing}}</td>
+            </tr>
+            <tr>
+                <td class="jsongen">JSON Conversion</td>
+                <td>:</td>
+                <td>{{latency_data.json}}</td>
+            </tr>
+        </table>
+        <div class="tabcontainer">
+            <h2 class="resulttab"
+                ng-class="{active: result_json}"
+                ng-click="result_json=true">
+                json
+            </h2>
+            <h2 class="resulttab"
+                ng-class="{active:!result_json}"
+                ng-click="result_json=false">
+                tree
+            </h2>
+        </div>
+        <div ui-ace="{
+                useWrapMode : true,
+                showGutter: false,
+                readOnly: true,
+                theme:'tomorrow_night_eighties',
+                mode: 'javascript',
+                onLoad: responseEditorLoaded,
+             }"
+             readonly
+             ng-model="json_result"
+             ng-show="result_json"
+             class=editor></div>
+        <div class="tree" ng-if="!result_json">
+            <tree obj="query_result" expanded="true"></tree>
+            <div ng-if="!query_result">query result is not available</div>
+        </div>
+        <div ng-if="had_network_error" style="color:#f2777a">Error talking to server</div>
+    </div>
+
+    <script type="text/ng-template" id="tree_node.html">
+        <div ng-if="obj" class="treenode">
+            <div class="title" ng-click="expanded=!expanded">
+                {{summary.title}}
+            </div>
+            <div ng-if="expanded" ng-repeat="field in fields" class="field">
+                <div class="key">{{field.key}}</div>
+                <div class="atomvalue"> {{field.value}}</div>
+                <div class="objvalue">
+                    <tree ng-if="field.subobj" obj="field.subobj" expanded="false"></tree>
+                    <div ng-if="field.array">
+                        <div class="arraysummary"
+                             ng-if="!field.expanded"
+                             ng-click="field.expanded=true">
+                            <i class="fa fa-plus-circle"></i>
+                            {{field.array.length}} item{{field.array.length!=1?'s':''}}
+                        </div>
+                        <div ng-if="field.expanded">
+                            <div class="arrayoutline" ng-click="field.expanded=false">
+                                <i class="fa fa-minus-circle"></i>
+                                {{field.array.length}} item{{field.array.length!=1?'s':''}}
+                            </div>
+                            <table>
+                                <tr ng-repeat="el in field.array track by el._uid_">
+                                    <td>{{$index}}&nbsp;</td>
+                                    <td>
+                                        <tree
+                                              ng-class-odd='"odd"'
+                                              obj="el"
+                                              expanded="false"></tree>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</div> <!-- /codepen -->
+<!-- End Demo section -->
               </div>
               <!-- /.demo-console-->
               <div class="dg-features">
@@ -308,6 +452,15 @@
   <script type="text/javascript" src="assets/js/script.min.js"></script>
   <!-- GitHub star button-->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- JavaScript files for Demo section-->
+  <script src="assets/js/demo-section/angular/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.2/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.2/ext-language_tools.js"></script>
+  <script src="assets/js/demo-section/angular-ui-ace/ui-ace.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
+  <script src="assets/js/demo-section/typeahead.js"></script>
+  <script src="assets/js/demo-section/app.js"></script>
+  <script type="text/javascript" src="assets/js/demo-section/jquery.appear.js"></script>
 
   <!-- Google Analytics-->
   <script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date; e=o.createElement(i);r=o.getElementsByTagName(i)[0]; e.src='//www.google-analytics.com/analytics.js'; r.parentNode.insertBefore(e,r)}(window,document,'script','ga')); ga('create','UA-XXXXX-X');ga('send','pageview');</script>

@@ -11,7 +11,12 @@ append page-config
 
 //- Begin
 block additional-styles
-	//- page specific CSS styles
+	// CSS styles for Demo section
+	link(rel="stylesheet" href="assets/css/demo-section/bootstrap.css" type="text/css")
+	link(rel="stylesheet" href="assets/css/demo-section/color-red-medium.css" type="text/css")
+	link(rel="stylesheet" href="assets/css/demo-section/html5-boilerplate-main.css")
+	link(rel="stylesheet" href="assets/css/demo-section/main.css")
+	// End CSS styles for Demo section
 
 block partials
 	//- include partials/modals/modal
@@ -47,6 +52,9 @@ block page-content
 							header.demo-console__header
 								h5.demo-console__title Play with 21M facts from <a href="#">Freebase Film Data</a> loaded up on demo Dgraph instance, via GraphQL in real time.	
 							img(src="assets/images/homepage/demo-placeholder.png", alt="FPO").demo-console__screenshot
+
+							include partials/demo-section/demo.html
+
 						// /.demo-console
 
 						.dg-features
@@ -146,4 +154,13 @@ block page-content
 	// /.cta
 
 block additional-scripts
-	//- include partials/path/to/additional/script.js
+	// JavaScript files for Demo section
+
+	script(src="assets/js/demo-section/angular/angular.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.2/ace.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.2/ext-language_tools.js")
+	script(src="assets/js/demo-section/angular-ui-ace/ui-ace.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js")
+	script(src="assets/js/demo-section/typeahead.js")
+	script(src="assets/js/demo-section/app.js")
+	script(type="text/javascript" src="assets/js/demo-section/jquery.appear.js")
