@@ -1,7 +1,9 @@
 # 🆕 TODO List                                 [16 •]
-    ☐ Demo section                              ?
-    ☐ Add canvas particles                      ◦◦
-
+    ☐ Adapt demo section                        ◦◦
+    ☐ Style demo section (isparcati)
+    ☐ Modify CSS styles from demo folder
+    ☐ Add JavaScript files from demo folder
+    ☐ Add HTML structure from demo folder
 
 
 # ❔ Questions
@@ -10,8 +12,8 @@
 
 
 # 🕓 Later
-    ☐ Console section
-
+    ☐ Demo section                              ?
+    ☐ Add canvas particles                      ◦◦
 
 
 # 📁 Archived
