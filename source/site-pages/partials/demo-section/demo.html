@@ -5,13 +5,16 @@
         <li ng-repeat='tab in examples' ng-click='activate($index)' class="{{tab.active ? 'active' : ''}}">
             <button ng-click='activate($index)'>{{ tab.title}}</button>
         </li>
+
+        <span class="powered-badge">Powered by Dgraph</span>
     </ul>
 
     <div class=query>
-        <h2>graphql query</h2>
+        <h2>QGaphql Query</h2>
         <div class="root-id">
-            Name:
+            <span class="search-label">Name:</span>
             <input type="text"
+                   placeholder="Searh term (e.g. Big Lebowski)"
                    ng-model="typeahead_root_id"
                    uib-typeahead="x.name for x in fetch_kg($viewValue)" huy="| filter:$viewValue | limitTo:10"
                    typeahead-editable="false"
