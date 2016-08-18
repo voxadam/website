@@ -15,6 +15,7 @@
 	  position: absolute;
 	  top: 100%;
 	  left: 0;
+	  max-width: 380px;
 	  z-index: 1000;
 	  display: none;
 	  float: left;
@@ -54,16 +55,16 @@
 	}
 	.dropdown-menu > li > a:hover,
 	.dropdown-menu > li > a:focus {
-	  color: #262626;
+	  color: #fff;
 	  text-decoration: none;
-	  background-color: #f5f5f5;
+	  background-color: #00aeef;
 	}
 	.dropdown-menu > .active > a,
 	.dropdown-menu > .active > a:hover,
 	.dropdown-menu > .active > a:focus {
 	  color: #fff;
 	  text-decoration: none;
-	  background-color: #337ab7;
+	  background-color: #00aeef;
 	  outline: 0;
 	}
 	.dropdown-menu > .disabled > a,
@@ -155,12 +156,11 @@
 // Main.css styles
 
 	.codepen {
-	  border: 1px solid #222;
-	  background-color: #2d2d2d;
+	  border: 1px solid #f5f5f5;
+	  background-color: #f5f5f5;
 	  border-radius: 2px;
-	  box-shadow: 0px 0px 2px 2px rgba(48, 48, 48, 0.5);
 	  color: #999;
-	  font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
+	  font-family: @font-family-monospace;
 	  display: flex;
 	  flex-direction: row;
 	  margin-bottom: 24px;
@@ -173,33 +173,73 @@
 	  border: none;
 	  color: inherit;
 	  cursor: pointer;
-	  font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
+	  // font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
 	  margin: 0;
 	  padding: 0;
-	  font-size: 12px;
+	  font-size: 15px;
 	  outline: none;
 	}
 	.codepen ul.querytabs {
 	  list-style: none;
 	  width: 180px;
 	  margin: 0;
-	  padding: 20px 0 20px 10px;
+	  padding: 20px 0 20px 0;
 	  display: table-cell;
-	  background-color: #272727;
-	  border-right: 4px solid #222;
+	  background-color: #f5f5f5;
+		position: relative;
 	}
 	.codepen ul.querytabs li {
-	  margin: 4px 0;
-	  height: 24px;
-	  line-height: 24px;
-	  padding: 0 4px;
-	  border-radius: 6px 0 0 6px;
+		line-height: 1;
+	  padding: 8px 0 8px 15px;
 	  cursor: pointer;
 	  transition: background-color 0.2s;
+	  margin-bottom: 0;
+	  &:hover {
+	  	background-color: #ebebeb;
+	  }
+
+	  button {
+	  	font-size: 13px;
+		  font-family: @font-family-primary;
+	  	font-weight: @font-weight-extra-bold;
+	  	letter-spacing: .04em;
+			text-transform: uppercase;
+			color: #666;
+	  }
 	}
 	.codepen ul.querytabs li.active {
-	  background: #393939;
+	  background: #00aeef;
+	  color: #fff;
+
+	  button {
+	  	color: #fff;
+	  }
 	}
+
+	.powered-badge {
+		position: absolute;
+		bottom: 15px;
+		left: 10px;
+		font-size: 13px;
+	  font-family: @font-family-primary;
+  	font-weight: @font-weight-medium;
+		color: #bbbbbb;
+		padding-left: 28px;
+		letter-spacing: 0;
+		&:before {
+			background-image: url('../images/png-icons/icon-dgraph.png');
+			content: '';
+			position: absolute;
+			top: -3px;
+			left: 0;
+			width: 22px;
+			height: 22px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+	}
+
 	.codepen .query,
 	.codepen .result {
 	  display: flex;
@@ -207,18 +247,28 @@
 	  max-height: 75vh;
 	  overflow-x: hidden;
 	  overflow-y: auto;
-	  background-color: #2d2d2d;
+	  background-color: #fafafa;
 	  flex: 1;
 	  flex-direction: column;
 	  position: relative;
 	}
-	.codepen .query h2,
-	.codepen .result h2 {
-	  font-size: 16px;
-	  font-variant: small-caps;
-	  font-weight: bold;
-	  padding-bottom: 2px;
+	.codepen .query h2 {
+		margin: 15px 0;
+		color: #555555;
 	}
+
+	.codepen .query h2 {
+		font-family: @font-family-primary;
+		font-weight: @font-weight-regular;
+	  font-size: 24px;
+	}
+
+	.codepen .result h2 {
+		padding: 8px 12px;
+		font-family: @font-family-primary;
+		font-weight: @font-weight-semi-bold;
+	}
+
 	.codepen .query .float,
 	.codepen .result .float {
 	  position: absolute;
@@ -228,18 +278,25 @@
 	}
 	.codepen .query .float button,
 	.codepen .result .float button {
-	  background-color: #999999;
 	  border-radius: 4px;
 	  color: #2d2d2d;
 	  opacity: 0.9;
-	  padding: 2px 4px;
+	  padding: 4px 8px;
 	  font-size: 12px;
 	  margin-right: 0px;
+	  text-transform: uppercase;
+	  letter-spacing: .05em;
+	  font-family: @font-family-primary;
+	  font-weight: @font-weight-bold;
 	}
 	.codepen .query .float button.danger,
 	.codepen .result .float button.danger {
-	  background-color: #f99157;
-	  color: #cccccc;
+	  background-color: @color-alert;
+	  color: #fff;
+	  transition: all .2s ease-in-out;
+	  &:hover {
+	  	background-color: darken(@color-alert, 10%);
+	  }
 	}
 	.codepen .query .float button.positive,
 	.codepen .result .float button.positive {
@@ -249,31 +306,41 @@
 	.codepen .editor {
 	  display: table-cell;
 	  flex: 1;
-	  margin-left: 14px;
+		margin-left: 10px;
+		margin-top: 10px;
 	}
 	.codepen .query {
-	  margin-right: 20px;
-	  margin-left: 6px;
-	}
-	.codepen .query h2 {
-	  margin-bottom: 0;
+	  box-shadow: -8px 0px 8px rgba(0, 0, 0, 0.05);
+	  border-right: 8px solid #e0e0e0;
 	}
 	.codepen .query .root-id {
 	  font-size: 14px;
 	  line-height: 14px;
 	  display: flex;
-	  margin: 6px 0;
+		padding: 15px;
+		position: relative;
 	}
 	.codepen .query .root-id input {
-	  background-color: #ccc;
-	  border-radius: 4px;
+	  background-color: #fff;
+	  border-radius: 3px;
 	  flex: 1;
 	  width: 120px;
-	  height: 16px;
-	  font-size: 12px;
-	  line-height: 16px;
+	  height: 40px;
+	  font-size: 16px;
+	  line-height: 36px;
 	  margin: 0 8px;
 	  padding: 0 4px;
+	  outline: none;
+	  border: 2px solid #ccc;
+	  transition: all .2s ease-in-out;
+	  &:active,
+	  &:focus {
+	  	border-color: #00aeef;
+	  }
+	}
+	.search-label {
+		position: relative;
+		top: 11px;
 	}
 	.codepen .query .root-id ul.dropdown-menu li a {
 	  font-size: 14px;
@@ -282,18 +349,32 @@
 	}
 	.codepen .result {
 	  font-size: 12px;
+	  padding-left: 10px;
+	  padding-right: 10px;
+		
+		table {
+			width: auto;
+		}
+		td {
+			font-size: 13px;
+			padding: 0;
+			border: 0;
+		}
 	}
 	.codepen .result .spinner {
 	  color: #f99157;
 	  margin-bottom: 4px;
 	}
 	.codepen .result .latencycontainer {
+		width: auto;
+	}
+	.codepen .result .latencycontainer {
 	  z-index: 1;
 	  padding: 2px 16px;
-	  margin-bottom: 2px;
+	  margin-bottom: 15px;
 	}
-	.codepen .result .latencycontainer tr.total,
-	.codepen .result .latencycontainer tr.entities {
+	.codepen .result .latencycontainer tr.total td,
+	.codepen .result .latencycontainer tr.entities td {
 	  color: #f99157;
 	}
 	.codepen .result .latencycontainer td:first-child {
@@ -302,7 +383,7 @@
 	.codepen .result .latencycontainer td:last-child {
 	  text-align: right;
 	}
-	@media (max-width: 700px) {
+	@media (max-width: 768px) {
 	  .codepen {
 	    flex-direction: column;
 	  }
@@ -318,9 +399,10 @@
 	    flex: 1;
 	    float: left;
 	    padding: 4px;
+	    margin-bottom: 0;
 	  }
 	  .codepen ul.querytabs li.active {
-	    border-radius: 6px;
+	    border-radius: 3px;
 	  }
 	  .codepen .query {
 	    min-height: 30vh;
@@ -334,57 +416,73 @@
 	}
 	.codepen .tabcontainer {
 	  margin: 0 0 6px -2px;
-	  border-top: 1px dotted #444;
-	  border-bottom: 1px solid #999;
-	  padding-top: 8px;
+    border-bottom: 2px solid #00aeef;
 	}
 	.codepen .resulttab {
-	  border: 1px solid #777;
+		font-family: @font-family-monospace;
+	  border: 2px solid #ccc;
 	  border-bottom: none;
 	  color: #777;
 	  cursor: pointer;
 	  display: block;
 	  float: left;
 	  margin: 0 2px;
-	  width: 45px;
 	  text-align: center;
 	  border-radius: 4px 4px 0 0;
 	  padding: 0 2px 1px;
 	  transition: all 0.1s;
+	  font-size: 15px;
 	}
+	  // border: 1px dotted #00aeef;
+
 	.codepen .resulttab.active {
-	  border-color: #999;
-	  color: #999;
-	  border-bottom: 1px solid #2d2d2d;
-	  margin-bottom: -1px;
+	  border-color: #00aeef;
+	  color: #00aeef;
+	  margin-bottom: -2px;
+	  border-bottom: 2px solid #fafafa;
 	}
 	.codepen .treenode {
-	  border: 1px solid #999;
-	  margin-right: 4px;
-	  color: #ccc;
+	  border: 1px solid #ccc;
+	  border-radius: 2px;
+	  color: #999;
 	}
 	.codepen .treenode .title {
-	  background-color: #393939;
-	  color: #fff;
-	  padding: 0 4px 1px;
-	  margin-bottom: 1px;
+		font-weight: @font-weight-medium;
+	  background-color: #fff;
+	  color: #00aeef;
+	  padding: 5px;
+	  transition: all .2s ease-in-out;
+	  &:hover {
+	  	background-color: #00aeef;
+	  	color: #fff;
+	  }
 	}
 	.codepen .treenode .value {
 	  margin-left: 16px;
 	}
 	.codepen .treenode .key {
-	  color: #99cc99;
+	  color: green;
 	}
 	.codepen .treenode .field {
-	  margin: 0 4px;
+	  margin: 4px;
 	  border-bottom: 1px dotted #666;
 	}
 	.codepen .treenode .arrayoutline {
 	  color: #999;
 	}
 	.codepen .treenode .arraysummary:hover {
-	  text-decoration: underline;
+	  text-decoration: underline !important;
 	}
 	.codepen .treenode [ng-click] {
 	  cursor: pointer;
+	}
+
+
+	// Custom style overrides
+	.ace-tomorrow {
+		background: none !important;
+	}
+
+	.ace_content {
+		font-size: 13px;
 	}

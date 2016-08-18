@@ -1,9 +1,15 @@
 # 🆕 TODO List                                 [16 •]
-    ☐ Adapt demo section                        ◦◦
-    ☐ Style demo section (isparcati)
-    ☐ Modify CSS styles from demo folder
-    ☐ Add JavaScript files from demo folder
-    ☐ Add HTML structure from demo folder
+    ✔ Implment demo section from GitHub repo    ••
+      + Add CSS files from demo folder
+      + Add JavaScript files from demo folder
+      + Add HTML structure from demo folder
+    ✔ Modify CSS styles according to mockups
+      + Remove unnecessary CSS styles
+      + Adapt new CSS styles
+    ✔ Add icon fonts
+    ☐ Modify Search header
+    ☐ Optimise console for mobile devices
+    ☐ Cleanup
 
 
 # ❔ Questions
@@ -12,8 +18,8 @@
 
 
 # 🕓 Later
-    ☐ Demo section                              ?
-    ☐ Add canvas particles                      ◦◦
+    ✗ Add canvas particles                      ◦◦
+    ☐ Dodati u README.md informacije u vezi sa unminified folderom, kao i načinom na koji je demo sekcija implementirana (svi demo folderi nisu kompajlirani, jedino je CSS generisan iz LESS-a)
 
 
 # 📁 Archived
