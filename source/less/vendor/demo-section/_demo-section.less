@@ -1,0 +1,390 @@
+/* ===========================================
+ * Demo section styling
+ * Source: https://github.com/adishap/demoDgraph
+ *
+ *  Styles borrowed from these files:
+ * 	1. bootstrap.css
+ * 	2. color-red-medium.css
+ * 	3. html5-boilerplate/.../main.css
+ * 	4. main.css
+ * 	
+ * =========================================== */
+
+// Bootstrap styles
+	.dropdown-menu {
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	  z-index: 1000;
+	  display: none;
+	  float: left;
+	  min-width: 160px;
+	  padding: 5px 0;
+	  margin: 2px 0 0;
+	  font-size: 14px;
+	  text-align: left;
+	  list-style: none;
+	  background-color: #fff;
+	  -webkit-background-clip: padding-box;
+	          background-clip: padding-box;
+	  border: 1px solid #ccc;
+	  border: 1px solid rgba(0, 0, 0, .15);
+	  border-radius: 4px;
+	  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+	          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+	}
+	.dropdown-menu.pull-right {
+	  right: 0;
+	  left: auto;
+	}
+	.dropdown-menu .divider {
+	  height: 1px;
+	  margin: 9px 0;
+	  overflow: hidden;
+	  background-color: #e5e5e5;
+	}
+	.dropdown-menu > li > a {
+	  display: block;
+	  padding: 3px 20px;
+	  clear: both;
+	  font-weight: normal;
+	  line-height: 1.42857143;
+	  color: #333;
+	  white-space: nowrap;
+	}
+	.dropdown-menu > li > a:hover,
+	.dropdown-menu > li > a:focus {
+	  color: #262626;
+	  text-decoration: none;
+	  background-color: #f5f5f5;
+	}
+	.dropdown-menu > .active > a,
+	.dropdown-menu > .active > a:hover,
+	.dropdown-menu > .active > a:focus {
+	  color: #fff;
+	  text-decoration: none;
+	  background-color: #337ab7;
+	  outline: 0;
+	}
+	.dropdown-menu > .disabled > a,
+	.dropdown-menu > .disabled > a:hover,
+	.dropdown-menu > .disabled > a:focus {
+	  color: #777;
+	}
+	.dropdown-menu > .disabled > a:hover,
+	.dropdown-menu > .disabled > a:focus {
+	  text-decoration: none;
+	  cursor: not-allowed;
+	  background-color: transparent;
+	  background-image: none;
+	  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	}
+	.open > .dropdown-menu {
+	  display: block;
+	}
+	.open > a {
+	  outline: 0;
+	}
+	.dropdown-menu-right {
+	  right: 0;
+	  left: auto;
+	}
+	.dropdown-menu-left {
+	  right: auto;
+	  left: 0;
+	}
+	.dropdown-header {
+	  display: block;
+	  padding: 3px 20px;
+	  font-size: 12px;
+	  line-height: 1.42857143;
+	  color: #777;
+	  white-space: nowrap;
+	}
+	.dropdown-backdrop {
+	  position: fixed;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  z-index: 990;
+	}
+	.pull-right > .dropdown-menu {
+	  right: 0;
+	  left: auto;
+	}
+	.dropup .caret,
+	.navbar-fixed-bottom .dropdown .caret {
+	  content: "";
+	  border-top: 0;
+	  border-bottom: 4px dashed;
+	  border-bottom: 4px solid \9;
+	}
+	.dropup .dropdown-menu,
+	.navbar-fixed-bottom .dropdown .dropdown-menu {
+	  top: auto;
+	  bottom: 100%;
+	  margin-bottom: 2px;
+	}
+	@media (min-width: 768px) {
+	  .navbar-right .dropdown-menu {
+	    right: 0;
+	    left: auto;
+	  }
+	  .navbar-right .dropdown-menu-left {
+	    right: auto;
+	    left: 0;
+	  }
+	}
+
+
+
+// Color-red-medium styles
+	.dropdown-menu {
+	  -moz-border-radius: 0;
+	  -webkit-border-radius: 0;
+	  border-radius: 0;
+	  border: none;
+	  padding: 0;
+	}
+	.dropdown-menu > li > a {
+	  padding: 10px 20px;
+	}
+
+
+// Main.css styles
+
+	.codepen {
+	  border: 1px solid #222;
+	  background-color: #2d2d2d;
+	  border-radius: 2px;
+	  box-shadow: 0px 0px 2px 2px rgba(48, 48, 48, 0.5);
+	  color: #999;
+	  font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
+	  display: flex;
+	  flex-direction: row;
+	  margin-bottom: 24px;
+	}
+	.codepen.ng-cloak {
+	  display: none !important;
+	}
+	.codepen button {
+	  background: none;
+	  border: none;
+	  color: inherit;
+	  cursor: pointer;
+	  font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
+	  margin: 0;
+	  padding: 0;
+	  font-size: 12px;
+	  outline: none;
+	}
+	.codepen ul.querytabs {
+	  list-style: none;
+	  width: 180px;
+	  margin: 0;
+	  padding: 20px 0 20px 10px;
+	  display: table-cell;
+	  background-color: #272727;
+	  border-right: 4px solid #222;
+	}
+	.codepen ul.querytabs li {
+	  margin: 4px 0;
+	  height: 24px;
+	  line-height: 24px;
+	  padding: 0 4px;
+	  border-radius: 6px 0 0 6px;
+	  cursor: pointer;
+	  transition: background-color 0.2s;
+	}
+	.codepen ul.querytabs li.active {
+	  background: #393939;
+	}
+	.codepen .query,
+	.codepen .result {
+	  display: flex;
+	  min-height: 50vh;
+	  max-height: 75vh;
+	  overflow-x: hidden;
+	  overflow-y: auto;
+	  background-color: #2d2d2d;
+	  flex: 1;
+	  flex-direction: column;
+	  position: relative;
+	}
+	.codepen .query h2,
+	.codepen .result h2 {
+	  font-size: 16px;
+	  font-variant: small-caps;
+	  font-weight: bold;
+	  padding-bottom: 2px;
+	}
+	.codepen .query .float,
+	.codepen .result .float {
+	  position: absolute;
+	  bottom: 10px;
+	  left: 16px;
+	  z-index: 1000;
+	}
+	.codepen .query .float button,
+	.codepen .result .float button {
+	  background-color: #999999;
+	  border-radius: 4px;
+	  color: #2d2d2d;
+	  opacity: 0.9;
+	  padding: 2px 4px;
+	  font-size: 12px;
+	  margin-right: 0px;
+	}
+	.codepen .query .float button.danger,
+	.codepen .result .float button.danger {
+	  background-color: #f99157;
+	  color: #cccccc;
+	}
+	.codepen .query .float button.positive,
+	.codepen .result .float button.positive {
+	  background-color: #6699cc;
+	  color: #cccccc;
+	}
+	.codepen .editor {
+	  display: table-cell;
+	  flex: 1;
+	  margin-left: 14px;
+	}
+	.codepen .query {
+	  margin-right: 20px;
+	  margin-left: 6px;
+	}
+	.codepen .query h2 {
+	  margin-bottom: 0;
+	}
+	.codepen .query .root-id {
+	  font-size: 14px;
+	  line-height: 14px;
+	  display: flex;
+	  margin: 6px 0;
+	}
+	.codepen .query .root-id input {
+	  background-color: #ccc;
+	  border-radius: 4px;
+	  flex: 1;
+	  width: 120px;
+	  height: 16px;
+	  font-size: 12px;
+	  line-height: 16px;
+	  margin: 0 8px;
+	  padding: 0 4px;
+	}
+	.codepen .query .root-id ul.dropdown-menu li a {
+	  font-size: 14px;
+	  line-height: 14px;
+	  padding: 5px;
+	}
+	.codepen .result {
+	  font-size: 12px;
+	}
+	.codepen .result .spinner {
+	  color: #f99157;
+	  margin-bottom: 4px;
+	}
+	.codepen .result .latencycontainer {
+	  z-index: 1;
+	  padding: 2px 16px;
+	  margin-bottom: 2px;
+	}
+	.codepen .result .latencycontainer tr.total,
+	.codepen .result .latencycontainer tr.entities {
+	  color: #f99157;
+	}
+	.codepen .result .latencycontainer td:first-child {
+	  padding-right: 10px;
+	}
+	.codepen .result .latencycontainer td:last-child {
+	  text-align: right;
+	}
+	@media (max-width: 700px) {
+	  .codepen {
+	    flex-direction: column;
+	  }
+	  .codepen ul.querytabs {
+	    width: auto;
+	    display: flex;
+	    flex-direction: row;
+	  }
+	  .codepen ul.querytabs li {
+	    width: auto;
+	    height: auto;
+	    text-align: center;
+	    flex: 1;
+	    float: left;
+	    padding: 4px;
+	  }
+	  .codepen ul.querytabs li.active {
+	    border-radius: 6px;
+	  }
+	  .codepen .query {
+	    min-height: 30vh;
+	    max-height: 30vh;
+	    margin-right: 6px;
+	  }
+	  .codepen .result {
+	    border-top: 1px dotted #444;
+	    margin: 2px 6px;
+	  }
+	}
+	.codepen .tabcontainer {
+	  margin: 0 0 6px -2px;
+	  border-top: 1px dotted #444;
+	  border-bottom: 1px solid #999;
+	  padding-top: 8px;
+	}
+	.codepen .resulttab {
+	  border: 1px solid #777;
+	  border-bottom: none;
+	  color: #777;
+	  cursor: pointer;
+	  display: block;
+	  float: left;
+	  margin: 0 2px;
+	  width: 45px;
+	  text-align: center;
+	  border-radius: 4px 4px 0 0;
+	  padding: 0 2px 1px;
+	  transition: all 0.1s;
+	}
+	.codepen .resulttab.active {
+	  border-color: #999;
+	  color: #999;
+	  border-bottom: 1px solid #2d2d2d;
+	  margin-bottom: -1px;
+	}
+	.codepen .treenode {
+	  border: 1px solid #999;
+	  margin-right: 4px;
+	  color: #ccc;
+	}
+	.codepen .treenode .title {
+	  background-color: #393939;
+	  color: #fff;
+	  padding: 0 4px 1px;
+	  margin-bottom: 1px;
+	}
+	.codepen .treenode .value {
+	  margin-left: 16px;
+	}
+	.codepen .treenode .key {
+	  color: #99cc99;
+	}
+	.codepen .treenode .field {
+	  margin: 0 4px;
+	  border-bottom: 1px dotted #666;
+	}
+	.codepen .treenode .arrayoutline {
+	  color: #999;
+	}
+	.codepen .treenode .arraysummary:hover {
+	  text-decoration: underline;
+	}
+	.codepen .treenode [ng-click] {
+	  cursor: pointer;
+	}
