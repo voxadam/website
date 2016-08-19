@@ -127,102 +127,110 @@
                 </header><!-- Start Demo section -->
 <div class="codepen from-bottom ng-cloak" ng-app="darthGraph" ng-controller="GraphMagic">
 
-    <ul class=querytabs>
-        <li ng-repeat='tab in examples' ng-click='activate($index)' class="{{tab.active ? 'active' : ''}}">
-            <button ng-click='activate($index)'>{{ tab.title}}</button>
-        </li>
-
-        <span class="powered-badge">Powered by Dgraph</span>
-    </ul>
-
-    <div class=query>
-        <h2>QGaphql Query</h2>
+    <div class="codepen__header">
+      <h2>QGaphql Query</h2>
+      <div class="console-search__wrapper">
+        <label for="console-search" class="search-label">Name:</label>
         <div class="root-id">
-            <span class="search-label">Name:</span>
             <input type="text"
                    placeholder="Searh term (e.g. Big Lebowski)"
                    ng-model="typeahead_root_id"
                    uib-typeahead="x.name for x in fetch_kg($viewValue)" huy="| filter:$viewValue | limitTo:10"
                    typeahead-editable="false"
                    select-on-click
+                   id="console-search"
+                   class="search-input"
                    />
         </div>
-        <div ui-ace="{
-               useWrapMode : true,
-               showGutter: false,
-               theme:'tomorrow',
-               mode: 'javascript',
-               onLoad: queryEditorLoaded,
-               require: ['ace/ext/language_tools'],
-               advanced: {
-                   enableSnippets: false,
-                   enableBasicAutocompletion: true,
-                   enableLiveAutocompletion: true
-               },
-             }"
-             ng-model="active_tab.code" class=editor></div>
-        <div class=float>
-            <!-- <button class="positive">Run Query</button> -->
-            <button ng-click="reset_example_code()" class="danger" ng-class="{hidden: active_tab.code == active_tab.sample_code}">Undo Changes</button>
-        </div>
+      </div>
     </div>
+    <div class="codepen__body">
+      <ul class=querytabs>
+          <li ng-repeat='tab in examples' ng-click='activate($index)' class="{{tab.active ? 'active' : ''}}">
+              <button ng-click='activate($index)'>{{ tab.title}}</button>
+          </li>
 
-    <div class=result>
-        <span class='spinner' ng-show="isNetPending()">
-            <i class="fa fa-spinner icon-myspin"></i>
-            Processing...
-        </span>
-        <table class="latencycontainer" ng-hide="isNetPending()">
-            <tr class="entities">
-                <td>Entities found</td>
-                <td>:</td>
-                <td>{{latency_data.entity_count}}</td>
-            </tr>
-            <tr class="total">
-                <td>Server latency</td>
-                <td>:</td>
-                <td>{{ latency_data.total }}</td>
-            </tr>
-            <tr>
-                <td class="processing">Processing</td>
-                <td>:</td>
-                <td>{{latency_data.processing}}</td>
-            </tr>
-            <tr>
-                <td class="jsongen">JSON Conversion</td>
-                <td>:</td>
-                <td>{{latency_data.json}}</td>
-            </tr>
-        </table>
-        <div class="tabcontainer">
-            <h2 class="resulttab"
-                ng-class="{active: result_json}"
-                ng-click="result_json=true">
-                json
-            </h2>
-            <h2 class="resulttab"
-                ng-class="{active:!result_json}"
-                ng-click="result_json=false">
-                tree
-            </h2>
-        </div>
-        <div ui-ace="{
-                useWrapMode : true,
-                showGutter: false,
-                readOnly: true,
-                theme:'tomorrow',
-                mode: 'javascript',
-                onLoad: responseEditorLoaded,
-             }"
-             readonly
-             ng-model="json_result"
-             ng-show="result_json"
-             class=editor></div>
-        <div class="tree" ng-if="!result_json">
-            <tree obj="query_result" expanded="true"></tree>
-            <div ng-if="!query_result">query result is not available</div>
-        </div>
-        <div ng-if="had_network_error" style="color:#f2777a">Error talking to server</div>
+          <span class="powered-badge">Powered by Dgraph</span>
+      </ul>
+
+      <div class=query>
+          <div ui-ace="{
+                 useWrapMode : true,
+                 showGutter: false,
+                 theme:'tomorrow',
+                 mode: 'javascript',
+                 onLoad: queryEditorLoaded,
+                 require: ['ace/ext/language_tools'],
+                 advanced: {
+                     enableSnippets: false,
+                     enableBasicAutocompletion: true,
+                     enableLiveAutocompletion: true
+                 },
+               }"
+               ng-model="active_tab.code" class=editor></div>
+          <div class=float>
+              <!-- <button class="positive">Run Query</button> -->
+              <button ng-click="reset_example_code()" class="danger" ng-class="{hidden: active_tab.code == active_tab.sample_code}">Undo Changes</button>
+          </div>
+      </div>
+
+      <div class=result>
+          <span class='spinner' ng-show="isNetPending()">
+              <i class="fa fa-spinner icon-myspin"></i>
+              Processing...
+          </span>
+          <table class="latencycontainer" ng-hide="isNetPending()">
+              <tr class="entities">
+                  <td>Entities found</td>
+                  <td>:</td>
+                  <td>{{latency_data.entity_count}}</td>
+              </tr>
+              <tr class="total">
+                  <td>Server latency</td>
+                  <td>:</td>
+                  <td>{{ latency_data.total }}</td>
+              </tr>
+              <tr>
+                  <td class="processing">Processing</td>
+                  <td>:</td>
+                  <td>{{latency_data.processing}}</td>
+              </tr>
+              <tr>
+                  <td class="jsongen">JSON Conversion</td>
+                  <td>:</td>
+                  <td>{{latency_data.json}}</td>
+              </tr>
+          </table>
+          <div class="tabcontainer">
+              <h2 class="resulttab"
+                  ng-class="{active: result_json}"
+                  ng-click="result_json=true">
+                  json
+              </h2>
+              <h2 class="resulttab"
+                  ng-class="{active:!result_json}"
+                  ng-click="result_json=false">
+                  tree
+              </h2>
+          </div>
+          <div ui-ace="{
+                  useWrapMode : true,
+                  showGutter: false,
+                  readOnly: true,
+                  theme:'tomorrow',
+                  mode: 'javascript',
+                  onLoad: responseEditorLoaded,
+               }"
+               readonly
+               ng-model="json_result"
+               ng-show="result_json"
+               class=editor></div>
+          <div class="tree" ng-if="!result_json">
+              <tree obj="query_result" expanded="true"></tree>
+              <div ng-if="!query_result">query result is not available</div>
+          </div>
+          <div ng-if="had_network_error" style="color:#f2777a">Error talking to server</div>
+      </div>
     </div>
 
     <script type="text/ng-template" id="tree_node.html">
