@@ -1,15 +1,5 @@
 # 🆕 TODO List                                 [16 •]
-    ✔ Implment demo section from GitHub repo    ••
-      + Add CSS files from demo folder
-      + Add JavaScript files from demo folder
-      + Add HTML structure from demo folder
-    ✔ Modify CSS styles according to mockups
-      + Remove unnecessary CSS styles
-      + Adapt new CSS styles
-    ✔ Add icon fonts
-    ✔ Modify Search header
-    ✔ Optimise console for mobile devices
-    ☐ Code Cleanup
+
 
 
 # ❔ Questions
@@ -18,9 +8,7 @@
 
 
 # 🕓 Later
-    ✗ Add canvas particles                      ◦◦
-    ✔ Dodati u README.md informacije u vezi sa unminified folderom, kao i načinom na koji je demo sekcija implementirana (svi demo folderi nisu kompajlirani, jedino je CSS generisan iz LESS-a)
-    ☐ Update README.md from stash.
+    ☐ Main logo on homepage, link issue
 
 
 # 📁 Archived
@@ -52,6 +40,23 @@
 ~~13.06.2016
     ✔ Disquss and comments section              •
     ✔ Polish use case section (css and js)      ••~~
+~~18.08.2016
+    ✔ Implment demo section from GitHub repo
+      + Add CSS files from demo folder
+      + Add JavaScript files from demo folder
+      + Add HTML structure from demo folder
+    ✔ Modify CSS styles according to mockups
+      + Remove unnecessary CSS styles
+      + Adapt new CSS styles
+    ✔ Add icon fonts
+    ✔ Modify Search header
+    ✔ Optimise console for mobile devices
+    ✗ Add canvas particles~~
+~~19.08.2016
+    ✔ Code Cleanup
+    ✔ Improve README.md
+    ✔ Update README.md from stash.~~
+
 
 
 # 📎 Additional Notes
