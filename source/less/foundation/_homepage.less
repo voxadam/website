@@ -61,19 +61,26 @@
 
 	&__header {
 		color: @color-white;
-		text-align: center;
 		background-color: @color-brand-primary;
-		max-width: 750px;		
+		text-align: center;		
 		margin-left: auto;
 		margin-right: auto;
 		border-top-left-radius: 3px;
 		border-top-right-radius: 3px;
 		padding: 10px 20px;
 		position: relative;
+		margin-top: 60px;
+		@media screen and (min-width: @tablet-breakpoint) {
+			margin-left: 180px;
+			margin-top: 0;
+		}
+		@media screen and (min-width: @hd-breakpoint) {
+			max-width: 750px;
+		}
 		&:before {
 			content: '';
 			position: absolute;
-			right: -250px;
+			right: -200px;
 			top: -80px;
 			width: 167px;
 			height: 147px;
@@ -126,10 +133,6 @@
 				text-decoration: none;
 			}
 		}
-	}
-
-	&__screenshot {
-		.image-responsive();
 	}
 }
 

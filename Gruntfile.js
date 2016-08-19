@@ -124,9 +124,9 @@ module.exports = function(grunt) {
             },
             files: [{
               src: [                                               // Jquery fallback (in case that cdn version is not loaded).
-                'source/js/vendor/jquery/jquery-1.11.2.min.js'
+                'source/js/vendor/jquery/jquery-2.1.0.min.js'
               ],
-              dest: 'assets/js/jquery-1.11.2.min.js'
+              dest: 'assets/js/jquery-2.1.0.min.js'
             },
             {
               src: [                                               // Modernizr (custom made).
