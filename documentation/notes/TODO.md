@@ -19,7 +19,8 @@
 
 # 🕓 Later
     ✗ Add canvas particles                      ◦◦
-    ☐ Dodati u README.md informacije u vezi sa unminified folderom, kao i načinom na koji je demo sekcija implementirana (svi demo folderi nisu kompajlirani, jedino je CSS generisan iz LESS-a)
+    ✔ Dodati u README.md informacije u vezi sa unminified folderom, kao i načinom na koji je demo sekcija implementirana (svi demo folderi nisu kompajlirani, jedino je CSS generisan iz LESS-a)
+    ☐ Update README.md from stash.
 
 
 # 📁 Archived
