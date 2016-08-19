@@ -7,9 +7,9 @@
       + Remove unnecessary CSS styles
       + Adapt new CSS styles
     ✔ Add icon fonts
-    ☐ Modify Search header
-    ☐ Optimise console for mobile devices
-    ☐ Cleanup
+    ✔ Modify Search header
+    ✔ Optimise console for mobile devices
+    ☐ Code Cleanup
 
 
 # ❔ Questions
