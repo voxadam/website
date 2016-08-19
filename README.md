@@ -5,12 +5,20 @@ This is a Dgraph repository which is built with [Lifeboat - Jade](https://bitbuc
 ### Installation
 
 Install required grunt-related libraries with `npm install`.  
-Install dploy with `dploy install`.
 
 ### Building the assets
 
+To run main grunt task, use `grunt watch-files` command.  
 All assets source files are located in `/source/less, js, images` and built files are located in `/assets/css, js, images`.  
-Jade pages are located in `source/site-pages`. This task builds html pages in the root directory.
+Jade pages are located in `source/site-pages`, while builds *(HTML pages)** are placed in the root directory.  
+Inside `assets/js` you can see folder named `unminified` which holds unminified javascript which is used on this project.  
+
+### NOTICE regarding demo/console section
+CSS/HTML/JS structure is taken from [adishap](https://github.com/adishap/demoDgraph) who helped isolating this section from the previous Dgraph website version. HTML and CSS is additionally modified in order to adapt the visual style presented in the mockups. Except CSS, we didn't include files in our build process; we placed them in `assets/`:  
+- `css/demo-section` – but we didn't reference these files. Since there is a **ton** of unnecessary CSS properties *(~255kb)*, we copied only necessary ones and placed them inside `source/less/vendor/demo-section/_demo-section.less`.  
+- `js/demo-section`
+- `fonts/demo-section`
+
 
 ### Resources and tools
 
