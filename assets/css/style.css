@@ -4281,7 +4281,7 @@ img[data-src] {
           flex-direction: row;
   margin-bottom: 24px;
 }
-.codepen.ng-cloak {
+.ng-cloak {
   display: none !important;
 }
 .codepen button {
@@ -4600,6 +4600,10 @@ img[data-src] {
 .codepen .treenode [ng-click] {
   cursor: pointer;
 }
+/* ===========================================================
+ * sprawsm code update for demo section
+ * date: Aug 19th 2016.
+ * =========================================================== */
 .ace-tomorrow {
   background: none !important;
 }
