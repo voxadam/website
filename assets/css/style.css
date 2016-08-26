@@ -4180,14 +4180,14 @@ img[data-src] {
 .dropdown-menu > li > a:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #00aeef;
+  background-color: #f96315;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #00aeef;
+  background-color: #f96315;
   outline: 0;
 }
 .dropdown-menu > .disabled > a,
@@ -4300,7 +4300,7 @@ img[data-src] {
   margin: 0;
   padding: 20px 0 20px 0;
   display: table-cell;
-  background-color: #f1f1f1;
+  background-color: #333;
   position: relative;
   z-index: 0;
 }
@@ -4319,7 +4319,7 @@ img[data-src] {
   margin-bottom: 0;
 }
 .codepen ul.querytabs li:hover {
-  background-color: #ebebeb;
+  background-color: #1d1f21;
 }
 .codepen ul.querytabs li button {
   font-size: 13px;
@@ -4330,7 +4330,7 @@ img[data-src] {
   color: #666;
 }
 .codepen ul.querytabs li.active {
-  background: #00aeef;
+  background: #f96315;
   color: #fff;
 }
 .codepen ul.querytabs li.active button {
@@ -4367,7 +4367,7 @@ img[data-src] {
   max-height: 75vh;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #fafafa;
+  background-color: #1d1f21;
   -webkit-box-flex: 1;
           flex: 1;
   -webkit-box-orient: vertical;
@@ -4409,7 +4409,7 @@ img[data-src] {
 }
 .codepen .query .float button.danger,
 .codepen .result .float button.danger {
-  background-color: #ffa530;
+  background-color: #f96315;
   color: #fff;
   -webkit-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
@@ -4431,7 +4431,7 @@ img[data-src] {
   margin-top: 10px;
 }
 .codepen .query {
-  border-right: 8px solid #e0e0e0;
+  border-right: 8px solid #333;
 }
 .codepen .query .root-id {
   font-size: 14px;
@@ -4539,11 +4539,11 @@ img[data-src] {
 }
 .codepen .tabcontainer {
   margin: 0 0 6px -2px;
-  border-bottom: 2px solid #00aeef;
+  border-bottom: 2px solid #f96315;
 }
 .codepen .resulttab {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-  border: 2px solid #ccc;
+  border: 2px solid #333;
   border-bottom: none;
   color: #777;
   cursor: pointer;
@@ -4558,34 +4558,35 @@ img[data-src] {
   font-size: 15px;
 }
 .codepen .resulttab.active {
-  border-color: #00aeef;
-  color: #00aeef;
+  border-color: #f96315;
+  color: #f96315;
   margin-bottom: -2px;
-  border-bottom: 2px solid #fafafa;
+  border-bottom: 2px solid #1d1f21;
 }
 .codepen .treenode {
-  border: 1px solid #ccc;
+  border: 1px solid #333;
   border-radius: 2px;
   color: #999;
-  background-color: #f2fafd;
+  background-color: #333;
 }
 .codepen .treenode .title {
   font-weight: 500;
-  background-color: #fff;
-  color: #00aeef;
+  background-color: #333;
+  color: #f96315;
   padding: 5px;
   -webkit-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
+  border-bottom: 1px solid #666;
 }
 .codepen .treenode .title:hover {
-  background-color: #00aeef;
+  background-color: #f96315;
   color: #fff;
 }
 .codepen .treenode .value {
   margin-left: 16px;
 }
 .codepen .treenode .key {
-  color: green;
+  color: #53D362;
 }
 .codepen .treenode .field {
   margin: 4px;
@@ -4622,9 +4623,9 @@ img[data-src] {
   }
 }
 .codepen__header {
-  background-color: #fafafa;
+  background-color: #1d1f21;
   padding: 20px 10px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #666;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   position: relative;
@@ -4638,7 +4639,7 @@ img[data-src] {
   }
 }
 .codepen__header h2 {
-  color: #555555;
+  color: #fff;
   font-family: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 24px;
@@ -4665,7 +4666,7 @@ img[data-src] {
   cursor: pointer;
 }
 .codepen__header .search-input {
-  background-color: #fff;
+  background-color: #ccc;
   border-radius: 3px;
   -webkit-box-flex: 1;
           flex: 1;
@@ -4681,7 +4682,8 @@ img[data-src] {
 }
 .codepen__header .search-input:active,
 .codepen__header .search-input:focus {
-  border-color: #00aeef;
+  border-color: #f96315;
+  background-color: #fff;
 }
 .codepen__body {
   display: -webkit-box;
