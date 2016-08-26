@@ -4607,9 +4607,6 @@ img[data-src] {
 .ace-tomorrow {
   background: none !important;
 }
-.ace_content {
-  font-size: 13px;
-}
 .codepen {
   display: -webkit-box;
   display: flex;
