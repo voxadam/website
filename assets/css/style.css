@@ -4300,7 +4300,7 @@ img[data-src] {
   margin: 0;
   padding: 20px 0 20px 0;
   display: table-cell;
-  background-color: #333;
+  background-color: #393939;
   position: relative;
   z-index: 0;
 }
@@ -4319,7 +4319,7 @@ img[data-src] {
   margin-bottom: 0;
 }
 .codepen ul.querytabs li:hover {
-  background-color: #1d1f21;
+  background-color: #2d2d2d;
 }
 .codepen ul.querytabs li button {
   font-size: 13px;
@@ -4367,7 +4367,7 @@ img[data-src] {
   max-height: 75vh;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #1d1f21;
+  background-color: #2d2d2d;
   -webkit-box-flex: 1;
           flex: 1;
   -webkit-box-orient: vertical;
@@ -4431,7 +4431,7 @@ img[data-src] {
   margin-top: 10px;
 }
 .codepen .query {
-  border-right: 8px solid #333;
+  border-right: 8px solid #393939;
 }
 .codepen .query .root-id {
   font-size: 14px;
@@ -4539,11 +4539,11 @@ img[data-src] {
 }
 .codepen .tabcontainer {
   margin: 0 0 6px -2px;
-  border-bottom: 2px solid #f96315;
+  border-bottom: 2px solid #f99157;
 }
 .codepen .resulttab {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-  border: 2px solid #333;
+  border: 2px solid #393939;
   border-bottom: none;
   color: #777;
   cursor: pointer;
@@ -4558,10 +4558,10 @@ img[data-src] {
   font-size: 15px;
 }
 .codepen .resulttab.active {
-  border-color: #f96315;
-  color: #f96315;
+  border-color: #f99157;
+  color: #f99157;
   margin-bottom: -2px;
-  border-bottom: 2px solid #1d1f21;
+  border-bottom: 2px solid #2d2d2d;
 }
 .codepen .treenode {
   border: 1px solid #333;
@@ -4572,14 +4572,14 @@ img[data-src] {
 .codepen .treenode .title {
   font-weight: 500;
   background-color: #333;
-  color: #f96315;
+  color: #f99157;
   padding: 5px;
   -webkit-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
   border-bottom: 1px solid #666;
 }
 .codepen .treenode .title:hover {
-  background-color: #f96315;
+  background-color: #f99157;
   color: #fff;
 }
 .codepen .treenode .value {
@@ -4623,7 +4623,7 @@ img[data-src] {
   }
 }
 .codepen__header {
-  background-color: #1d1f21;
+  background-color: #2d2d2d;
   padding: 20px 10px;
   border-bottom: 1px solid #666;
   border-top-left-radius: 3px;
