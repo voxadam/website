@@ -1,4 +1,20 @@
 # 🆕 TODO List                                 [16 •]
+☐ Implement Molokai Theme
+☐ Finalise Use Cases section
+☐ Update Download section
+
+
+
+# ❔ Questions
+    ☐ Search terms
+
+
+
+# 🕓 Later
+
+
+# 📁 Archived
+~~19.08.2016
     ✔ Implment demo section from GitHub repo    ••
       + Add CSS files from demo folder
       + Add JavaScript files from demo folder
@@ -9,21 +25,10 @@
     ✔ Add icon fonts
     ✔ Modify Search header
     ✔ Optimise console for mobile devices
-    ☐ Code Cleanup
-
-
-# ❔ Questions
-    ☐ Search terms
-
-
-
-# 🕓 Later
+    ✔ Code Cleanup
     ✗ Add canvas particles                      ◦◦
     ✔ Dodati u README.md informacije u vezi sa unminified folderom, kao i načinom na koji je demo sekcija implementirana (svi demo folderi nisu kompajlirani, jedino je CSS generisan iz LESS-a)
-    ☐ Update README.md from stash.
-
-
-# 📁 Archived
+    ✔ Update README.md from stash.~~
 ~~05.07.2016
     ✗ SVG Lazy Line painter                 ◦◦◦◦
     ✗ Improve bolt graphic animation        ◦◦◦
