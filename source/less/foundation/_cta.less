@@ -21,13 +21,14 @@
 	p {
 		.font-size(16);
 		line-height: 1.5;
+		margin-bottom: 0;
 	}
 
 	&__button {
 		.font-size(20);
 		margin-top: @spacing-small / 1.5;
 		@media screen and (min-width: @tablet-breakpoint) {
-			margin-top: 40px;
+			margin-top: 28px;
 		}
 	}
 
@@ -51,6 +52,15 @@
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
+		}
+
+		code {
+			display: block;
+			.font-size(@font-size-small - 1);
+			color: @color-brand-primary;
+			padding: 4px 4px;
+			background-color: fade(@color-white, 85%);
+			margin: 5px 0;
 		}
 	}
 

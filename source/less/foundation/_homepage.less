@@ -200,6 +200,10 @@
 .usage {
 	position: relative;
 	z-index: 5;
+	@media screen and (max-width: 600px) {
+		display: none;
+	}
+			
 
 	.section-header {
 		position: relative;
@@ -230,9 +234,11 @@
 		&:before,
 		&:after {
 			content: '';
-			width: 100%;
+			width: 200px;
 			height: 60px;
 			position: absolute;
+			margin-left: auto;
+			margin-right: auto;
 			left: 0;
 			right: 0;
 			z-index: 2;
@@ -241,9 +247,10 @@
 			top: -70px;
 			background: linear-gradient(rgba(0255,255,255,.9) 40%, rgba(0255,255,255,.5) 100%);
 		}
+
 		// &:after {
-		// 	bottom: -150px;
-		// 	background: linear-gradient(rgba(0255,255,255,.5) 40%, rgba(0255,255,255,.9) 100%);
+		// 	bottom: -70px;
+		// 	// background: rgba(0255,255,255,.5) 100%, linear-gradient(rgba(0255,255,255,.9) 40%);
 		// }
 	}
 
@@ -314,6 +321,7 @@
 		left: 0;
 		right: 0;
 		top: -58px;
+		z-index: 3;
 
 		&.js-tilt {
 			transition: all .3s ease;
@@ -350,7 +358,10 @@
 
 	&__list {
 		margin-bottom: 100px;
-		min-height: 550px;
+		min-height: 250px;
+		@media screen and (min-width: @desktop-breakpoint) {
+			min-height: 550px;
+		}
 	}
 
 	&__item {
