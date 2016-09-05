@@ -1754,6 +1754,11 @@ hr {
   position: relative;
   z-index: 5;
 }
+@media screen and (max-width: 600px) {
+  .usage {
+    display: none;
+  }
+}
 .usage .section-header {
   position: relative;
   z-index: 6;
@@ -1782,9 +1787,11 @@ hr {
 .usage-carousel__nav:before,
 .usage-carousel__nav:after {
   content: '';
-  width: 100%;
+  width: 200px;
   height: 60px;
   position: absolute;
+  margin-left: auto;
+  margin-right: auto;
   left: 0;
   right: 0;
   z-index: 2;
@@ -1855,6 +1862,7 @@ hr {
   left: 0;
   right: 0;
   top: -58px;
+  z-index: 3;
 }
 .usage-carousel__list.js-tilt {
   -webkit-transition: all .3s ease;
@@ -1885,7 +1893,12 @@ hr {
 }
 .result__list {
   margin-bottom: 100px;
-  min-height: 550px;
+  min-height: 250px;
+}
+@media screen and (min-width: 989px) {
+  .result__list {
+    min-height: 550px;
+  }
 }
 .result__item {
   display: none;
