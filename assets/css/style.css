@@ -1784,10 +1784,9 @@ hr {
 .usage-carousel__nav:hover .usage-carousel__window:before {
   opacity: .8;
 }
-.usage-carousel__nav:before,
-.usage-carousel__nav:after {
+.usage-carousel__nav:before {
   content: '';
-  width: 200px;
+  width: 230px;
   height: 60px;
   position: absolute;
   margin-left: auto;
@@ -1895,6 +1894,7 @@ hr {
   color: #333333;
 }
 .result__list {
+  margin-top: -90px;
   margin-bottom: 100px;
   min-height: 250px;
 }
