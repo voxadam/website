@@ -216,7 +216,7 @@
 	&__nav {
 		.clearfix();
 		width: 100%;
-		max-width: 400px;
+		max-width: 500px;
 		margin-left: auto;
 		margin-right: auto;
 		position: relative;
@@ -231,17 +231,16 @@
 			}
 		}
 
-		&:before,
-		&:after {
+		&:before {
 			content: '';
-			width: 200px;
+			width: 230px;
 			height: 60px;
 			position: absolute;
 			margin-left: auto;
 			margin-right: auto;
 			left: 0;
 			right: 0;
-			z-index: 2;
+			z-index: 4;
 		}
 		&:before {
 			top: -70px;
@@ -287,7 +286,7 @@
 
 	&__window {
 		width: 100%;
-		max-width: 350px;
+		max-width: 450px;
 		height: 84px;
 		background-color: @color-white;
 		position: relative;
@@ -343,6 +342,9 @@
 		margin: 0;
 		list-style-type: none;
 		display: block;
+		&:hover {
+			cursor: pointer;
+		}
 		&:not(:last-child) {
 			margin-bottom: 50px;
 		}
@@ -357,6 +359,7 @@
 .result {
 
 	&__list {
+		margin-top: -90px;
 		margin-bottom: 100px;
 		min-height: 250px;
 		@media screen and (min-width: @desktop-breakpoint) {
