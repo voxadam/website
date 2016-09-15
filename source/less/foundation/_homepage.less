@@ -342,9 +342,15 @@
 		margin: 0;
 		list-style-type: none;
 		display: block;
-		&:hover {
-			cursor: pointer;
+		pointer-events: none;
+
+		&.is-active {
+			pointer-events: auto;
+			&:hover {
+				cursor: pointer;
+			}
 		}
+		
 		&:not(:last-child) {
 			margin-bottom: 50px;
 		}
