@@ -1786,7 +1786,7 @@ hr {
 }
 .usage-carousel__nav:before {
   content: '';
-  width: 230px;
+  width: 260px;
   height: 60px;
   position: absolute;
   margin-left: auto;
@@ -1880,16 +1880,13 @@ hr {
   font-size: 1.75rem;
   font-weight: 500;
   color: #cccccc;
-  margin: 0;
+  margin: 0 45px 0 0;
   list-style-type: none;
   display: block;
   pointer-events: none;
 }
 .usage-carousel__item.is-active {
   pointer-events: auto;
-}
-.usage-carousel__item.is-active:hover {
-  cursor: pointer;
 }
 .usage-carousel__item:not(:last-child) {
   margin-bottom: 50px;
