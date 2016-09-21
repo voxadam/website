@@ -233,7 +233,7 @@
 
 		&:before {
 			content: '';
-			width: 230px;
+			width: 260px;
 			height: 60px;
 			position: absolute;
 			margin-left: auto;
@@ -254,7 +254,7 @@
 	}
 
 	&__controls {
-		width: 30px;
+		width: 36px;
 		float: left;
 		margin-top: 10px;
 		margin-left: 15px;
@@ -262,12 +262,12 @@
 		z-index: 5;
 
 		.icon {
-			fill: #f0f0f0;
+			fill: #00ADF2;
 			width: 30px;
 			height: 30px;
 			transition: .2s fill ease-in-out;
 			&:hover {
-				fill: @color-silver;
+				fill: darken(#00ADF2, 10%);
 			}
 		}
 	}
@@ -286,7 +286,7 @@
 
 	&__window {
 		width: 100%;
-		max-width: 450px;
+		max-width: 440px;
 		height: 84px;
 		background-color: @color-white;
 		position: relative;
@@ -339,12 +339,18 @@
 		.font-size(28);
 		font-weight: @font-weight-medium;
 		color: @color-silver;
-		margin: 0;
+		margin: 0 45px 0 0;
 		list-style-type: none;
 		display: block;
-		&:hover {
-			cursor: pointer;
+		pointer-events: none;
+
+		&.is-active {
+			pointer-events: auto;
+			// &:hover {
+			// 	cursor: pointer;
+			// }
 		}
+		
 		&:not(:last-child) {
 			margin-bottom: 50px;
 		}

@@ -87,7 +87,7 @@ $(document).ready(function() {
 			$activeResult = $('.result__item').filter('.is-active');
 	
 	// When user click on chevron up icon
-	$('#previous-slide, .usage-carousel__item').on('click', function() {
+	$('#previous-slide').on('click', function() {
 
 	  var $previousSearchTerm = $activeSearchTerm.prev();
 	  var $previousResult = $activeResult.prev();
