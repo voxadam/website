@@ -3,8 +3,11 @@
 This is a Dgraph repository which is built with [Lifeboat - Jade](https://bitbucket.org/danijel_grabez/lifeboat-jade).
 
 ### Installation
+1. Install npm from [here](https://nodejs.org/en/download/package-manager/)
 
-Install required grunt-related libraries with `npm install`.  
+2. Install grunt with `npm install -g grunt-cli`
+
+3. Install required grunt-related libraries with `npm install`.  
 
 ### Building the assets
 
