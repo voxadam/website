@@ -7,7 +7,7 @@
         <label for="console-search" class="search-label">Name:</label>
         <div class="root-id">
             <input type="text"
-                   placeholder="Searh term (e.g. Big Lebowski)"
+                   placeholder="Search term (e.g. Big Lebowski)"
                    ng-model="typeahead_root_id"
                    uib-typeahead="x.name for x in fetch_kg($viewValue)" huy="| filter:$viewValue | limitTo:10"
                    typeahead-editable="false"
