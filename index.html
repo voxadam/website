@@ -76,7 +76,7 @@
         <div class="col-12 col-desktop-8 push-desktop-4">
           <nav class="page-nav">
             <ul class="page-nav__list page-nav__list--alternate">
-              <li class="page-nav__item"><a href="about.html" title="Learn more about us" class="page-nav__link">About</a></li>
+              <li class="page-nav__item"><a href="https://wiki.dgraph.io" title="Offical documentation for Dgraph." target="_blank" class="page-nav__link link-alias">Documentation</a></li>
               <li class="page-nav__item"><a href="https://open.dgraph.io" title="Thoughts on usage of graph database." class="page-nav__link link-alias">Blog</a></li>
               <li class="page-nav__item"><a href="https://discuss.dgraph.io" title="Head over to our Discourse community" target="_blank" class="page-nav__link link-alias">Discourse</a></li>
               <li class="page-nav__item"><a href="https://slack.dgraph.io/" title="Head over to our Slack community" target="_blank" class="page-nav__link link-alias">Slack</a></li>
@@ -133,7 +133,7 @@
         <label for="console-search" class="search-label">Name:</label>
         <div class="root-id">
             <input type="text"
-                   placeholder="Searh term (e.g. Big Lebowski)"
+                   placeholder="Search term (e.g. Big Lebowski)"
                    ng-model="typeahead_root_id"
                    uib-typeahead="x.name for x in fetch_kg($viewValue)" huy="| filter:$viewValue | limitTo:10"
                    typeahead-editable="false"
@@ -274,6 +274,7 @@
     </script>
 </div> <!-- /codepen -->
 <!-- End Demo section -->
+
               </div>
               <!-- /.demo-console-->
               <div class="dg-features">
@@ -285,14 +286,14 @@
                     <div class="dg-features__figure"><img src="assets/images/homepage/feature-01.svg" alt="Image for low latency, high throughout feature" class="dg-features__image"></div>
                     <div class="dg-features__description">
                       <h4 class="dg-features__title">Low Latency, High Throughout</h4>
-                      <p>Storage layer of DGraph is designed for efficient retrieval, it offers low enough latency to be serving real time user queries, over terabytes of structured data.</p>
+                      <p>Storage layer of Dgraph is designed for efficient retrieval, it offers low enough latency to be serving real time user queries, over terabytes of structured data.</p>
                     </div>
                   </li>
                   <li class="dg-features__item">
                     <div class="dg-features__figure"><img src="assets/images/homepage/feature-02.svg" alt="Image for distributed and scalable feature" class="dg-features__image"></div>
                     <div class="dg-features__description">
                       <h4 class="dg-features__title">Distributed and Scalable</h4>
-                      <p>Easily scale to multiple machines, or datacenters. DGraph's sharded storage and query processing were specifically designed to minimize the number of network calls.</p>
+                      <p>Easily scale to multiple machines, or datacenters. Dgraph's sharded storage and query processing were specifically designed to minimize the number of network calls.</p>
                     </div>
                   </li>
                   <li class="dg-features__item">
@@ -358,7 +359,7 @@
             <div class="cta">
               <div class="cta__box">
                 <h4 class="cta__title">Download Dgraph</h4>
-                <p>Install Dgraph binaries quickly in a single step using this command if you are on Linux/Mac: <code> curl https://get.dgraph.io | bash</code> For other methods of installing Dgraph check out our Wiki.</p><a href="https://wiki.dgraph.io/Beginners_Guide#Installation" target="_blank" class="button button--white button--jumbo cta__button">Dgraph Wiki</a>
+                <p>Install Dgraph binaries quickly in a single step using this command if you are on Linux/Mac: <code> curl https://get.dgraph.io | bash</code> For other methods of installing Dgraph check out our documentation.</p><a href="https://wiki.dgraph.io/Beginners_Guide#Installation" target="_blank" class="button button--white button--jumbo cta__button">Official Documentation</a>
               </div>
               <div class="cta__more">
                 <h4 class="cta__title">More information about Dgraph</h4>
@@ -366,8 +367,8 @@
                   <li class="cta__more-item"><a href="https://github.com/dgraph-io/dgraph/" target="_blank" class="cta__more-link cta__more-link--github link-alias">GitHub</a></li>
                   <li class="cta__more-item"><a href="https://discuss.dgraph.io" target="_blank" class="cta__more-link cta__more-link--discourse link-alias">Discourse</a></li>
                   <li class="cta__more-item"><a href="https://slack.dgraph.io/" target="_blank" class="cta__more-link cta__more-link--slack link-alias">Slack</a></li>
-                  <li class="cta__more-item"><a href="https://open.dgraph.io" target="_blank" class="cta__more-link cta__more-link--blog link-alias">Dgraph’s blog</a></li>
-                  <li class="cta__more-item"><a href="https://wiki.dgraph.io" target="_blank" class="cta__more-link cta__more-link--wiki link-alias">Dgraph Wiki</a></li>
+                  <li class="cta__more-item"><a href="https://open.dgraph.io" target="_blank" class="cta__more-link cta__more-link--blog link-alias">Blog</a></li>
+                  <li class="cta__more-item"><a href="https://wiki.dgraph.io" target="_blank" class="cta__more-link cta__more-link--wiki link-alias">Documentation</a></li>
                 </ul>
               </div>
             </div>
@@ -400,7 +401,7 @@
               <h6 class="page-footer-nav__title">Community</h6>
               <ul class="page-footer-nav__list">
                 <li class="page-footer-nav__item"><a href="https://open.dgraph.io" title="Thoughts on usage of graph database." target="_blank" class="page-footer-nav__link link-alias">Blog</a></li>
-                <li class="page-footer-nav__item"><a href="https://wiki.dgraph.io" title="Discuss about Dgraph with us." target="_blank" class="page-footer-nav__link link-alias">Dgraph Wiki</a></li>
+                <li class="page-footer-nav__item"><a href="https://wiki.dgraph.io" title="Discuss about Dgraph with us." target="_blank" class="page-footer-nav__link link-alias">Documentation</a></li>
                 <li class="page-footer-nav__item"><a href="https://github.com/dgraph-io/dgraph" title="We are on GitHub, check it out." target="_blank" class="page-footer-nav__link link-alias">GitHub</a></li>
                 <li class="page-footer-nav__item"><a href="https://discuss.dgraph.io/" title="Discuss about Dgraph with us." target="_blank" class="page-footer-nav__link link-alias">Discuss</a></li>
                 <li class="page-footer-nav__item"><a href="https://slack.dgraph.io/" title="Slack about Dgraph with us." target="_blank" class="page-footer-nav__link link-alias">Slack</a></li>
