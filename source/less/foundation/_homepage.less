@@ -389,6 +389,116 @@
 	}
 }
 
+// News
+.media {
+	padding-bottom: 60px;
+	@media screen and (min-width: @tablet-breakpoint) {
+		padding-bottom: 100px;
+	}
+
+	&__list {
+		padding: 0;
+	}
+
+	&__item {
+		list-style-type: none;
+		line-height: 1.8;
+		padding-left: 15px;
+		position: relative;
+		&:before {
+			content: '–';
+			color: @color-bronco;
+			position: absolute;
+			top: 0px;
+			left: 0;
+		}
+	}
+
+	&__link {
+		.font-size(18);
+		font-weight: @font-weight-medium;
+	}
+}
+
+.media-inline {
+	.clearfix();
+	padding-bottom: 40px;
+
+	.cta__title {
+		@media screen and (max-width: @desktop-breakpoint) {
+			text-align: center;
+		}
+	}
+
+	&__image {
+		display: block;
+		margin-bottom: 15px;
+		text-align: center; 
+		@media screen and (min-width: @desktop-breakpoint) {
+			text-align: left;
+			float: left;
+			margin-bottom: 0;
+		}
+	}
+
+	&__body {
+		display: block;
+		@media screen and (min-width: @desktop-breakpoint) {
+			padding-left: 30px;
+			float: left;
+		}
+	}
+}
+
+.media-logo {
+
+	&__row {
+		.clearfix();
+		border-top: 2px solid #f0f0f0;
+		border-bottom: 2px solid #f0f0f0;
+		padding: 15px 0;
+	}
+
+	&__item {
+
+		@media screen and (min-width: @tablet-breakpoint) {
+			float: left;
+			width: 50%;
+			height: 120px;
+			position: relative;
+		}
+		@media screen and (max-width: @tablet-breakpoint) {
+			margin-bottom: 15px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}				
+
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+		}
+
+		img {
+			margin: 0 auto;
+			display: block;
+			max-width: 100%;
+			@media screen and (min-width: @tablet-breakpoint) {
+				margin: 0 auto;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				transform: translateY(-50%);
+			}		
+		}
+
+	}
+
+}
+
 // Bolt image in the background
 .bolt-image {
 	position: relative;

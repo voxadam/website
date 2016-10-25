@@ -128,6 +128,35 @@ block page-content
 							img(src="assets/images/homepage/slide-03.png", alt="Use case scenario for book club.")
 	// /.use-case
 
+	.media
+		.container
+			.row
+				.col-12
+					header.section-header
+						h2.section-header__title Dgaph in the News
+						p.section-header__lead Short description about this section, no more then one sentance.
+					.media-inline
+						.media-inline__image
+							a(href="https://hn.algolia.com/?query=dgraph&sort=byPopularity&prefix&page=0&dateRange=all&type=story" target="_blank"): img(src="assets/images/in-news/hn.jpg", alt="Hacker News")
+						.media-inline__body
+							h4.cta__title Dgraph in Hacker News
+							ul.media__list
+								li.media__item: a(href="https://news.ycombinator.com/item?id=11322444" target="_blank").media__link  DGraph – Scalable, Distributed, Low-Latency, High-Throughput Graph Database
+								li.media__item: a(href="https://news.ycombinator.com/item?id=11934087" target="_blank").media__link  Dgraph is a next generation graph database with GraphQL as the query language
+								li.media__item: a(href="https://news.ycombinator.com/item?id=11944969" target="_blank").media__link  Scaling nodes in a Dgraph cluster
+					// /.media-inline
+					.media-logo
+						.media-logo__row
+							.media-logo__item
+								a(href="http://www.afr.com/technology/cannonbrookes-blackbird-bain-back-new-migrants-graph-startup-20160517-goxglw" target="_blank")
+									img(src="assets/images/in-news/fr.jpg", alt="Financial Review")
+							.media-logo__item
+								a(href="http://www.startupsmart.com.au/advice/funding/two-failed-startups-later-ex-google-employee-secures-1-45-million-in-funding-and-backing-of-atlassians-co-founder/" target="_blank")
+									img(src="assets/images/in-news/ss.jpg", alt="Startup Smart")
+					// /.media-logo
+					
+	// /.media
+
 	.cta-wrapper.cta-wrapper--homepage
 		.container
 			.row
