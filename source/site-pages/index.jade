@@ -2,7 +2,7 @@ extends pagewrapper
 
 //- Override config.jade file
 append page-config
-	- var PageTitle = 'Dgraph | Scalable, Distributed, Low Latency, High Throughput Graph Database.'
+	- var PageTitle = 'Dgraph: Graph database for production environment'
 	- var PageClass = 'homepage'
 	- var PageIntroClass = 'homepage'
 	- var PageContentClass = 'homepage'
@@ -31,11 +31,11 @@ block page-intro
 			.col-12.col-desktop-4.hide-mobile.show-desktop
 				figure.page-intro__figure.page-intro__figure--logo
 					a(href="index.html")
-						img(src="assets/images/logo.svg", alt="Dgraph logo – Scalable, Distributed, Low Latency, High Throughput Graph Database.")
+						img(src="assets/images/logo.svg", alt="Dgraph logo – Graph database for web-scale production environment.")
 			.col-12.col-desktop-7
 				header.page-intro__header
-					h1.page-intro__title.page-intro__title--emphasized Scalable, Distributed, Low Latency, High Throughput Graph Database.
-					p.page-intro__lead Building a social network or a recommendation engine, Dgraph will suit your needs.
+					h1.page-intro__title.page-intro__title--emphasized Graph database for <br/> web-scale production environment.
+					p.page-intro__lead Meet Dgraph &mdash;  an open source, scalable, distributed, highly available and fast graph database, designed from ground up to be run in production.
 
 block page-content
 	.demo__wrapper
@@ -49,12 +49,12 @@ block page-content
 				.row
 					.col-12
 						header.section-header
-							h2.section-header__title Search is now better than ever
-							p.section-header__lead Play with 21M facts from Freebase Film Data loaded up on demo Dgraph instance, via GraphQL in real time.
+							h2.section-header__title Distributed joins are a cakewalk
+							p.section-header__lead Dgraph can run complex distributed queries involving filters, string matching, pagination, sorting and geolocations blazingly fast.
 
 						.demo-console
 							header.demo-console__header
-								h5.demo-console__title Play with 21M facts from <a href="https://developers.google.com/freebase/" target="_blank">Freebase Film Data</a> loaded up on demo Dgraph instance, via <a href="https://github.com/facebook/graphql" target="_blank">GraphQL</a> in real time.
+								h5.demo-console__title Play with 21M facts from <a href="https://developers.google.com/freebase/" target="_blank">Freebase Film Data</a> loaded up on demo Dgraph instance, via <a href="https://wiki.dgraph.io/Query_Language" target="_blank">GraphQL+-</a> in real time.
 
 							include partials/demo-section/demo.html
 
