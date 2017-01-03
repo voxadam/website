@@ -4276,11 +4276,11 @@ img[data-src] {
  * Source: https://github.com/adishap/demoDgraph
  *
  *  Styles borrowed from these files:
- *  1. bootstrap.css
- *  2. color-red-medium.css
- *  3. html5-boilerplate/.../main.css
- *  4. main.css
- *  
+ * 	1. bootstrap.css
+ * 	2. color-red-medium.css
+ * 	3. html5-boilerplate/.../main.css
+ * 	4. main.css
+ * 	
  * =========================================== */
 .dropdown-menu {
   position: absolute;
@@ -4347,7 +4347,6 @@ img[data-src] {
   cursor: not-allowed;
   background-color: transparent;
   background-image: none;
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 .open > .dropdown-menu {
   display: block;
@@ -4443,6 +4442,7 @@ img[data-src] {
 .codepen ul.querytabs {
   list-style: none;
   width: 180px;
+  height: 80vh;
   margin: 0;
   padding: 20px 0 20px 0;
   display: table-cell;
