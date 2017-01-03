@@ -90,7 +90,7 @@ controller('GraphMagic', function($scope, $http) {
         sample_code: "" +
             "{\n" +
             "  debug(near(\"loc\", \"{'type':'Point', 'coordinates': [-122.469829, 37.771935]}\", \"1000\" ) ) {\n" +
-            "    name\n" +
+            "    type.object.name.en: name\n" +
             "  }\n" +
             "}\n",
     }, ];
