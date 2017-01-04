@@ -72,6 +72,11 @@ printf $RESET
 	fi
 
 	platform="$(uname | tr '[:upper:]' '[:lower:]')"
+	if [ "$platform" = "linux" ]; then
+		md5cmd=md5sum
+	else
+		md5cmd=md5 -r
+	fi
 	checksum_file="dgraph-checksum-$platform-amd64-$release_version".md5
 	checksum_link="https://github.com/dgraph-io/dgraph/releases/download/"$release_version"/"$checksum_file
 	print_step "Downloading checksum file."
@@ -80,14 +85,24 @@ printf $RESET
 	else
 		print_error "Sorry. Binaries not available for your platform. Please compile manually: https://wiki.dgraph.io/Beginners_Guide"
 		echo
-		exit 1;
+		# exit 1;
 	fi
 
-	dgraph=$(sed '1q;d' /tmp/$checksum_file)
-	dgraphloader=$(sed '2q;d' /tmp/$checksum_file)
+	dgraph=$(sed '1q;d' /tmp/$checksum_file | awk '{print $1;}')
+	echo $dgraph
+	dgraphloader=$(sed '2q;d' /tmp/$checksum_file | awk '{print $1;}')
 
 	print_step "Comparing checksums for dgraph binaries"
-	if echo $dgraph | md5sum -c && echo $dgraphloader | md5sum -c; then
+	
+	if $md5cmd /usr/local/bin/dgraph && $md5cmd /usr/local/bin/dgraphloader; then
+		dgraphsum=$($md5cmd /usr/local/bin/dgraph | awk '{print $1;}')
+		dgraphloadersum=$($md5cmd /usr/local/bin/dgraphloader | awk '{print $1;}')
+	else
+		dgraphsum=""
+		dgraphloadersum=""
+	fi
+
+	if [ "$dgraph" == "$dgraphsum" ] && [ "$dgraphloader" == "$dgraphloadersum" ]; then
 		print_good "You already have latest version of Dgraph binary installed."
 	else
 		tar_file=dgraph-$platform-amd64-$release_version".tar.gz"
@@ -140,9 +155,17 @@ printf $RESET
 		fi
 	fi
 
-	icu=$(sed '3q;d' /tmp/$checksum_file)
+	icu=$(sed '3q;d' /tmp/$checksum_file | awk '{print $1;}')
+	echo $icu
 
-	if echo $icu | md5sum -c; then
+	if $md5cmd /usr/local/share/icudt58l.dat; then
+		icusum=$($md5cmd /usr/local/share/icudt58l.dat | awk '{print $1;}')
+	else
+		icusum=""
+	fi
+
+	echo $icusum
+	if [ "$icu" == "$icusum" ]; then
 		print_good "You already have the ICU data file for v58.2."
 	else
 		print_step "Downloading ICU data file.";
