@@ -75,7 +75,7 @@ printf $RESET
 	if [ "$platform" = "linux" ]; then
 		md5cmd=md5sum
 	else
-		md5cmd=md5 -r
+		md5cmd="md5 -r"
 	fi
 	checksum_file="dgraph-checksum-$platform-amd64-$release_version".md5
 	checksum_link="https://github.com/dgraph-io/dgraph/releases/download/"$release_version"/"$checksum_file
