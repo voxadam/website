@@ -85,15 +85,14 @@ printf $RESET
 	else
 		print_error "Sorry. Binaries not available for your platform. Please compile manually: https://wiki.dgraph.io/Beginners_Guide"
 		echo
-		# exit 1;
+		exit 1;
 	fi
 
 	dgraph=$(sed '1q;d' /tmp/$checksum_file | awk '{print $1;}')
-	echo $dgraph
 	dgraphloader=$(sed '2q;d' /tmp/$checksum_file | awk '{print $1;}')
 
 	print_step "Comparing checksums for dgraph binaries"
-	
+
 	if $md5cmd /usr/local/bin/dgraph && $md5cmd /usr/local/bin/dgraphloader; then
 		dgraphsum=$($md5cmd /usr/local/bin/dgraph | awk '{print $1;}')
 		dgraphloadersum=$($md5cmd /usr/local/bin/dgraphloader | awk '{print $1;}')
@@ -156,7 +155,6 @@ printf $RESET
 	fi
 
 	icu=$(sed '3q;d' /tmp/$checksum_file | awk '{print $1;}')
-	echo $icu
 
 	if $md5cmd /usr/local/share/icudt58l.dat; then
 		icusum=$($md5cmd /usr/local/share/icudt58l.dat | awk '{print $1;}')
@@ -164,7 +162,6 @@ printf $RESET
 		icusum=""
 	fi
 
-	echo $icusum
 	if [ "$icu" == "$icusum" ]; then
 		print_good "You already have the ICU data file for v58.2."
 	else
