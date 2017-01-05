@@ -1934,8 +1934,8 @@ hr {
   position: relative;
 }
 .media__item:before {
-  content: '–';
-  color: #a4958c;
+  content: '• ';
+  color: black;
   position: absolute;
   top: 0px;
   left: 0;
@@ -1944,6 +1944,14 @@ hr {
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 500;
+}
+.hn-list {
+  text-align: center;
+}
+.hn-list ul {
+  display: none;
+  padding-top: 20px;
+  text-align: left;
 }
 .media-inline {
   zoom: 1;
@@ -2000,8 +2008,8 @@ hr {
 @media screen and (min-width: 767px) {
   .media-logo__item {
     float: left;
-    width: 50%;
-    height: 120px;
+    width: 33%;
+    height: 200px;
     position: relative;
   }
 }
