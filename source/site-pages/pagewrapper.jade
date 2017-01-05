@@ -36,7 +36,7 @@ head
 
 	= '\n'	
 	//css
-	link(href="assets/css/style.min.css", rel="stylesheet" type="text/css")
+	link(href="assets/css/style.min.css?v=20170105", rel="stylesheet" type="text/css")
 	
 	//- Page specific styles (in case CSS only needs to be loaded for e.g. on one page)
 	block additional-styles
@@ -107,7 +107,7 @@ body(class="#{PageClass}")
 		catch(e){}}(window,document));});
 
 	// Minified script
-	script(type="text/javascript", src="assets/js/script.min.js")
+	script(type="text/javascript", src="assets/js/script.min.jsv=20170105")
 
 	// GitHub star button
 	script(async defer src="https://buttons.github.io/buttons.js")
