@@ -8,22 +8,24 @@ controller('GraphMagic', function($scope, $http) {
         title: 'Directors All of',
         sample_code: "" +
             "{\n" +
-            "  debug(allof(\"type.object.name.en\", \"steven spielberg\")) {\n" +
-            "    type.object.name.en\n" +
-            "    film.director.film {\n" +
-            "      type.object.name.en\n" +
-            "      film.film.initial_release_date\n" +
-            "      film.film.country\n" +
-            "      film.film.starring {\n" +
-            "        film.performance.actor {\n" +
-            "          type.object.name.en\n" +
+            "  debug(allof(\"name.en\", \"steven spielberg\")) {\n" +
+            "    name.en\n" +
+            "    director.film {\n" +
+            "      name.en\n" +
+            "      initial_release_date\n" +
+            "      country {\n" +
+            "        name.en\n" +
+            "      }\n" +
+            "      starring {\n" +
+            "        performance.actor {\n" +
+            "          name.en\n" +
             "        }\n" +
-            "        film.performance.character {\n" +
-            "          type.object.name.en\n" +
+            "        performance.character {\n" +
+            "          name.en\n" +
             "        }\n" +
             "      }\n" +
-            "      film.film.genre {\n" +
-            "        type.object.name.en\n" +
+            "      genre {\n" +
+            "        name.en\n" +
             "      }\n" +
             "    }\n" +
             "  }\n" +
@@ -32,20 +34,22 @@ controller('GraphMagic', function($scope, $http) {
         title: 'Movies Any of',
         sample_code: "" +
             "{\n" +
-            "  debug(anyof(\"type.object.name.en\",\"big lebowski\")) {\n" +
-            "    type.object.name.en\n" +
-            "    film.film.initial_release_date\n" +
-            "    film.film.country\n" +
-            "    film.film.starring {\n" +
-            "      film.performance.actor {\n" +
-            "        type.object.name.en\n" +
+            "  debug(anyof(\"name.en\",\"big lebowski\")) {\n" +
+            "    name.en\n" +
+            "    initial_release_date\n" +
+            "    country {\n" +
+            "      name.en\n" +
+            "    }\n" +
+            "    starring {\n" +
+            "      performance.actor {\n" +
+            "        name.en\n" +
             "      }\n" +
-            "      film.performance.character {\n" +
-            "        type.object.name.en\n" +
+            "      performance.character {\n" +
+            "        name.en\n" +
             "      }\n" +
             "    }\n" +
-            "    film.film.genre {\n" +
-            "      type.object.name.en\n" +
+            "    genre {\n" +
+            "      name.en\n" +
             "    }\n" +
             "  }\n" +
             "}\n",
@@ -53,11 +57,11 @@ controller('GraphMagic', function($scope, $http) {
         title: 'Greater than equal',
         sample_code: "" +
             "{\n" +
-            "  debug(_xid_: m.0bxtg) {\n" +
-            "    type.object.name.en\n" +
-            "    film.director.film @filter(geq(\"film.film.initial_release_date\", \"1970-01-01\")) {\n" +
-            "      film.film.initial_release_date\n" +
-            "      type.object.name.en\n" +
+            "  debug(id: m.0bxtg) {\n" +
+            "    name.en\n" +
+            "    director.film @filter(geq(\"initial_release_date\", \"1970-01-01\")) {\n" +
+            "      initial_release_date\n" +
+            "      name.en\n" +
             "    }\n" +
             "  }\n" +
             "}\n"
@@ -65,11 +69,11 @@ controller('GraphMagic', function($scope, $http) {
         title: 'Sort by date',
         sample_code: "" +
             "{\n" +
-            "   debug(allof(\"type.object.name.en\", \"steven spielberg\")) {\n" +
-            "     type.object.name.en\n" +
-            "     film.director.film(order: film.film.initial_release_date) {\n" +
-            "       type.object.name.en\n" +
-            "       film.film.initial_release_date\n" +
+            "   debug(allof(\"name.en\", \"steven spielberg\")) {\n" +
+            "     name.en\n" +
+            "     director.film(order: initial_release_date) {\n" +
+            "       name.en\n" +
+            "       initial_release_date\n" +
             "     }\n" +
             "   }\n" +
             "}\n",
@@ -77,11 +81,11 @@ controller('GraphMagic', function($scope, $http) {
         title: 'Filters',
         sample_code: "" +
             "{\n" +
-            "  debug(_xid_: m.06pj8) {\n" +
-            "    type.object.name.en\n" +
-            "    film.director.film @filter(allof(\"type.object.name.en\", \"jones indiana\") || allof(\"type.object.name.en\", \"jurassic park\"))  {\n" +
+            "  debug(id: m.06pj8) {\n" +
+            "    name.en\n" +
+            "    director.film @filter(allof(\"name.en\", \"jones indiana\") OR allof(\"name.en\", \"jurassic park\"))  {\n" +
             "      _uid_\n" +
-            "      type.object.name.en\n" +
+            "      name.en\n" +
             "    }\n" +
             "   }\n" +
             "}\n",
@@ -89,8 +93,8 @@ controller('GraphMagic', function($scope, $http) {
         title: 'Geolocation Near',
         sample_code: "" +
             "{\n" +
-            "  debug(near(\"loc\", \"{'type':'Point', 'coordinates': [-122.469829, 37.771935]}\", \"1000\" ) ) {\n" +
-            "    type.object.name.en: name\n" +
+            "  debug(near(loc, [-122.469829, 37.771935], 1000) ) {\n" +
+            "    name.en: name\n" +
             "  }\n" +
             "}\n",
     }, ];
@@ -187,7 +191,7 @@ controller('GraphMagic', function($scope, $http) {
         $scope.lastSentVersion = $scope.lastSentVersion || 0;
         var currentCodeVersion = ++$scope.lastSentVersion;
         $http({
-            url: 'https://dgraph.io/query',
+            url: 'http://localhost:8080/query',
             method: 'POST',
             data: query
         }).then(function(response) {
