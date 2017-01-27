@@ -191,7 +191,7 @@ controller('GraphMagic', function($scope, $http) {
         $scope.lastSentVersion = $scope.lastSentVersion || 0;
         var currentCodeVersion = ++$scope.lastSentVersion;
         $http({
-            url: 'http://localhost:8080/query',
+            url: 'https://dgraph.io/query',
             method: 'POST',
             data: query
         }).then(function(response) {
