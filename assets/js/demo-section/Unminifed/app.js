@@ -8,7 +8,7 @@ controller('GraphMagic', function($scope, $http) {
         title: 'Directors All of',
         sample_code: "" +
             "{\n" +
-            "  debug(allof(\"name.en\", \"steven spielberg\")) {\n" +
+            "  director(func: allof(\"name.en\", \"steven spielberg\")) {\n" +
             "    name.en\n" +
             "    director.film {\n" +
             "      name.en\n" +
@@ -34,7 +34,7 @@ controller('GraphMagic', function($scope, $http) {
         title: 'Movies Any of',
         sample_code: "" +
             "{\n" +
-            "  debug(anyof(\"name.en\",\"big lebowski\")) {\n" +
+            "  movies(func: anyof(\"name.en\",\"big lebowski\")) {\n" +
             "    name.en\n" +
             "    initial_release_date\n" +
             "    country {\n" +
@@ -57,7 +57,7 @@ controller('GraphMagic', function($scope, $http) {
         title: 'Greater than equal',
         sample_code: "" +
             "{\n" +
-            "  debug(id: m.0bxtg) {\n" +
+            "  directed(id: m.0bxtg) {\n" +
             "    name.en\n" +
             "    director.film @filter(geq(\"initial_release_date\", \"1970-01-01\")) {\n" +
             "      initial_release_date\n" +
@@ -69,7 +69,7 @@ controller('GraphMagic', function($scope, $http) {
         title: 'Sort by date',
         sample_code: "" +
             "{\n" +
-            "   debug(allof(\"name.en\", \"steven spielberg\")) {\n" +
+            "   bydate(func: allof(\"name.en\", \"steven spielberg\")) {\n" +
             "     name.en\n" +
             "     director.film(order: initial_release_date) {\n" +
             "       name.en\n" +
@@ -81,7 +81,7 @@ controller('GraphMagic', function($scope, $http) {
         title: 'Filters',
         sample_code: "" +
             "{\n" +
-            "  debug(id: m.06pj8) {\n" +
+            "  movies(id: m.06pj8) {\n" +
             "    name.en\n" +
             "    director.film @filter(allof(\"name.en\", \"jones indiana\") OR allof(\"name.en\", \"jurassic park\"))  {\n" +
             "      _uid_\n" +
@@ -93,7 +93,7 @@ controller('GraphMagic', function($scope, $http) {
         title: 'Geolocation Near',
         sample_code: "" +
             "{\n" +
-            "  debug(near(loc, [-122.469829, 37.771935], 1000) ) {\n" +
+            "  places(func: near(loc, [-122.469829, 37.771935], 1000) ) {\n" +
             "    name.en: name\n" +
             "  }\n" +
             "}\n",
@@ -191,7 +191,7 @@ controller('GraphMagic', function($scope, $http) {
         $scope.lastSentVersion = $scope.lastSentVersion || 0;
         var currentCodeVersion = ++$scope.lastSentVersion;
         $http({
-            url: 'https://dgraph.io/query',
+            url: 'https://dgraph.io/query?debug=true',
             method: 'POST',
             data: query
         }).then(function(response) {
@@ -299,7 +299,7 @@ angular.module('darthGraph')
                             } else if (fields[i].array) {
                                 children += fields[i].array.length;
                             }
-                            if (fields[i].key.indexOf('type.object.name.') == 0) {
+                            if (fields[i].key.indexOf('name') == 0) {
                                 title = fields[i].value;
                             }
                         }
