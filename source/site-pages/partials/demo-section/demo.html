@@ -72,8 +72,8 @@
                   onLoad: responseEditorLoaded,
                }" readonly ng-model="json_result" ng-show="result_json" class=editor></div>
             <div class="tree" ng-if="!result_json">
-                <tree obj="query_result" expanded="true"></tree>
-                <div ng-if="!query_result">query result is not available</div>
+                <tree obj="tree_result" expanded="true"></tree>
+                <div ng-if="!tree_result">query result is not available</div>
             </div>
             <div ng-if="had_network_error" style="color:#f2777a">Error talking to server</div>
         </div>

@@ -71,7 +71,7 @@ controller('GraphMagic', function($scope, $http) {
             "{\n" +
             "   bydate(func: allof(\"name.en\", \"steven spielberg\")) {\n" +
             "     name.en\n" +
-            "     director.film(order: initial_release_date) {\n" +
+            "     director.film(orderasc: initial_release_date) {\n" +
             "       name.en\n" +
             "       initial_release_date\n" +
             "     }\n" +
@@ -89,7 +89,7 @@ controller('GraphMagic', function($scope, $http) {
             "    }\n" +
             "   }\n" +
             "}\n",
-    }, {
+    },{
         title: 'Geolocation Near',
         sample_code: "" +
             "{\n" +
@@ -198,7 +198,21 @@ controller('GraphMagic', function($scope, $http) {
             $scope.had_network_error = false;
             $scope.lastReceivedVersion = currentCodeVersion;
 
-            $scope.query_result = response.data.debug;
+            var keys = Object.keys(response.data);
+            var key = "";
+            for (var i = 0; i < keys.length; i++) {
+              if(keys[i] != "server_latency" && keys[i] != "uids") {
+                key = keys[i]
+                break
+              }
+            }
+
+            if(key === "") {
+                return
+            }
+
+            $scope.tree_result = response.data[key];
+            $scope.query_result = response.data;
             $scope.json_result = JSON.stringify($scope.query_result, null, 2);
 
             $scope.latency_data = response.data.server_latency || {};
