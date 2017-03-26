@@ -197,8 +197,8 @@
                   onLoad: responseEditorLoaded,
                }" readonly ng-model="json_result" ng-show="result_json" class=editor></div>
             <div class="tree" ng-if="!result_json">
-                <tree obj="query_result" expanded="true"></tree>
-                <div ng-if="!query_result">query result is not available</div>
+                <tree obj="tree_result" expanded="true"></tree>
+                <div ng-if="!tree_result">query result is not available</div>
             </div>
             <div ng-if="had_network_error" style="color:#f2777a">Error talking to server</div>
         </div>
@@ -263,7 +263,7 @@
                     <div class="dg-features__figure"><img src="assets/images/homepage/feature-03.svg" alt="Image for open source feature" class="dg-features__image"></div>
                     <div class="dg-features__description">
                       <h4 class="dg-features__title">Open Source</h4>
-                      <p>Written entirely in Go, Dgraph is available under a very liberal Apache License 2.0.</p>
+                      <p>Written entirely in Go, Dgraph is available under open-source license.</p>
                     </div>
                   </li>
                 </ul>
