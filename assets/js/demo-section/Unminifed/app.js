@@ -31,28 +31,23 @@ controller('GraphMagic', function($scope, $http) {
             "  }\n" +
             "}\n"
     }, {
-        title: 'Movies Any of',
+        title: 'Top 10 movie Recommendation',
         sample_code: "" +
-            "{\n" +
-            "  movies(func: anyof(\"name.en\",\"big lebowski\")) {\n" +
-            "    name.en\n" +
-            "    initial_release_date\n" +
-            "    country {\n" +
-            "      name.en\n" +
-            "    }\n" +
-            "    starring {\n" +
-            "      performance.actor {\n" +
-            "        name.en\n" +
-            "      }\n" +
-            "      performance.character {\n" +
-            "        name.en\n" +
-            "      }\n" +
-            "    }\n" +
-            "    genre {\n" +
-            "      name.en\n" +
-            "    }\n" +
-            "  }\n" +
-            "}\n",
+					"{\n"+
+					"	var(func:allofterms(name, "steven spielberg")) {\n"+
+					"		films as director.film {\n"+
+					"			p as count(starring)\n"+
+					"			q as count(genre)\n"+
+					"			r as count(country)\n"+
+					"			score as sumvar(p, q, r)\n"+
+					"		}\n"+
+					"	}\n"+
+					"\n" +
+					"	TopMovies(id: var(films), orderdesc: var(score), first: 10){\n"+
+					"		name@en\n"+
+					"		var(score)\n"+
+					"	}\n" +
+					"}\n",
     }, {
         title: 'Greater than equal',
         sample_code: "" +
@@ -78,17 +73,21 @@ controller('GraphMagic', function($scope, $http) {
             "   }\n" +
             "}\n",
     }, {
-        title: 'Filters',
+        title: 'People who played Harry Potter',
         sample_code: "" +
-            "{\n" +
-            "  movies(id: m.06pj8) {\n" +
-            "    name.en\n" +
-            "    director.film @filter(allof(\"name.en\", \"jones indiana\") OR allof(\"name.en\", \"jurassic park\"))  {\n" +
-            "      _uid_\n" +
-            "      name.en\n" +
-            "    }\n" +
-            "   }\n" +
-            "}\n",
+					"{\n"+
+ 	 				"	HP(func: allofterms(name@en, "Harry Potter")) @cascade{\n"+
+ 	   			"		name\n"+
+  	  		"		starring{\n"+
+    			"			performance.character@filter(allofterms(name@en, "harry")) {\n"+
+    			"				name@en\n"+
+ 	   			"			}\n"+
+  	  		"			performance.actor {\n"+
+    		 	"				name@en\n"+
+   	   		"			}\n"+
+  		  	"		}\n"+
+ 				 	"	}\n"+
+					"}\n",
     }, {
         title: 'Geolocation Near',
         sample_code: "" +
