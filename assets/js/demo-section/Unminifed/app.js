@@ -75,20 +75,34 @@ controller('GraphMagic', function($scope, $http) {
     }, {
         title: 'People who played Harry Potter',
         sample_code: "" +
-					"{\n"+
- 	 				"	HP(func: allofterms(name@en, "Harry Potter")) @cascade{\n"+
- 	   			"		name\n"+
-  	  		"		starring{\n"+
-    			"			performance.character@filter(allofterms(name@en, "harry")) {\n"+
-    			"				name@en\n"+
- 	   			"			}\n"+
-  	  		"			performance.actor {\n"+
-    		 	"				name@en\n"+
-   	   		"			}\n"+
-  		  	"		}\n"+
- 				 	"	}\n"+
-					"}\n",
-    }, {
+						"{\n"+
+ 	 					"	HP(func: allofterms(name@en, "Harry Potter")) @cascade{\n"+
+ 	   				"		name\n"+
+  	  			"		starring{\n"+
+    				"			performance.character@filter(allofterms(name@en, "harry")) {\n"+
+    				"				name@en\n"+
+ 	   				"			}\n"+
+  	  			"			performance.actor {\n"+
+    		 		"				name@en\n"+
+   	   			"			}\n"+
+  		  		"		}\n"+
+ 				 		"	}\n"+
+						"}\n",
+    },	{
+        title: 'Shortest Path',
+        sample_code: "" +
+    				"{\n"+
+	  				"	A as shortest(from: 0x3b0de646eaf32b75, to: 0x36692145960cfceb) {\n"+
+	    			"		director.film\n"+
+  		  		"		starring\n"+
+    				"		performance.actor\n"+
+  					"	}\n"+
+    				"\n"+
+ 	 					"	names(id: var(A)) {\n"+
+  	  			"		name@en\n"+
+ 						"	}\n"+
+						"}\n",
+		},  {
         title: 'Geolocation Near',
         sample_code: "" +
             "{\n" +
