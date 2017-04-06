@@ -45,11 +45,11 @@
   <!--modernizr-->
   <script type="text/javascript" src="assets/js/modernizr.min.js"></script>
   <!--[if lt IE 9] <script src="assets/js/ie.min.js"></script> ![endif]-->
-  
+
 </head>
 <body class="about">
   <!-- SVG holder is included via svg-local-storage script-->
-  <!--[if lt IE 9] 
+  <!--[if lt IE 9]
   <div class="browsehappy"> <a href="#" class="browsehappy__dismiss">Dismiss</a>
   	<h2 class="browsehappy__title">Your browser is not currently supported</h2>
   	<p>But there’s an easy fix! This web site works on a wide range of browsers. Click one of the buttons below and follow the instructions.</p>
@@ -60,7 +60,7 @@
   		<li class="browsehappy__item"><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank" class="button browsehappy__button">Download Internet Explorer</a></li>
   	</ul>
   </div> ![endif]
-  
+
   -->
   <header id="page-header" class="page-header">
     <div class="container">
@@ -226,6 +226,31 @@
               </div>
             </div>
           </div>
+          <div class="col-12 col-desktop-6">
+            <div class="member">
+              <div class="member__figure"><img src="assets/images/about/team-sung.jpg" alt="Image of Sung Won Cho, Frontend Engineer at Dgraph" class="member__image">
+                <nav class="social__nav member__social">
+                  <ul class="social__list">
+                    <li class="social__item"><a href="https://www.linkedin.com/in/sungwoncho" target="_blank" class="social__link">
+                        <svg class="icon social__icon social__icon--linkedin">
+                          <use xlink:href="#icon-linkedin" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>Sung Won Cho</a></li>
+                    <li class="social__item"><a href="https://twitter.com/mikeswcho" target="_blank" class="social__link">
+                        <svg class="icon social__icon social__icon--twitter">
+                          <use xlink:href="#icon-twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>@mikeswcho</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="member__description">
+                <h3 class="member__name">Sung Won Cho</h3>
+                <h4 class="member__title">Frontend Engineer</h4>
+                <p>Sung has been making websites since he was a kid. After finishing school, he became a developer.</p>
+                <p>He is passionate about martial arts. He is a programmer by day and MMA fighter by night.</p>
+                <p></p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -309,7 +334,7 @@
   <script>window.jQuery || document.write('<script src="assets/js/jquery-2.1.0.min.js"><\/script>')</script>
 
   <script type="text/javascript">
-    //- // Cashing SVG Sprite in localStorage 
+    //- // Cashing SVG Sprite in localStorage
     $(document).ready(function(){;(function(window,document)
     {'use strict';
     	// Change revision of svg icons every time you add new icons
@@ -328,7 +353,7 @@
     {data=request.responseText;insert();if(isLocalStorage)
     {localStorage.setItem('inlineSVGdata',data);localStorage.setItem('inlineSVGrev',revision);}}};request.send();}
     catch(e){}}(window,document));});
-    
+
   </script>
   <!-- Minified script-->
   <script type="text/javascript" src="assets/js/script.min.js?v=20170105"></script>
