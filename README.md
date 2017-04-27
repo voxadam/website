@@ -22,6 +22,11 @@ CSS/HTML/JS structure is taken from [adishap](https://github.com/adishap/demoDgr
 - `js/demo-section`
 - `fonts/demo-section`
 
+### Deploying
+
+* Run `grunt`
+* Commit the artifact to `master`
+* If CSS has changed, bust the cache by changing the timestamp in the header
 
 ### Resources and tools
 
@@ -29,7 +34,7 @@ CSS/HTML/JS structure is taken from [adishap](https://github.com/adishap/demoDgr
 - [Jade](http://jade-lang.com/) — Jade Templating Language
 - [NPM](https://nodejs.org/) — Node Package Manager
 - [Grunt.js](http://gruntjs.com/) — JavaScript Task Runner
-- [Surge](https://surge.sh/) — Deploy projects to a production-quality CDN 
+- [Surge](https://surge.sh/) — Deploy projects to a production-quality CDN
 
 For more information about each of the mentioned tool see [Tools and Services Page](documentation/tools-and-services.md).
 
