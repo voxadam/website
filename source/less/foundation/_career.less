@@ -9,16 +9,16 @@
 .career-perk {
 
 	&__wrapper {
-		margin-bottom: @spacing-base;			
+		margin-bottom: @spacing-base;
 	}
-	
+
 	&__list {
 		padding: 0;
 		margin: 0;
 		@media screen and (min-width: 550px) {
 			.clearfix();
 			margin: 0 -15px;
-		}	
+		}
 	}
 
 	&__item {
@@ -40,7 +40,7 @@
 			&:nth-child(7), {
 				clear: left;
 			}
-		}		
+		}
 
 		@media screen and (min-width: @tablet-breakpoint) and (max-width: @hd-breakpoint) {
 			width: 33.3333%;
@@ -59,7 +59,7 @@
 		p {
 			margin-bottom: 0;
 		}
-				
+
 	}
 
 	&__icon {
@@ -80,7 +80,7 @@
 }
 
 .job-offer {
-	.font-size(16);	
+	.font-size(16);
 	margin: @spacing-small 0;
 	padding-bottom: @spacing-small;
 	border-bottom: 2px solid #f0f0f0;
@@ -88,7 +88,7 @@
 		margin: @spacing-base 0;
 		padding-bottom: @spacing-base;
 	}
-			
+
 	&:last-child {
 		margin-bottom: 0;
 		padding-bottom: 0;
@@ -97,9 +97,19 @@
 
 	&__wrapper {
 		margin-bottom: @spacing-base;
+		text-align: center;
+
 		@media screen and (min-width: @tablet-breakpoint) {
-			margin-bottom: @spacing-large;
+			margin-bottom: calc(@spacing-large + 70px);
 		}
+	}
+
+	&__cta {
+		color: black;
+    padding: 16px 46px;
+    font-weight: 500;
+		text-transform: uppercase;
+		font-size: 18px;
 	}
 
 	&__title {
@@ -116,7 +126,7 @@
 			.font-size(16);
 		}
 	}
-	
+
 	p {
 		@media screen and (min-width: @tablet-breakpoint) {
 			.font-size(18);
