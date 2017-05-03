@@ -41,7 +41,7 @@ angular
                     "           p as count(starring)\n" +
                     "           q as count(genre)\n" +
                     "           r as count(country)\n" +
-                    "           score as sumvar(p, q, r)\n" +
+                    "           score as math(p + q + r)\n" +
                     "       }\n" +
                     "   }\n" +
                     "\n" +
@@ -57,7 +57,7 @@ angular
                     "{\n" +
                     "  directed(id: m.0bxtg) {\n" +
                     "    name@en\n" +
-                    '    director.film @filter(geq(initial_release_date, "1970-01-01")) {\n' +
+                    '    director.film @filter(ge(initial_release_date, "1970-01-01")) {\n' +
                     "      initial_release_date\n" +
                     "      name@en\n" +
                     "    }\n" +
@@ -128,8 +128,8 @@ angular
                 $scope.active_tab.active = false;
             }
             $scope.active_tab = $scope.examples[index];
-            $scope.active_tab.code = $scope.active_tab.code ||
-                $scope.active_tab.sample_code;
+            $scope.active_tab.code =
+                $scope.active_tab.code || $scope.active_tab.sample_code;
             $scope.active_tab.active = true;
         };
 
@@ -172,9 +172,8 @@ angular
         $scope.found_entity = function(data) {
             var index = $scope.typeahead_cache_indices[data.name];
             if (index == undefined) {
-                $scope.typeahead_cache_indices[
-                    data.name
-                ] = $scope.typeahead_cache.length;
+                $scope.typeahead_cache_indices[data.name] =
+                    $scope.typeahead_cache.length;
                 $scope.typeahead_cache.push(data);
             } else {
                 var cached = $scope.typeahead_cache[index];
@@ -245,13 +244,14 @@ angular
                     );
 
                     $scope.latency_data = response.data.server_latency || {};
-                    $scope.latency_data.client_total_latency = Date.now() -
-                        startTime;
+                    $scope.latency_data.client_total_latency =
+                        Date.now() - startTime;
                     if ($scope.json_result) {
-                        $scope.latency_data.entity_count = $scope.json_result.replace(
-                            /"_uid_": /g,
-                            '"_uid_": 1'
-                        ).length - $scope.json_result.length;
+                        $scope.latency_data.entity_count =
+                            $scope.json_result.replace(
+                                /"_uid_": /g,
+                                '"_uid_": 1'
+                            ).length - $scope.json_result.length;
                     } else {
                         $scope.latency_data.entity_count = 0;
                     }
