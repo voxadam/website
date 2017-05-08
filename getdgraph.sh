@@ -74,7 +74,7 @@ printf $RESET
 	digest_cmd=""
 	if hash shasum 2>/dev/null; then
 	  digest_cmd="shasum -a 256"
-	if hash sha256sum 2>/dev/null; then
+	elif hash sha256sum 2>/dev/null; then
 	  digest_cmd="sha256sum"
 	else
 	  print_error "Could not find suitable hashing utility. Please install shasum or sha256sum and try again.";
